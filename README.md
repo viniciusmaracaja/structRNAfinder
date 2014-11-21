@@ -15,6 +15,7 @@ To install structRNAfinder and requirement, type in terminal located in structRN
 	*sudo sh install.sh*
 
 And follow the instructions.
+
 <br>
 
 ***Summary of available tools***
@@ -41,6 +42,8 @@ This program only is used for databases different to Rfam.
 *SRF_generateJS*: generates JavaScript files necessary to produce the summary chart on the html final report.
 
 <br>
+
+
 ***Comments, criticisms and suggestions***
 
 Please, feel free to contact us in case of comments, criticisms and suggestions at: vinicius.coutinho@umayor.cl or by
