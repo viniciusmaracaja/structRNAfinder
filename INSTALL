@@ -1,4 +1,6 @@
-**Installation**
+-----------------------------------------------------------
+		       Installation
+-----------------------------------------------------------
 
 The installation procedure into structRNAfinder is done by 
 a shell script that have all the instruction to install the
@@ -7,6 +9,57 @@ user wants.
 
 To install type in terminal:
 
-	*sudo sh install.sh*
+	sudo sh install.sh
 	
 and follow the instruction.
+
+
+-----------------------------------------------------------
+		    Prompted questions
+-----------------------------------------------------------
+
+At the time of execution it be asking if the user want to 
+install or download the particular sofware or database, the
+order of the installation is the follow:
+
+1.- Would you like to install/re-install Vienna? (y/n) [n]
+If you only press enter without put a letter the answer not 
+(n) is taken by default.
+
+In this part the script download the source code of Vienna 
+package available in:
+http://www.tbi.univie.ac.at/RNA/download.php?id=viennarna-2.1.7
+and compile it using the installation recommendation of the
+authors.
+
+
+2.- Would you like to install/re-install Infernal? (y/n) [n]
+If you only press enter without put a letter the answer not
+(n) is taken by default.
+
+To perform this, the precompiled binary are downloaded from 
+http://selab.janelia.org/software/infernal/infernal-1.1-linux-intel-gcc.tar.gz
+extracted into temporal folder and then copied into default 
+binary folder of linux (/usr/local/bin).
+
+
+3.- Would you like to download/re-download Rfam.cm? (y/n) [y]
+If you only press enter without put a letter the answer yes 
+(y) is taken by default.
+
+In this moment the Rfam database is downloaded from 
+ftp://selab.janelia.org/pub/rfam/rfam-11.0/Rfam.cm.gz and then
+is generated the necessary files to run cmscan using the 
+cmpress program (Infernal recomendation). By default the path 
+to extract the database is the home folder of the current user,
+but it can be change by prompt.
+
+
+4.- Would you like to install/re-install Bio::Graphics? (y/n) [y]
+If you only press enter without put a letter the answer yes
+(y) is taken by default.
+
+Finally, a perl library is needed to generate the mapping i-
+mages. In this part, the script install libgd-perl and the 
+library Bio::Graphics using cpan tool. If you have already
+installed or you want to install manually, please answer “n”
