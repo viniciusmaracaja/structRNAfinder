@@ -1,45 +1,44 @@
 structRNAfinder
 ===============
-StructRNAfinder is designed to analyse data originated from transcriptome and genome projects. So, as a input it is required the sequences in Fasta format, as well  a covariance model (CM format) related to the secondary structures used for comparison.
-StructRNAfinder integrates two third-part softwares and inhouse scripts that allows to perform noncoding RNA annotation based on secondary structure inference. This tool generates a friendly output of the obtained results of each step.
-This program is optimized to use the covariance model available in the Rfam databases. This mean that the generated output uses other complementary files, annotations and information extracted from that database. However, it do not exclude the possibility of using other covariance models as input,  since the tool main pipeline is conserved, the unique difference is in the step of generating the html final reports. This option is useful for comparative genomics analysis, as well implementing CMs originated by other softwares than Infernal. 
+StructRNAfinder is designed to analyse data originated from transcriptome or genome projects. As input it is required the sequences in Fasta format, as well a covariance model (CM format) related to the secondary structures used for comparison.
+
+StructRNAfinder integrates two third-part softwares and in-house scripts that allows to perform noncoding RNA annotation based on secondary structure inference. This tool generates a friendly output of the obtained results for every analysis developed on each step of its workflow.
+
+This program is optimized to use the covariance models available in the Rfam database (http://rfam.xfam.org/). This mean that the generated output uses other complementary files, annotations and information extracted from that database. However, it do not exclude the possibility of using other covariance models as input.  The tool main pipeline is conserved and the unique difference is on the step of generating the html final reports. This option is useful for comparative genomics analysis, as well implementing CMs originated by other softwares than Infernal. 
 
 <br>
 
 ***Installation***
 
-To see more detail about the installation procedure please see the INSTALL file.
+To see more details related to the installation process please see the INSTALL file.
 
-To install structRNAfinder and requirement, type in terminal located in structRNAfinder folder:
+To install structRNAfinder and its requirements, type in terminal located in structRNAfinder folder:
 
 	*sudo sh install.sh*
 
-And follow the instructions.
+And follow the instructions provided.
 
 <br>
 
-***Summary of available tools***
+***Summary of available tools and scripts***
 
-*Infernal software*: tool for searching DNA sequence databases for RNA structure and sequence similarities (Nawrocki and Eddy, 2013)
+*Infernal software*: tool for searching for RNA structures in nucleotide sequences (Nawrocki and Eddy, 2013)
 
-*RNAfold software*: is a tool for predict secondary structures of single stranded RNA or DNA sequences calculating free
-energy necessary to perform the structure (Lorenz et al., 2011).
+*RNAfold software*: tool for secondary structure predictions in single stranded RNA or DNA sequences, based on the folding and calculation of the free energy viable to form the structure (Lorenz et al., 2011).
 
 *structRNAfinder*: it is the main script the of StructRNAfinder. It performs all the analysis by calling other subscripts related to each comparison.
 
-*SRF_Infernal2table*: it generates a tab delimited file with the information related to selected hits for secondary structures based on covariance models comparisons against primary sequences performed by Infernal.
+*SRF_Infernal2table*: it generates a tab delimited file with the information related to the selected hits for secondary structures, based on covariance models comparisons against the primary sequences performed by Infernal.
 
-*SRF_extractMature*: this script extracts the mature sequenceof the best hits filtered previously. The output is generated in two files in Fasta format, one with the complete sequence and another with the mature sequence of selected hits.
+*SRF_extractMature*: this script extracts the mature sequence of the best hits filtered previously. The output is generated in two files in Fasta format, one with the complete sequence and another with the mature sequence of selected hits.
 
-*SRF_taxonomy*: use the Krona tools (Ondov et al., 2011) to generate dynamic graphics with the taxonomic assignation of
-all secondary structure based on each RNA famlify taxonomic distribution.
+*SRF_taxonomy*: use the Krona tools (Ondov et al., 2011) to generate dynamic graphics with the taxonomic assignation for all secondary structures based on each RNA family taxonomic distribution reported on Rfam (Griffiths-Jones, 2003)
 
 *SRF_generateHtml*: integrates all the results previously obtained with additional information extracted from Rfam database for each hit in a friendly output in html format.  
 
-*SRF_generateHtmlOther*: integrates all the result previously obtained to generate the output like a friendly html format.
-This program only is used for databases different to Rfam. 
+*SRF_generateHtmlOther*: integrates all the results previously obtained to generate the a friendly output in html format. This program is only used for other databases than Rfam.  
 
-*SRF_generateJS*: generates JavaScript files necessary to produce the summary chart on the html final report.
+*SRF_generateJS*: generates the JavaScript files necessary to produce the summary chart on the html final report.
 
 <br>
 
