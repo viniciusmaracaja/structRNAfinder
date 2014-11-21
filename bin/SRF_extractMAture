@@ -1,0 +1,238 @@
+#!/usr/bin/perl
+#######################################################################################################
+## Script which extract the sequence of mature RNAs through alignment of structures done previously 
+## with infernal, considering the length of reference sequences into a covariance model file (.cm)
+## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
+## Contact: vinicius.coutinho@umayor.cl
+## Date: 12th May, 2014
+#######################################################################################################
+use strict;
+use warnings;
+use Getopt::Long;
+
+my $usage = "
+Script which extract the sequence of mature RNAs through alignment 
+of structures done previously with infernal, considering the length
+of reference sequences into a covariance model file (.cm)
+
+Usage: SRF_extractMAture OPTION:
+
+ -f, --fasta	 input file in fasta format
+ -i, --infernal  tab delimited file with the infernal output
+ -c, --cm 	 covariance model used
+ -r, --report	 report total number of annotated RNAs, for default only is showed the best hit per sequence [default: False]
+ -o, --output	 fasta file will write with mature sequence 
+ -u, --outcompl  fasta file will write with complete sequence.This option is valid only for best hits report.
+\n\n";
+
+my ($filefasta, $fileinf, $nameout, $db, $help, $seqcomp, $report);
+if ( @ARGV < 1 or !GetOptions('help|h' => \$help, 'fasta|f=s' => \$filefasta, 'infernal|i=s' => \$fileinf, 
+'cm|c=s' => \$db, 'output|o=s' => \$nameout,  'outcompl|u=s' => \$seqcomp, 'report|r' => \$report) or defined $help ) {
+	print "Unknown option: @_\n" if ( @_ );
+        print $usage;
+	exit;
+}
+if(!defined($filefasta) || !defined($fileinf) || !defined($nameout) || !defined($db)) {
+        print $usage;
+        exit;
+}
+
+open (IN,"$filefasta") or die "Can't open the file [$filefasta]";
+open (IN2,"$fileinf") or die "Can't open the file [$fileinf]";
+open (OUT,">$nameout") or die "Can't open the file [$nameout]";
+
+open (DB, "$db") or die "Can't open the file [$db]";
+
+my %fasta = ();
+my $id = "";
+my $num_seq =0;
+
+$/ = ">";
+<IN>;
+while (<IN>){
+	chomp($_);
+	my @temp = split("\n",$_);
+	my $id2 = shift(@temp);
+	my @id= split (/\s/,$id2);
+	my $seq = join("",@temp);
+	$fasta{$id[0]} = $seq;	
+}
+
+my $db_id;
+my %dbcm;
+$/ = "\n";
+
+while (<DB>){
+	if(/^ACC/){
+		chomp($_);
+		my @acc = split (/\s+/,$_);
+		$db_id = $acc[1];
+	}
+	elsif(/^CLEN/){
+		chomp($_);
+                my @acclength = split (/\s+/,$_);
+                $dbcm{$db_id} = $acclength[1];
+        }
+}
+
+if(!defined($report)){
+	open (OUT2,">$seqcomp") or die "Can't open the file [$seqcomp]";
+	while (<IN2>){
+		if(!/^#/ && !/^Contig/){
+			my @in= split ("\t",$_);
+			my $contig= $in[0];
+			my $length = length($fasta{$contig});
+			if($fasta{$contig}) {
+				my $from= $in[5];
+				my $to= $in[6];
+				my $newfrom = 0;
+				my $newto = 0;
+
+				if ($from > $to){
+					my $tmp1 = $from;
+					my $tmp2 = $to;
+					$from = $tmp2;
+					$to = $tmp1;
+				}
+				$newfrom = $from;
+				$newto = $to;
+				my $mat = $to - $from;
+				if($mat < $dbcm{$in[2]}){
+					my $exp = int (($dbcm{$in[2]} - $mat) / 2);
+					my $expiz = $exp;
+					my $expde = $exp;			
+					if ($exp > $from ) {
+						$expde = $expde + ($expiz - $from);
+						$from = 1;
+						if($expde > ($length - $to)){
+							$to = $length;
+						}
+						else{
+							$to = $to + $expde;
+						}
+		                        	
+					}
+					elsif($expde > ($length - $to)){
+						$expiz = $expiz + ($exp - ($length - $to));
+						$to = $length;
+						if($expiz > $from){
+							$from = 1;
+						}
+						else{
+							$from = $from - $expiz;
+							$newfrom = ($newfrom - $from) + 1;
+							$newto = $newto - $from;
+						}
+					}
+					else{
+						$to = $to + $expde;
+						$from = $from - $expiz;
+						$newfrom = ($newfrom - $from) + 1;
+						$newto = $newto - $from;
+					}
+					my $str = substr ($fasta{$contig}, $from, $to-$from);
+			        	chomp($str);
+		        	       	my $i = length($str);
+					print OUT ">$contig-$newfrom-$newto\n$str\n";
+					print OUT2 ">$contig\n$fasta{$contig}\n";
+				}
+				else{
+					$newfrom=1;
+					$newto= $newto - $from;
+					my $str = substr ($fasta{$contig}, $from, $to-$from);
+		        		chomp($str);
+		               		my $i = length($str);
+					print OUT ">$contig-$newfrom-$newto\n$str\n";
+					print OUT2 ">$contig\n$fasta{$contig}\n";
+				}
+			}
+		}
+	}
+}
+else{
+	my $cont = 0;
+	while (<IN2>){
+		if(!/^#/ && !/^Contig/){
+			$cont++;
+			my @in= split ("\t",$_);
+			my $contig_org = $in[0];
+			my @contig= split ("_",$in[0]);
+			pop(@contig);
+			my $contig= join("_",@contig);
+			my $length = length($fasta{$contig});
+			if($fasta{$contig}) {
+				my $from= $in[5];
+				my $to= $in[6];
+				my $newfrom = 0;
+				my $newto = 0;
+
+				if ($from > $to){
+					my $tmp1 = $from;
+					my $tmp2 = $to;
+					$from = $tmp2;
+					$to = $tmp1;
+				}
+				$newfrom = $from;
+				$newto = $to;
+				my $mat = $to - $from;
+				if($mat < $dbcm{$in[2]}){
+					my $exp = int (($dbcm{$in[2]} - $mat) / 2);
+					my $expiz = $exp;
+					my $expde = $exp;			
+					if ($exp > $from ) {
+						$expde = $expde + ($expiz - $from);
+						$from = 1;
+						if($expde > ($length - $to)){
+							$to = $length;
+						}
+						else{
+							$to = $to + $expde;
+						}
+		                        	
+					}
+					elsif($expde > ($length - $to)){
+						$expiz = $expiz + ($exp - ($length - $to));
+						$to = $length;
+						if($expiz > $from){
+							$from = 1;
+						}
+						else{
+							$from = $from - $expiz;
+							$newfrom = ($newfrom - $from) + 1;
+							$newto = $newto - $from;
+						}
+					}
+					else{
+						$to = $to + $expde;
+						$from = $from - $expiz;
+						$newfrom = ($newfrom - $from) + 1;
+						$newto = $newto - $from;
+					}
+					my $str = substr ($fasta{$contig}, $from, $to-$from);
+			        	chomp($str);
+		        	       	my $i = length($str);
+					print OUT ">$contig_org-$newfrom-$newto\n$str\n";
+					
+					
+				}
+				else{
+					$newfrom=1;
+					$newto= $newto - $from;
+					my $str = substr ($fasta{$contig}, $from, $to-$from);
+		        		chomp($str);
+		               		my $i = length($str);
+					print OUT ">$contig_org-$newfrom-$newto\n$str\n";
+					
+					
+				}
+			}
+		}
+	}
+
+
+}
+close (IN);
+close (OUT);
+close (OUT2);
+close (DB);
+close (IN2);

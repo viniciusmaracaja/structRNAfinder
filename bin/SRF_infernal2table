@@ -1,0 +1,247 @@
+#!/usr/bin/perl
+#######################################################################################################
+## Script which filter the significant hit from output tab of cmscan 
+## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
+## Contact: vinicius.coutinho@umayor.cl
+## Date: 12th May, 2014
+#######################################################################################################
+use strict;
+use warnings;
+use Getopt::Long;
+
+my $usage = "\nFiltrate each hit in tab delimited file given by cmscan (infernal)
+
+Usage: infernal2table OPTION:
+ -i, --input	tab delimited file with the output
+ -u, --inout	output file with infernal
+ -o, --output	tab delimited file with the filters hit 
+		[default: same input name with extension .out]
+ -r, --report   report total number of annotated RNAs, for default only is showed the best hit per sequence [default: False]
+ -b, --outbed	output file in bed format
+ -m, --method	method used cmscan or cmsearch [default: cmscan]
+
+\n\n";
+
+my ($help, $filein, $fileout, $evalue, $score, $outbed, $method, $report);
+if ( @ARGV < 1 or !GetOptions('help|h' => \$help, 'i|input=s' => \$filein, 'o|output=s' => \$fileout, 's|score=f' => \$score, 'e|e-value=f' =>\$evalue, 'b|outbed=s' => \$outbed, 'm|method=s' => \$method, 'r|report' => \$report  ) or defined $help ) {
+	print "Unknown option: @_\n" if ( @_ );
+	print $usage;
+  	exit;
+}
+if(!defined($filein)) {
+	print $usage;
+	exit;
+}
+if(!defined($fileout)) {
+	$fileout = $filein . ".out";
+}
+if(!defined($outbed)) {
+	$outbed = $filein . ".bed";
+}
+if(!defined($evalue)) {
+	$evalue = 0.01;
+}
+if(!defined($score)) {
+        $score	= 10;
+}
+if(!defined($method)) {
+        $method	= "cmscan";
+}
+
+open (IN2,"/usr/local/share/structRNAfinder/Rfam_specie.tab") or die "Can't open the file [Rfam_specie.tab]";
+my %faminf;
+
+while (<IN2>) {
+        chomp($_);
+        if(!/^#/)
+		{
+                my @dates;
+                my @types= split ("\t",$_);
+                my $id= $types[0];
+                $dates[0] = $types[1];#family
+                $dates[1] = $types[2];#family descrip
+                $dates[2] = $types[3];#type
+		$dates[3] = $types[4];#dominio
+                $dates[4] = $types[5];#Description
+                $faminf{$id} = \@dates;
+        }
+}
+
+close(IN2);
+
+open(IN,"$filein");
+open(OUT,">$fileout");
+open(BED,">$outbed");
+
+print OUT "\#Contigs\tFamily\tID\tScore\tE-value\tfrom_seq\tto_seq\ttype\tdomain\tdescription\n";
+
+if(!defined($report)) {
+	if($method eq "cmscan") {
+		my %values = ();
+		my $contig = '';
+		my $cont = 0;
+		while(<IN>) {
+			if(!/^#/) 
+				{  #si no comienza con el signo #
+				my @fields = split(/\s+/,$_);
+				if ($fields[16] eq "!") {
+					if(!$values{$fields[2]}) {
+						if($contig ne $fields[2]){
+				                        $contig = $fields[2];
+				                        #agrega columna con el tipo de familia
+							if($faminf{$fields[1]}[2]){
+								$cont++;
+								$values{$fields[2]} = "$fields[2]\t$fields[0]\t$fields[1]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\t$faminf{$fields[1]}[2]\t$faminf{$fields[1]}[3]\t$faminf{$fields[1]}[4]\n";
+								if($fields[7] < $fields[8]){
+									print BED "$fields[2]\t$fields[7]\t$fields[8]\tRNA$cont\_$fields[0]_$fields[1]\t0\t+\n";
+								}
+								else{
+									print BED "$fields[2]\t$fields[8]\t$fields[7]\tRNA$cont\_$fields[0]_$fields[1]\t0\t-\n";
+								}
+						
+							}
+							else{
+								$cont++;
+								$values{$fields[2]} = "$fields[2]\t$fields[0]\t$fields[1]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\tother\t$faminf{$fields[1]}[3]\t$faminf{$fields[1]}[4]\n";
+								if($fields[7] < $fields[8]){
+									print BED "$fields[2]\t$fields[7]\t$fields[8]\tRNA$cont\_$fields[0]_$fields[1]\t0\t+\n";
+								}
+								else{
+									print BED "$fields[2]\t$fields[8]\t$fields[7]\tRNA$cont\_$fields[0]_$fields[1]\t0\t-\n";
+								
+								}
+				                	}
+					
+						}		
+					}
+				}
+			}	
+		}
+		foreach my $key (sort keys %values) {
+			print OUT $values{$key};
+		}
+	}
+	
+	elsif($method eq "cmsearch"){
+		system ("sort -k 1 $filein > 1 && mv -f 1 $filein");
+		my %values = ();
+		my $contig = '';
+		my @dates = '';
+		my $cont =0;
+		while(<IN>) {
+			if(!/^#/) 
+				{  #si no comienza con el signo #
+				my @fields = split(/\s+/,$_);
+				if ($fields[16] eq "!") {
+					if($values{$fields[0]}) {
+						if($fields[15] < $values{$fields[0]}[4] ){
+							@dates = ("$fields[0]","$fields[2]","$fields[3]","$fields[14]","$fields[15]","$fields[7]","$fields[8]","$faminf{$fields[3]}[2]","$faminf{$fields[3]}[3]","$faminf{$fields[3]}[4]");
+						$values{$fields[0]} = [@dates];	
+				  	        }				
+					}
+					else{
+						@dates = ("$fields[0]","$fields[2]","$fields[3]","$fields[14]","$fields[15]","$fields[7]","$fields[8]","$faminf{$fields[3]}[2]","$faminf{$fields[3]}[3]","$faminf{$fields[3]}[4]");
+						$values{$fields[0]} = [@dates];		
+					}	
+				}		
+			}
+		}
+		for my $dates ( keys %values ) {
+			$cont++;
+			print OUT "$values{$dates}[0]\t$values{$dates}[1]\t$values{$dates}[2]\t$values{$dates}[3]\t$values{$dates}[4]\t$values{$dates}[5]\t$values{$dates}[6]\t$values{$dates}[7]\t$values{$dates}[8]\t$values{$dates}[9]\n";
+			if($values{$dates}[5] < $values{$dates}[6]){
+			    	print BED "$values{$dates}[0]\t$values{$dates}[5]\t$values{$dates}[6]\tRNA$cont\_$values{$dates}[1]_$values{$dates}[2]\t0\t+\n";
+			}
+			else{
+			    	print BED "$values{$dates}[0]\t$values{$dates}[6]\t$values{$dates}[5]\tRNA$cont\_$values{$dates}[1]_$values{$dates}[2]\t0\t-\n";
+			}
+		}
+	}
+}
+else{ #all resport
+	if($method eq "cmscan"){
+		my %values = ();
+		my $contig = '';
+		my $cont = 0;
+		my $target = '';
+		my $newtarget= '';
+		while(<IN>) {
+			if(!/^#/ && !/^-/) 
+				{  #si no comienza con el signo #
+				my @fields = split(/\s+/,$_);
+				if ($fields[16] eq "!") {
+					$contig = $fields[2];
+					$newtarget = $contig;
+					if($newtarget eq $target){
+						$cont++;
+						print OUT "$fields[2]_$cont\t$fields[0]\t$fields[1]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\t$faminf{$fields[1]}[2]\t$faminf{$fields[1]}[3]\t$faminf{$fields[1]}[4]\n";
+						if($fields[7] < $fields[8]){
+							print BED "$fields[2]\t$fields[7]\t$fields[8]\tRNA$cont\_$fields[0]_$fields[1]\t0\t+\n";
+						}
+						else{
+							print BED "$fields[2]\t$fields[8]\t$fields[7]\tRNA$cont\_$fields[0]_$fields[1]\t0\t-\n";
+						}					
+					}
+					else{
+						$cont = 1;
+						$target = $newtarget;
+						print OUT "$fields[2]_$cont\t$fields[0]\t$fields[1]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\t$faminf{$fields[1]}[2]\t$faminf{$fields[1]}[3]\t$faminf{$fields[1]}[4]\n";
+						if($fields[7] < $fields[8]){
+							print BED "$fields[2]\t$fields[7]\t$fields[8]\tRNA$cont\_$fields[0]_$fields[1]\t0\t+\n";				}
+						else{
+							print BED "$fields[2]\t$fields[8]\t$fields[7]\tRNA$cont\_$fields[0]_$fields[1]\t0\t-\n";
+						}	
+						
+					
+					}		
+				}
+			}
+		}
+	}		
+	elsif($method eq "cmsearch") {
+		system ("sort -k 1 $filein > 1 && mv -f 1 $filein");
+		my %values = ();
+		my $contig = '';
+		my @dates = '';
+		my $cont = 1;
+		my $target = '';
+		my $newtarget = '';
+		while(<IN>) {
+			if(!/^#/)  #si no comienza con el signo #
+				{  
+				my @fields = split(/\s+/,$_);
+				$newtarget = $fields[0];
+				if ($fields[16] eq "!") {
+					if($newtarget eq $target){
+						$cont++;
+						print OUT "$fields[0]_$cont\t$fields[2]\t$fields[3]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\t$faminf{$fields[3]}[2]\t$faminf{$fields[3]}[3]\t$faminf{$fields[3]}[4]\n";
+						if($fields[7] < $fields[8]){
+							print BED "$fields[0]\t$fields[7]\t$fields[8]\tRNA_$cont\_$fields[2]_$fields[3]\t0\t+\n";
+						}
+						else{
+							print BED "$fields[0]\t$fields[8]\t$fields[7]\tRNA_$cont\_$fields[2]_$fields[3]\t0\t-\n";
+						
+						}
+				 	}
+				 	else{
+				 		$cont = 1;
+				 		$target = $newtarget;
+				 		print OUT "$fields[0]_$cont\t$fields[2]\t$fields[3]\t$fields[14]\t$fields[15]\t$fields[7]\t$fields[8]\t$faminf{$fields[3]}[2]\t$faminf{$fields[3]}[3]\t$faminf{$fields[3]}[4]\n";
+				 		if($fields[7] < $fields[8]){
+							print BED "$fields[0]\t$fields[7]\t$fields[8]\tRNA_$cont\_$fields[2]_$fields[3]\t0\t+\n";
+						}
+						else{
+							print BED "$fields[0]\t$fields[8]\t$fields[7]\tRNA_$cont\_$fields[2]_$fields[3]\t0\t-\n";
+						}
+					}
+				 }
+			}		
+		}
+	}		
+}
+
+
+close(IN);
+close(OUT);
+close(BED);
+

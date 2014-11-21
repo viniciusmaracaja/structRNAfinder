@@ -1,0 +1,268 @@
+#!/usr/bin/perl
+#######################################################################################################
+##structRNAfinder is an automated tool for de novo identification, functional annotation and taxonomic
+#assignation of structured RNA domains and families in large and small nucleotide sequences. This script 
+#is main program which call all other programs. 
+## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
+## Contact: vinicius.coutinho@umayor.cl
+## Date: 12th oct, 2014
+#######################################################################################################
+
+use strict;
+use warnings;
+use Getopt::Long;
+use Cwd qw(getcwd abs_path);
+use File::Spec;
+
+my $usage = "structRNAfinder: an integrated and automated toolkit
+for ncRNA annotation based on secondary structure inference.
+
+Usage: structRNAfinder [OPTION]:
+
+ -i, --input      input file in format fasta
+ -d, --database   input reference database
+ -x, --otherDB    define only if you want use a reference database different to Rfam [default: false]
+ -m, --method     method to search for structural RNAs in a sequence dataset, cmscan or cmsearch [default: cmscan]
+ -r, --report     report total number of annotated RNAs, for default only is showed the best hit per sequence [default: False]
+ -t, --tblout     save parseable table of hits to file [default: <input>.tab]
+ -o, --output     direct output to file <f>, not stdout [default: <input>.out]
+ -c, --cpu        number of parallel CPU workers to use for multithreads [default: 1 cpu]
+ -p, --posStrand  only search the positive strand [default: false]
+ -n, --negStrand  only search the negative strand [default: false]
+
+ Options controlling inclusion (significance) thresholds (only one):
+ -e, --e-value    maximun e-value to each hit [default: 0.01]
+ -s, --score      minimun score to each hit [default: 10]\n
+NOTE: The headers in the input fasta should have less than 20 characters, 
+if not these will be automatically cutted\n
+";
+
+my ($help, $filein, $meth, $fileoutta, $fileout, $cpu, $db, $score, $evalue, $evalue_cut, $other, $report, $posS, $negS);
+if ( @ARGV < 1 or !GetOptions('help|h' => \$help, 'i|input=s' => \$filein, 'd|database=s' => \$db, 'm|method=s' => \$meth, 't|tblout=s' => \$fileoutta, 'o|output=s' => \$fileout, 'c|cpu=f' => \$cpu, 's|score=f' => \$score, 'e|e-value=f' => \$evalue, 'x|otherDB' => \$other, 'r|report' => \$report, 'p|posStrand' => \$posS, 'n|negStrand' => \$negS )  or defined $help ) {
+        print "Unknown option: @_\n" if ( @_ );
+        print $usage;
+        exit;
+}
+if(!defined($filein)) {
+        print $usage;
+        exit;
+}
+
+open (IN,"$filein") or die "Can't open the file [$filein]";
+my @new = split ("/",$filein);
+my $new2 = pop(@new);
+open (OUT2,">new_$new2") or die "Can't open the file [new_$new2]";
+my $too_long = 0;
+my $marc = 0;
+while (<IN>){
+	if(/^>/) {
+		$_ =~ s/>//g;
+		if($_ =~ /\|/ || $_ =~ /\//){
+			$_ =~ s/\|/_/g;
+			$_ =~ s/\//_/g;
+			$marc ++;
+		}
+		my @name_long = split(/\s+/,$_);
+		if(length($name_long[0]) > 20) {
+			print "[Warning] Too long header $name_long[0] will be replace by ";
+			$_ = substr($name_long[0],0,20);
+			print "$_\n";
+			$_ = $_."\n";
+			$too_long++;
+		}
+		$_ = ">".$_;		
+	} 
+	print OUT2 $_;		
+}
+close OUT2;
+if( $marc == 0 && $too_long == 0){
+	system("rm -rf new_$new2");
+} else {
+	$filein = "new_$new2";
+}
+if(!defined($db)){
+	print $usage;
+	exit;
+}
+if(!defined($meth)){
+	$meth = "cmscan";
+}
+my @name1 = split("/",$filein);
+my $name2 = pop(@name1);
+my @name3 = split (/\./,$name2);
+pop(@name3);
+my $name4 = join(".",@name3);
+
+if(!defined($fileoutta)){
+	$fileoutta = $name4 . ".tab";
+}
+if(!defined($fileout)) {
+        $fileout = $name4 . ".out";
+}
+if(!defined($cpu)){ 
+	$cpu = 1;
+}
+if(defined($evalue) && defined($score)){
+	print "You must define evalue or score\n" if ( @_ );
+        print $usage;
+        exit;
+}
+else{
+	if(!defined($evalue)) {
+        	$evalue = "";
+        	$evalue_cut = "-E 0.01";
+	}
+	else{
+		$evalue = "--incE " . $evalue;
+		$evalue_cut = "-E " . $evalue;
+	}
+	if(!defined($score)) {
+        	$score  = "";
+	}
+	else{
+		$score= "--incT " . $score;
+	}
+}
+
+#Run cmscan or cmsearch
+
+if($meth eq "cmscan" || $meth eq "cmsearch"){
+	if(defined($posS) && defined($negS)){
+		print "You must define positive or negative strand. For default, this program does search in both strands\n";
+		exit;
+	}	
+	elsif(defined($posS)){
+		system("$meth --toponly -o $fileout --tblout $fileoutta $evalue $score $evalue_cut --acc --cpu $cpu  $db $filein");
+	}
+	elsif(defined($negS)){
+		system("$meth --bottomonly -o $fileout --tblout $fileoutta $evalue $score $evalue_cut --acc --cpu $cpu   $db $filein");
+	}
+	else{
+		system("$meth -o $fileout --tblout $fileoutta $evalue $score $evalue_cut --acc --cpu $cpu $db $filein");	
+	}
+}
+else {
+	print "Method no valid\n";
+	exit;
+}
+
+if(!defined($report)){
+	#filtered uniq
+	system("SRF_infernal2table -i $fileoutta -o $name4\_filtered.tab -b $name4\_filtered.bed -m $meth");
+	#sequences mature
+	system("SRF_extractMAture -f $filein -i $name4\_filtered.tab -o $name4\_mature.fasta -c $db -u $name4\_complete.fasta");
+}
+else{
+	#filtered uniq
+	system("SRF_infernal2table -i $fileoutta -o $name4\_filtered.tab -b $name4\_filtered.bed -m $meth -r");
+	#sequences mature
+	system("SRF_extractMAture -f $filein -i $name4\_filtered.tab -o $name4\_mature.fasta -c $db -r");
+}
+
+#run RNAfold
+
+system("mkdir img");
+system("RNAfold --circ < $name4\_mature.fasta > $name4\_RNAfold.dbn");
+
+my $function = "/segmark { % f i j lw r g b segmark
+  % mark segment [i,j] with outline width lw and color rgb
+  % use omark and Fomark instead
+  gsave
+  setrgbcolor setlinewidth
+  newpath
+  1 sub exch 1 sub dup
+  coor exch get aload pop moveto
+  currentdict (cpr) known
+  {
+    3 -1 roll dup 4 1 roll dup
+    {
+      3 1 roll dup 3 -1 roll dup
+      4 1 roll exch 5 2 roll exch
+    }
+    {
+      3 1 roll exch
+    } ifelse
+    1 exch { coor exch get aload pop lineto } for
+    {
+      dup 3 1 roll 1 add exch 1 add arccoords pop pop
+      4 2 roll 5 -1 roll coor exch get aload pop curveto
+    } if
+  }
+  {
+    exch 1 exch {
+      coor exch get aload pop lineto
+    } for
+  } ifelse
+  { closepath fill } if  stroke
+  grestore
+} bind def
+/omark { % i j lw r g b omark
+  % stroke segment [i..j] with linewidth lw, color rgb
+  false 7 1 roll segmark
+} bind def\n";
+
+my $path = `pwd`;
+chomp($path);
+opendir(DIR, $path) or die $!; #se abre el directorio
+my @ps = grep(!/^\./,readdir(DIR));
+closedir(DIR);
+
+foreach my $name_ps (@ps) {
+	if($name_ps =~ /.ps/){
+		my $name_png = $name_ps;
+		$name_png  =~ s/ps/png/;
+		open(PS,$name_ps);
+		open(TEMP,">ps_temp");
+		my $init = 0;
+		my $bind_def = 0;
+		my $name_head = $name_ps;
+		$name_head =~ s/_ss.ps//;
+		my @head = split("-",$name_head);
+		my $start = $head[@head - 2];
+		my $end = $head[@head -1] - 1;
+		chomp($end);
+		my $color = "$start $end 15 0 1 0 omark\n";
+		while(<PS>) {
+		        print TEMP $_;
+		        if(/^} bind def/ && $bind_def == 0) {
+		                $bind_def = 1;
+		                print TEMP $function;
+		        }
+		        if(/^init/ && $init == 0) {
+		                $init = 1;
+		                print TEMP $color;
+		        }
+		}
+		close(PS);
+		close(TEMP);
+		system("convert -flatten ps_temp $name_png && rm -f ps_temp $name_ps");	
+		system("mv $name_png img");	
+	}
+}
+system("mkdir html");
+system("mkdir html/tables");
+
+if(!defined($report)){
+	if(!defined($other)){
+		#created html
+		system("SRF_taxonomy $name4\_filtered.tab");
+		system("SRF_generateHTML -f $name4\_filtered.tab --outRNAfold $name4\_RNAfold.dbn -m $meth -o $fileout -i $filein -b $name4\_filtered.bed");
+		system("SRF_generateJS");	
+		}
+	else{
+		system("SRF_generateHTMLOther -f $name4\_filtered.tab --outRNAfold $name4\_RNAfold.dbn -m $meth -o $fileout -i $filein -b $name4\_filtered.bed");
+
+	}
+}
+else{#all report
+	if(!defined($other)){
+		#created html
+		system("SRF_taxonomy $name4\_filtered.tab");
+		system("SRF_generateHTML -f $name4\_filtered.tab --outRNAfold $name4\_RNAfold.dbn -m $meth -o $fileout -r -i $filein -b $name4\_filtered.bed");
+		system("SRF_generateJS");
+		}
+	else{
+		system("SRF_generateHTMLOther -f $name4\_filtered.tab --outRNAfold $name4\_RNAfold.dbn -m $meth -o $fileout -r -i $filein -b $name4\_filtered.bed");
+
+	}
+}

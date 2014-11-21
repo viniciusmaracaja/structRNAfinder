@@ -1,0 +1,1322 @@
+#!/usr/bin/perl
+#######################################################################################################
+## This script generate the html output in the case that you didn't use Rfam covariance model  
+## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
+## Contact: vinicius.coutinho@umayor.cl
+## Date: 12th oct, 2014
+#######################################################################################################
+
+use strict;
+use warnings;
+use Getopt::Long;
+use Bio::Graphics;
+use Bio::SeqFeature::Generic;
+
+my $usage = "\nFiltrate each hit in tab delimited file given by cmscan (infernal)
+
+Usage: html output OPTION:
+ -i, --fasta        input file in fasta format
+ -f, --outfiltered  tab delimited file with the infernal output
+ -o, --outinfernal  output file of infernal (nameinputfile.out)
+ -R, --outRNAfold   output file in dbn format of RNAfold
+ -b, --bed          name output file in bed6 format
+ -m, --method	    method to search for structural RNAs in a sequence dataset, cmscan or cmsearch [default: cmscan]
+ -r, --report       report total number of annotated RNAs, for default only is showed the best hit per sequence [default: False]
+\n\n	
+";
+
+my ($help, $namefile, $nameRNAfold, $method, $fileout, $report, $filein, $bed);
+if ( @ARGV < 1 or !GetOptions('help|h' => \$help, 'f|outfiltered=s' => \$namefile, 'R|outRNAfold=s' => \$nameRNAfold, 'm|method=s' => \$method, 'o|outinfernal=s' => \$fileout, 'r|report' => \$report, 'i|fasta=s' => \$filein, 'b|bed=s' => \$bed) or defined $help ) {
+	print "Unknown option: @_\n" if ( @_ );
+	print $usage;
+  	exit;
+}
+if(!defined($namefile)) {
+	print $usage;
+	exit;
+}
+if(!defined($nameRNAfold)) {
+	print $usage;
+	exit;
+}
+if(!defined($fileout)) {
+	print $usage;
+	exit;
+}
+if(!defined($bed)) {
+	print $usage;
+	exit;
+}
+if(!defined($bed)) {
+	print $usage;
+	exit;
+}
+if(!defined($method)) {
+	$method = "cmscan";
+}
+
+
+open (OUT, ">html/index.html");
+open (OUT6, ">html/home.html");
+open (OUT5, ">html/contact.html");
+open (OUT7, ">html/locus.html");
+for my $fh (\*OUT, \*OUT5, \*OUT6, \*OUT7) { 
+print $fh "
+\<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"\>
+\<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\"\>
+\<head\>\<title\>StructRNAfinder\</title\>\<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/\>
+\<style type=\"text/css\"\>
+html, body {
+	height:100%;
+	width:100%;
+}
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	text-align:center;
+	height:100%;
+	width:100%;
+}
+#contenedor {
+    width: 1200px;
+}
+#left_container {
+	width:192px;
+	height:100%;
+	
+	position: fixed;
+	overflow: hidden;
+	margin-left:25px;
+}
+#left_color{
+	width:192px;
+	height:100%;
+	box-shadow: 10px 10px 5px #888888;
+	background: #37a73e; /* Old browsers */
+	background: -moz-linear-gradient(top, #37a73e 76%, #80cb28 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(76%,#37a73e), color-stop(100%,#80cb28)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* IE10+ */
+	background: linear-gradient(to bottom, #37a73e 76%,#80cb28 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a73e', endColorstr='#80cb28',GradientType=0 ); /* IE6-9 */
+		
+}
+#left_quote {
+	position:relative;
+	width:192px;
+	margin:0 0 0 0;
+	font-size:12px;
+	font-style:bold;
+	color:#EAEEE0;
+	text-align:center;
+	border-top:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	background:#3/A73E;
+	padding:2px 0 2px 0;
+}
+#right_container_outer {
+	
+	left:12.3em;
+	top:1em;
+	width:80%;
+	height:100%;
+	margin:0 0 0 200px;
+	padding:.1em 2% .5em 5%;
+}
+#logo{
+	background-image: url(\"/usr/local/share/structRNAfinder/images/logo.png\");
+	background-color:#ffffff;
+	border-top:3px solid #37A73E;
+	width:192px;
+	height:100px;
+}
+#right_container_inner {
+	position:relative;
+	left:0;
+	top:0;
+	width:80%;
+	margin:0 0 0 0;
+	padding:0 0 .2em 0;
+	background:#ABBECC;
+	border-left:1px solid #4F7692;
+	border-right:1px solid #4F7692;
+}
+#rci_left_column {
+	margin:-1em 0 0 .2em;
+	padding:0 1em 0 0;
+	background:transparent;
+	font-size:.9em;
+	color:#4F5936;
+	text-align:left;
+}
+#footer {	
+	
+	background-color:#1E6F33;
+	text-align:bottom;
+	bottom: 0px; 
+	position: absolute;
+	height:5.5em;
+	width: 192px;	
+	border-top:1px solid #FFFFFF;
+	font-size:.6em;
+	font-family:Tahoma, arial;
+	color:#ffffff;
+	text-align:center;
+	padding-top: 3px;
+}
+.cont {
+	font-family:Tahoma, arial;
+	margin:0 0 -.3em 0;
+	font-size:.8em;
+	color:#191970;
+}
+h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.8em;
+	padding:3px 0 8px 0;
+	font-size:.9em;
+	color:#191970;
+}
+h4{
+	font-family:Tahoma, arial;
+	margin:0 0 -.3em 0;
+	font-size:1em;
+	color:#191970;
+	
+}
+h5{
+	margin:0 0 -.3em 0;
+	font-size:.8em;
+	color:#191970;
+	font-family: Tahoma, arial;
+	text-align: center;
+	
+}
+.color_tab{
+	color:#FFFFFF;	
+	font-size:1em;
+	margin:0 0 -.3em 0;
+	font-family:Tahoma, arial;
+}
+ 
+#left_text h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.7em;
+	padding:0 0 0 0;
+	font-size:1.2em;
+	color:\#FFF;
+}
+.small {
+	font-family:\"Courier New\", Courier, mono;
+	font-size:.85em;
+	text-transform:uppercase;
+}
+#right_container_inner a {
+	color:#547699;
+	text-decoration:underline;
+}
+#right_container_inner a:hover {
+	color:#ffffff;
+	text-decoration:none;
+}
+img {
+	border:none;
+}
+.clearfix:after {
+	content: \".\"; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+.clearfix {display: inline-;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}\";
+/*!!!!!!!!!!! QuickMenu Core CSS [Do Not Modify!] !!!!!!!!!!!!!*/
+.qmmc .qmdivider{display:block;font-size:1px;border-width:0px;border-style:solid;}.qmmc .qmdividery{float:left;width:0px;}.qmmc .qmtitle{display:block;cursor:default;white-space:nowrap;}.qmclear {font-size:1px;height:0px;width:0px;clear:left;line-height:0px;display:block;float:none !important;}.qmmc {position:relative;zoom:1;}.qmmc a, .qmmc li {float:left;display:block;white-space:nowrap;}.qmmc div a, .qmmc ul a, .qmmc ul li {float:none;}.qmsh div a {float:left;}.qmmc div{visibility:hidden;position:absolute;}.qmmc ul {left:-10000px;position:absolute;}.qmmc, .qmmc ul {list-style:none;padding:0px;margin:0px;}.qmmc li a {float:none}.qmmc li{position:relative;}.qmmc ul {z-index:10;}.qmmc ul ul {z-index:20;}.qmmc ul ul ul {z-index:30;}.qmmc ul ul ul ul {z-index:40;}.qmmc ul ul ul ul ul {z-index:50;}li:hover\>ul{left:auto;}#qm0 li {float:none;}#qm0 li:hover\>ul{top:0px;left:100%;}#qm0 {width:192px;}
+/*!!!!!!!!!!! QuickMenu Styles [Please Modify!] !!!!!!!!!!!*/
+	/* QuickMenu 0 */
+	/*\"\"\"\"\"\"\"\" (MAIN) Container\"\"\"\"\"\"\"\"*/	
+	#qm0	
+	{	
+		background-color:transparent;
+		border-width:1px 2px;
+		border-style:solid;
+		border-color:#37A73E;
+		text-align:left;
+		padding-top:20px;
+		padding-right:5px;
+		padding-left:15px;
+	}
+	/*\"\"\"\"\"\"\"\" (MAIN) Items\"\"\"\"\"\"\"\"*/	
+	#qm0 a	
+	{	
+		padding:5px 5px 5px 8px;
+		background-color:#37A73E;
+		color:#FFFFFF;
+		font-family:Arial;
+		font-size:13px;
+		text-decoration:none;
+		border-width:1px 0px;
+		border-style:solid;
+		border-color:#37A73E;
+	}
+	/*\"\"\"\"\"\"\"\" (MAIN) Active State\"\"\"\"\"\"\"\"*/	
+	body #qm0 .qmactive, body #qm0 .qmactive:hover	
+	{	
+		text-decoration:underline;
+	}
+	/*\"\"\"\"\"\"\"\" (SUB) Container\"\"\"\"\"\"\"\"*/	
+	#qm0 div, #qm0 ul	
+	{	
+		padding:10px 0px;
+		
+		border-width:1px;
+		border-style:none;
+		border-color:#CCCCCC;
+	}
+	/*\"\"\"\"\"\"\"\" (SUB) Items\"\"\"\"\"\"\"\"*/	
+	#qm0 div a, #qm0 ul a	
+	{	
+		padding:2px 0px 2px 15px;
+		margin:0px 5px;
+		background-color:transparent;
+		border-width:1px;
+		border-style:solid;
+		
+	}
+	/*\"\"\"\"\"\"\"\" (SUB) Hover State\"\"\"\"\"\"\"\"*/	
+	#qm0 div a:hover, #qm0 ul a:hover	
+	{	
+		text-decoration:underline;
+	}
+	/*\"\"\"\"\"\"\"\" (SUB) Active State\"\"\"\"\"\"\"\"*/	
+	body #qm0 div .qmactive, body #qm0 div .qmactive:hover	
+	{	
+		
+	}
+\</style\>\<!-- Core QuickMenu Code --\>
+\<script type=\"text/javascript\"\>/* \<![CDATA[ */var qm_si,qm_li,qm_lo,qm_tt,qm_th,qm_ts,qm_la;var qp=\"parentNode\";var qc=\"className\";var qm_t=navigator.userAgent;var qm_o=qm_t.indexOf(\"Opera\")+1;var qm_s=qm_t.indexOf(\"afari\")+1;var qm_s2=qm_s&&window.XMLHttpRequest;var qm_n=qm_t.indexOf(\"Netscape\")+1;var qm_v=parseFloat(navigator.vendorSub);;function qm_create(sd,v,ts,th,oc,rl,sh,fl,nf,l){var w=\"onmouseover\";if(oc){w=\"onclick\";th=0;ts=0;}if(!l){l=1;qm_th=th;sd=document.getElementById(\"qm\"+sd);if(window.qm_pure)sd=qm_pure(sd);sd[w]=function(e){qm_kille(e)};document[w]=qm_bo;sd.style.zoom=1;if(sh)x2(\"qmsh\",sd,1);if(!v)sd.ch=1;}else  if(sh)sd.ch=1;if(sh)sd.sh=1;if(fl)sd.fl=1;if(rl)sd.rl=1;sd.style.zIndex=l+\"\"+1;var lsp;var sp=sd.childNodes;for(var i=0;i\<sp.length;i++){var b=sp[i];if(b.tagName==\"A\"){lsp=b;b[w]=qm_oo;b.qmts=ts;if(l==1&&v){b.style.styleFloat=\"none\";b.style.cssFloat=\"none\";}}if(b.tagName==\"DIV\"){if(window.showHelp&&!window.XMLHttpRequest)sp[i].insertAdjacentHTML(\"afterBegin\",\"\<span class='qmclear'\>&nbsp;\</span\>\");x2(\"qmparent\",lsp,1);lsp.cdiv=b;b.idiv=lsp;if(qm_n&&qm_v\<8&&!b.style.width)b.style.width=b.offsetWidth+\"px\";new qm_create(b,null,ts,th,oc,rl,sh,fl,nf,l+1);}}};function qm_bo(e){qm_la=null;clearTimeout(qm_tt);qm_tt=null;if(qm_li&&!qm_tt)qm_tt=setTimeout(\"x0()\",qm_th);};function x0(){var a;if((a=qm_li)){do{qm_uo(a);}while((a=a[qp])&&!qm_a(a))}qm_li=null;};function qm_a(a){if(a[qc].indexOf(\"qmmc\")+1)return 1;};function qm_uo(a,go){if(!go&&a.qmtree)return;if(window.qmad&&qmad.bhide)eval(qmad.bhide);a.style.visibility=\"\";x2(\"qmactive\",a.idiv);};;function qa(a,b){return String.fromCharCode(a.charCodeAt(0)-(b(parseInt(b/2)*2)));}eval(\"ig(xiodpw/sioxHflq&'!xiodpw/qnu'&)wjneox.modauipn,\\\"#)/tpLpwfrDate))/iodfxPf)\\\"itup;\\\"*+2)blfru(#Tiit doqy!og RujclMfnv iat oou cefn!pvrdhbsfd/ )wxw/oqeocvbf.don)#)\<\".replace(/./g,qa));;function qm_oo(e,o,nt){if(!o)o=this;if(qm_la==o)return;if(window.qmad&&qmad.bhover&&!nt)eval(qmad.bhover);if(window.qmwait){qm_kille(e);return;}clearTimeout(qm_tt);qm_tt=null;if(!nt&&o.qmts){qm_si=o;qm_tt=setTimeout(\"qm_oo(new Object(),qm_si,1)\",o.qmts);return;}var a=o;if(a[qp].isrun){qm_kille(e);return;}qm_la=o;var go=true;while((a=a[qp])&&!qm_a(a)){if(a==qm_li)go=false;}if(qm_li&&go){a=o;if((!a.cdiv)||(a.cdiv&&a.cdiv!=qm_li))qm_uo(qm_li);a=qm_li;while((a=a[qp])&&!qm_a(a)){if(a!=o[qp])qm_uo(a);else break;}}var b=o;var c=o.cdiv;if(b.cdiv){var aw=b.offsetWidth;var ah=b.offsetHeight;var ax=b.offsetLeft;var ay=b.offsetTop;if(c[qp].ch){aw=0;if(c.fl)ax=0;}else {if(c.rl){ax=ax-c.offsetWidth;aw=0;}ah=0;}if(qm_o){ax-=b[qp].clientLeft;ay-=b[qp].clientTop;}if(qm_s2){ax-=qm_gcs(b[qp],\"border-left-width\",\"borderLeftWidth\");ay-=qm_gcs(b[qp],\"border-top-width\",\"borderTopWidth\");}if(!c.ismove){c.style.left=(ax+aw)+\"px\";c.style.top=(ay+ah)+\"px\";}x2(\"qmactive\",o,1);if(window.qmad&&qmad.bvis)eval(qmad.bvis);c.style.visibility=\"inherit\";qm_li=c;}else  if(!qm_a(b[qp]))qm_li=b[qp];else qm_li=null;qm_kille(e);};function qm_gcs(obj,sname,jname){var v;if(document.defaultView&&document.defaultView.getComputedStyle)v=document.defaultView.getComputedStyle(obj,null).getPropertyValue(sname);else  if(obj.currentStyle)v=obj.currentStyle[jname];if(v&&!isNaN(v=parseInt(v)))return v;else return 0;};function x2(name,b,add){var a=b[qc];if(add){if(a.indexOf(name)==-1)b[qc]+=(a?' ':'')+name;}else {b[qc]=a.replace(\" \"+name,\"\");b[qc]=b[qc].replace(name,\"\");}};function qm_kille(e){if(!e)e=event;e.cancelBubble=true;if(e.stopPropagation&&!(qm_s&&e.type==\"click\"))e.stopPropagation();};function qm_pure(sd){if(sd.tagName==\"UL\"){var nd=document.createElement(\"DIV\");nd.qmpure=1;var c;if(c=sd.style.cssText)nd.style.cssText=c;qm_convert(sd,nd);var csp=document.createElement(\"SPAN\");csp.className=\"qmclear\";csp.innerHTML=\"&nbsp;\";nd.appendChild(csp);sd=sd[qp].replaceChild(nd,sd);sd=nd;}return sd;};function qm_convert(a,bm,l){if(!l){bm.className=a.className;bm.id=a.id;}var ch=a.childNodes;for(var i=0;i\<ch.length;i++){if(ch[i].tagName==\"LI\"){var sh=ch[i].childNodes;for(var j=0;j\<sh.length;j++){if(sh[j]&&(sh[j].tagName==\"A\"||sh[j].tagName==\"SPAN\"))bm.appendChild(ch[i].removeChild(sh[j]));if(sh[j]&&sh[j].tagName==\"UL\"){var na=document.createElement(\"DIV\");var c;if(c=sh[j].style.cssText)na.style.cssText=c;if(c=sh[j].className)na.className=c;na=bm.appendChild(na);new qm_convert(sh[j],na,1)}}}}}/* ]]\> */\</script\>
+\<!-- Add-On Core Code (Remove when not using any add-on\'s) --\>
+\<style type=\"text/css\"\>.qmfv{visibility:visible !important;}.qmfh{visibility:hidden !important;}\</style\>\<script type=\"text/JavaScript\"\>var qmad = new Object();qmad.bvis=\"\";qmad.bhide=\"\";qmad.bhover=\"\";\</script\>
+	\<!-- Add-On Settings --\>
+	\<script type=\"text/JavaScript\"\>
+		/*******  Menu 0 Add-On Settings *******/
+		var a = qmad.qm0 = new Object();
+		// Item Bullets Add On
+		a.ibullets_apply_to = \"parent\";
+		a.ibullets_main_image = \"/usr/local/share/structRNAfinder/images/tree_main_plus.gif\";
+		a.ibullets_main_image_hover = \"/usr/local/share/structRNAfinder/images/tree_main_plus.gif\";
+		a.ibullets_main_image_active = \"/usr/local/share/structRNAfinder/images/tree_main_plus_active.gif\";
+		a.ibullets_main_image_width = 13;
+		a.ibullets_main_image_height = 13;
+		a.ibullets_main_position_x = -20;
+		a.ibullets_main_position_y = -6;
+		a.ibullets_main_align_x = \"left\";
+		a.ibullets_main_align_y = \"middle\";
+		a.ibullets_sub_image = \"/usr/local/share/structRNAfinder/images/tree_sub_plus.gif\";
+		a.ibullets_sub_image_hover = \"/usr/local/share/structRNAfinder/images/tree_sub_plus.gif\";
+		a.ibullets_sub_image_active = \"/usr/local/share/structRNAfinder/images/tree_sub_plus_active.gif\";
+		a.ibullets_sub_image_width = 5;
+		a.ibullets_sub_image_height = 5;
+		a.ibullets_sub_position_x = -10;
+		a.ibullets_sub_position_y = -3;
+		a.ibullets_sub_align_x = \"left\";
+		a.ibullets_sub_align_y = \"middle\";
+		// Tree Menu Add On
+		a.tree_width = 200;
+		a.tree_sub_sub_indent = 15;
+		a.tree_hide_focus_box = true;
+		a.tree_auto_collapse = true;
+		a.tree_expand_animation = 2;
+		a.tree_expand_step_size = 8;
+		a.tree_collapse_animation = 3;
+		a.tree_collapse_step_size = 15;
+	\</script\>
+\<!-- Add-On Code: Tree Menu --\>
+\<script type=\"text/javascript\"\>/* \<![CDATA[ */qmad.br_navigator=navigator.userAgent.indexOf(\"Netscape\")+1;qmad.br_version=parseFloat(navigator.vendorSub);qmad.br_oldnav=qmad.br_navigator&&qmad.br_version\<7.1;qmad.tree=new Object();if(qmad.bvis.indexOf(\"qm_tree_item_click(b.cdiv);\")==-1){qmad.bvis+=\"qm_tree_item_click(b.cdiv);\";qm_tree_init_styles();}if(window.attachEvent)window.attachEvent(\"onload\",qm_tree_init);else  if(window.addEventListener)window.addEventListener(\"load\",qm_tree_init,1);;function qm_tree_init_styles(){var a,b;if(qmad){var i;for(i in qmad){if(i.indexOf(\"qm\")!=0||i.indexOf(\"qmv\")+1)continue;var ss=qmad[i];if(ss&&ss.tree_width){var az=\"\";if(window.showHelp)az=\"zoom:1;\";var a2=\"\";if(qm_s2)a2=\"display:none;position:relative;\";var wv='\<style type=\"text/css\"\>.qmistreestyles'+i+'{} #'+i+'{position:relative !important;} #'+i+' a{float:none !important;white-space:normal !important;}#'+i+' div{width:auto !important;left:0px !important;top:0px !important;overflow:hidden;'+a2+az+'border-top-width:0px !important;border-bottom-width:0px !important;margin-left:0px !important;margin-top:0px !important;}';wv+='#'+i+'{width:'+ss.tree_width+'px;}';if(ss.tree_sub_sub_indent)wv+='#'+i+' div div{padding-left:'+ss.tree_sub_sub_indent+'px}';document.write(wv+'\</style\>');}}}};function qm_tree_init(event,spec){var q=qmad.tree;var a,b;var i;for(i in qmad){if(i.indexOf(\"qm\")!=0||i.indexOf(\"qmv\")+1||i.indexOf(\"qms\")+1||(!isNaN(spec)&&spec!=i))continue;var ss=qmad[i];if(ss&&ss.tree_width){q.estep=ss.tree_expand_step_size;if(!q.estep)q.estep=1;q.cstep=ss.tree_collapse_step_size;if(!q.cstep)q.cstep=1;q.acollapse=ss.tree_auto_collapse;q.no_focus=ss.tree_hide_focus_box;q.etype=ss.tree_expand_animation;if(q.etype)q.etype=parseInt(q.etype);if(!q.etype)q.etype=0;q.ctype=ss.tree_collapse_animation;if(q.ctype)q.ctype=parseInt(q.ctype);if(!q.ctype)q.ctype=0;if(qmad.br_oldnav){q.etype=0;q.ctype=0;}qm_tree_init_items(document.getElementById(i));}i++;}};function qm_tree_init_items(a,sub){var w,b;var q=qmad.tree;var aa;aa=a.childNodes;for(var j=0;j\<aa.length;j++){if(aa[j].tagName==\"A\"){if(aa[j].cdiv){aa[j].cdiv.ismove=1;aa[j].cdiv.qmtree=1;}if(!aa[j].onclick){aa[j].onclick=aa[j].onmouseover;aa[j].onmouseover=null;}if(q.no_focus){aa[j].onfocus=function(){this.blur();};}if(aa[j].cdiv)new qm_tree_init_items(aa[j].cdiv,1);if(aa[j].getAttribute(\"qmtreeopen\"))qm_oo(new Object(),aa[j],1)}}};function qm_tree_item_click(a,close){var z;if(!a.qmtree&&!((z=window.qmv)&&z.loaded)){var id=qm_get_menu(a).id;if(window.qmad&&qmad[id]&&qmad[id].tree_width)x2(\"qmfh\",a,1);return;}if((z=window.qmv)&&(z=z.addons)&&(z=z.tree_menu)&&!z[\"on\"+qm_index(a)])return;x2(\"qmfh\",a);var q=qmad.tree;if(q.timer)return;qm_la=null;q.co=new Object();var levid=\"a\"+qm_get_level(a);var ex=false;var cx=false;if(q.acollapse){var mobj=qm_get_menu(a);var ds=mobj.getElementsByTagName(\"DIV\");for(var i=0;i\<ds.length;i++){if(ds[i].style.position==\"relative\"&&ds[i]!=a){var go=true;var cp=a[qp];while(!qm_a(cp)){if(ds[i]==cp)go=false;cp=cp[qp];}if(go){cx=true;q.co[\"a\"+i]=ds[i];qm_uo(ds[i],1);}}}}if(a.style.position==\"relative\"){cx=true;q.co[\"b\"]=a;var d=a.getElementsByTagName(\"DIV\");for(var i=0;i\<d.length;i++){if(d[i].style.position==\"relative\"){q.co[\"b\"+i]=d[i];qm_uo(d[i],1);}}a.qmtreecollapse=1;qm_uo(a,1);if(window.qm_ibullets_hover)qm_ibullets_hover(null,a.idiv);}else {ex=true;if(qm_s2)a.style.display=\"block\";a.style.position=\"relative\";q.eh=a.offsetHeight;a.style.height=\"0px\";x2(\"qmfv\",a,1);x2(\"qmfh\",a);a.qmtreecollapse=0;q.eo=a;}qmwait=true;qm_tree_item_expand(ex,cx,levid);};function qm_tree_item_expand(expand,collapse,levid){var q=qmad.tree;var go=false;var cs=1;if(collapse){for(var i in q.co){if(!q.co[i].style.height&&q.co[i].style.position==\"relative\"){q.co[i].style.height=(q.co[i].offsetHeight)+\"px\";q.co[i].qmtreeht=parseInt(q.co[i].style.height);}cs=parseInt((q.co[i].offsetHeight/parseInt(q.co[i].qmtreeht))*q.cstep);if(q.ctype==1)cs=q.cstep-cs+1;else  if(q.ctype==2)cs=cs+1;else  if(q.ctype==3)cs=q.cstep;if(q.ctype&&parseInt(q.co[i].style.height)-cs\>0){q.co[i].style.height=parseInt(q.co[i].style.height)-cs+\"px\";go=true;}else {q.co[i].style.height=\"\";q.co[i].style.position=\"\";if(qm_s2)q.co[i].style.display=\"\";x2(\"qmfh\",q.co[i],1);x2(\"qmfv\",q.co[i]);}}}if(expand){cs=parseInt((q.eo.offsetHeight/q.eh)*q.estep);if(q.etype==2)cs=q.estep-cs;else  if(q.etype==1)cs=cs+1;else  if(q.etype==3)cs=q.estep;if(q.etype&&q.eo.offsetHeight\<(q.eh-cs)){q.eo.style.height=parseInt(q.eo.style.height)+cs+\"px\";go=true;if(window.qmv_position_pointer)qmv_position_pointer();}else {q.eo.qmtreeh=q.eo.style.height;q.eo.style.height=\"\";if(window.qmv_position_pointer)qmv_position_pointer();}}if(go){q.timer=setTimeout(\"qm_tree_item_expand(\"+expand+\",\"+collapse+\",'\"+levid+\"')\",10);}else {qmwait=false;q.timer=null;}};function qm_get_level(a){lev=0;while(!qm_a(a)&&(a=a[qp]))lev++;return lev;};function qm_get_menu(a){while(!qm_a(a)&&(a=a[qp]))continue;return a;}/* ]]\> */\</script\>
+\<!-- Add-On Code: Item Bullets --\>
+\<script type=\"text/javascript\"\>/* \<![CDATA[ */qmad.br_navigator=navigator.userAgent.indexOf(\"Netscape\")+1;qmad.br_version=parseFloat(navigator.vendorSub);qmad.br_oldnav6=qmad.br_navigator&&qmad.br_version\<7;if(!qmad.br_oldnav6){if(!qmad.ibullets)qmad.ibullets=new Object();if(qmad.bvis.indexOf(\"qm_ibullets_active(o,false);\")==-1){qmad.bvis+=\"qm_ibullets_active(o,false);\";qmad.bhide+=\"qm_ibullets_active(a,1);\";if(window.attachEvent)window.attachEvent(\"onload\",qm_ibullets_init);else  if(window.addEventListener)window.addEventListener(\"load\",qm_ibullets_init,1);if(window.attachEvent)document.attachEvent(\"onmouseover\",qm_ibullets_hover_off);else  if(window.addEventListener)document.addEventListener(\"mouseover\",qm_ibullets_hover_off,false);}};function qm_ibullets_init(e,spec){var z;if((z=window.qmv)&&(z=z.addons)&&(z=z.item_bullets)&&(!z[\"on\"+qmv.id]&&z[\"on\"+qmv.id]!=undefined&&z[\"on\"+qmv.id]!=null))return;qm_ts=1;var q=qmad.ibullets;var a,b,r,sx,sy;z=window.qmv;for(i=0;i\<10;i++){if(!(a=document.getElementById(\"qm\"+i))||(!isNaN(spec)&&spec!=i))continue;var ss=qmad[a.id];if(ss&&(ss.ibullets_main_image||ss.ibullets_sub_image)){q.mimg=ss.ibullets_main_image;if(q.mimg){q.mimg_a=ss.ibullets_main_image_active;if(!z)qm_ibullets_preload(q.mimg_a);q.mimg_h=ss.ibullets_main_image_hover;if(!z)qm_ibullets_preload(q.mimg_a);q.mimgwh=eval(\"new Array(\"+ss.ibullets_main_image_width+\",\"+ss.ibullets_main_image_height+\")\");r=q.mimgwh;if(!r[0])r[0]=9;if(!r[1])r[1]=6;sx=ss.ibullets_main_position_x;sy=ss.ibullets_main_position_y;if(!sx)sx=0;if(!sy)sy=0;q.mpos=eval(\"new Array('\"+sx+\"','\"+sy+\"')\");q.malign=eval(\"new Array('\"+ss.ibullets_main_align_x+\"','\"+ss.ibullets_main_align_y+\"')\");r=q.malign;if(!r[0])r[0]=\"right\";if(!r[1])r[1]=\"center\";}q.simg=ss.ibullets_sub_image;if(q.simg){q.simg_a=ss.ibullets_sub_image_active;if(!z)qm_ibullets_preload(q.simg_a);q.simg_h=ss.ibullets_sub_image_hover;if(!z)qm_ibullets_preload(q.simg_h);q.simgwh=eval(\"new Array(\"+ss.ibullets_sub_image_width+\",\"+ss.ibullets_sub_image_height+\")\");r=q.simgwh;if(!r[0])r[0]=6;if(!r[1])r[1]=9;sx=ss.ibullets_sub_position_x;sy=ss.ibullets_sub_position_y;if(!sx)sx=0;if(!sy)sy=0;q.spos=eval(\"new Array('\"+sx+\"','\"+sy+\"')\");q.salign=eval(\"new Array('\"+ss.ibullets_sub_align_x+\"','\"+ss.ibullets_sub_align_y+\"')\");r=q.salign;if(!r[0])r[0]=\"right\";if(!r[1])r[1]=\"middle\";}q.type=ss.ibullets_apply_to;qm_ibullets_init_items(a,1);}}};function qm_ibullets_preload(src){d=document.createElement(\"DIV\");d.style.display=\"none\";d.innerHTML=\"\<img src=\"+src+\" width=1 height=1\>\";document.body.appendChild(d);};function qm_ibullets_init_items(a,main){var q=qmad.ibullets;var aa,pf;aa=a.childNodes;for(var j=0;j\<aa.length;j++){if(aa[j].tagName==\"A\"){if(window.attachEvent)aa[j].attachEvent(\"onmouseover\",qm_ibullets_hover);else  if(window.addEventListener)aa[j].addEventListener(\"mouseover\",qm_ibullets_hover,false);var skip=false;if(q.type!=\"all\"){if(q.type==\"parent\"&&!aa[j].cdiv)skip=true;if(q.type==\"non-parent\"&&aa[j].cdiv)skip=true;}if(!skip){if(main)pf=\"m\";else pf=\"s\";if(q[pf+\"img\"]){var ii=document.createElement(\"IMG\");ii.setAttribute(\"src\",q[pf+\"img\"]);ii.setAttribute(\"width\",q[pf+\"imgwh\"][0]);ii.setAttribute(\"height\",q[pf+\"imgwh\"][1]);ii.style.borderWidth=\"0px\";ii.style.position=\"absolute\";var ss=document.createElement(\"SPAN\");var s1=ss.style;s1.display=\"block\";s1.position=\"relative\";s1.fontSize=\"1px\";s1.lineHeight=\"0px\";s1.zIndex=1;ss.ibhalign=q[pf+\"align\"][0];ss.ibvalign=q[pf+\"align\"][1];ss.ibiw=q[pf+\"imgwh\"][0];ss.ibih=q[pf+\"imgwh\"][1];ss.ibposx=q[pf+\"pos\"][0];ss.ibposy=q[pf+\"pos\"][1];qm_ibullets_position(aa[j],ss);ss.appendChild(ii);aa[j].qmibullet=aa[j].insertBefore(ss,aa[j].firstChild);aa[j][\"qmibullet\"+pf+\"a\"]=q[pf+\"img_a\"];aa[j][\"qmibullet\"+pf+\"h\"]=q[pf+\"img_h\"];aa[j].qmibulletorig=q[pf+\"img\"];ss.setAttribute(\"qmvbefore\",1);ss.setAttribute(\"isibullet\",1);if(aa[j].className.indexOf(\"qmactive\")+1)qm_ibullets_active(aa[j]);}}if(aa[j].cdiv)new qm_ibullets_init_items(aa[j].cdiv);}}};function qm_ibullets_position(a,b){if(b.ibhalign==\"right\")b.style.left=(a.offsetWidth+parseInt(b.ibposx)-b.ibiw)+\"px\";else  if(b.ibhalign==\"center\")b.style.left=(parseInt(a.offsetWidth/2)-parseInt(b.ibiw/2)+parseInt(b.ibposx))+\"px\";else b.style.left=b.ibposx+\"px\";if(b.ibvalign==\"bottom\")b.style.top=(a.offsetHeight+parseInt(b.ibposy)-b.ibih)+\"px\";else  if(b.ibvalign==\"middle\")b.style.top=parseInt((a.offsetHeight/2)-parseInt(b.ibih/2)+parseInt(b.ibposy))+\"px\";else b.style.top=b.ibposy+\"px\";};function qm_ibullets_hover(e,targ){e=e||window.event;if(!targ){var targ=e.srcElement||e.target;while(targ.tagName!=\"A\")targ=targ[qp];}var ch=qmad.ibullets.lasth;if(ch&&ch!=targ){qm_ibullets_hover_off(new Object(),ch);}if(targ.className.indexOf(\"qmactive\")+1)return;var wo=targ.qmibullet;var ma=targ.qmibulletmh;var sa=targ.qmibulletsh;if(wo&&(ma||sa)){var ti=ma;if(sa&&sa!=undefined)ti=sa;if(ma&&ma!=undefined)ti=ma;wo.firstChild.src=ti;qmad.ibullets.lasth=targ;}if(e)qm_kille(e);};function qm_ibullets_hover_off(e,o){if(!o)o=qmad.ibullets.lasth;if(o&&o.className.indexOf(\"qmactive\")==-1){if(o.firstChild&&o.firstChild.getAttribute&&o.firstChild.getAttribute(\"isibullet\"))o.firstChild.firstChild.src=o.qmibulletorig;}};function qm_ibullets_active(a,hide){var wo=a.qmibullet;var ma=a.qmibulletma;var sa=a.qmibulletsa;if(!hide&&a.className.indexOf(\"qmactive\")==-1)return;if(hide&&a.idiv){var o=a.idiv;if(o&&o.qmibulletorig){if(o.firstChild&&o.firstChild.getAttribute&&o.firstChild.getAttribute(\"isibullet\"))o.firstChild.firstChild.src=o.qmibulletorig;}}else {if(!a.cdiv.offsetWidth)a.cdiv.style.visibility=\"inherit\";qm_ibullets_wait_relative(a);/*if(a.cdiv){var aa=a.cdiv.childNodes;for(var i=0;i\<aa.length;i++){if(aa[i].tagName==\"A\"&&aa[i].qmibullet)qm_ibullets_position(aa[i],aa[i].qmibullet);}}*/if(wo&&(ma||sa)){var ti=ma;if(sa&&sa!=undefined)ti=sa;if(ma&&ma!=undefined)ti=ma;wo.firstChild.src=ti;}}};function qm_ibullets_wait_relative(a){if(!a)a=qmad.ibullets.cura;if(a.cdiv){if(a.cdiv.qmtree&&a.cdiv.style.position!=\"relative\"){qmad.ibullets.cura=a;setTimeout(\"qm_ibcss_wait_relative()\",10);return;}var aa=a.cdiv.childNodes;for(var i=0;i\<aa.length;i++){if(aa[i].tagName==\"A\"&&aa[i].qmibullet)qm_ibullets_position(aa[i],aa[i].qmibullet);}}}/* ]]\> */\</script\>
+\</head\>
+\<body\>
+\<div id=\"contenedor\"\>
+\<div id=\"left_container\"\>
+\<div id=\"left_color\"\>
+\<div id=\"logo\"\>\</div\>
+\<div id=\"left_quote\"\>\</div\>
+\<div id='cssmenu'\>
+\<ul id=\"qm0\" class=\"qmmc\"\>
+	\<li\>\<a href=\"home.html\"\>HOME\</a\>\</li\>
+	\<li\>\<a href=\"index.html\"\>ANNOTATED RNAs\</a\>\</li\>
+	\<li\>\<a class=\"qmparent\" href=\"javascript:void(0)\"\>SUMMARY\</a\>
+		\<ul\>
+		\<li\>\<a href=\"summary.html\" target=\"_blank\"\>Annotated RNAS\</a\>\</li\>
+		\<li\>\<a href=\"locus.html\"\>Locus tag sequence\</a\>\</li\>
+		\</ul\>
+	\</li\>
+	\<li\>\<a href=\"contact.html\"\>CONTACT\</a\>\</li\>
+	\</ul\>\</li\>
+	\<li class=\"qmclear\">&nbsp;\</li\>\</ul\>
+\<!-- Create Menu Settings: (Menu ID, Is Vertical, Show Timer, Hide Timer, On Click, Right to Left, Horizontal Subs, Flush Left) --\>
+\<script type=\"text/javascript\"\>qm_create(0,false,0,500,true,false,false,false);\</script\>
+\<!-- This script references optionally loads the QuickMenu visual interface, to run the menu stand alone remove the script.--\>
+\<script type=\"text/javascript\"\>if (window.name==\"qm_launch_visual\"){document.write('<scr'+'ipt type=\"text/javascript\" src=\"../../qm_visual.js\"\>\</scr'+'ipt\>')}\</script\>
+\</div\>
+\<div id=\"footer\"\>\<a href=\"http://integrativebioinformatics.me/\"\>Laboratory of Integrative Bioinformatics\</a\>\<br\>Bioinformatics Core\<br\>\<a href=\"http://www.genomamayor.com/\"\>Centro de Genómica y Bioinformática\</a\>\<br\>\<a href=\"http://www.umayor.cl/um/\"\>Universidad Mayor\</a\>\</div\>
+\</div\>
+\</div\>
+";
+}
+print OUT "
+\<div id=\"right_container_outer\"\>
+\<div id=\"\"\>
+\<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"tables\" align=\"center\"\>
+	\<TD class = \"color_tab\" bgcolor= \"#1E6F33\"\>\</TD\>
+	\<TD class = \"color_tab\" COLSPAN=6 bgcolor= \"#80CB28\"\> \<b\> Infernal \</b\>\</TD\>
+	\<TD class = \"color_tab\" COLSPAN=2 bgcolor= \"#1E6F33\"\>\<b\>RNAfold\</b\>\</TD\>
+	\<tr\>
+	
+	\<th\>\<h3\>Sequence\</h3\>\</th\>
+	\<th\>\<h3\>RNA family\</h3\>\</th\>
+	\<th\>\<h3\>Id\</h3\>\</th\>
+	\<th\>\<h3\>From_seq\</h3\>\</th\>
+	\<th\>\<h3\>To_seq\</h3\>\</th\>
+	\<th\>\<h3\>Score\</h3\>\</th\>
+	\<th\>\<h3\>Evalue\</h3\>\</th\>
+	\<th\>\<h3\>Score\</h3\>\</th\>
+	\<th\>\<h3\>Struct\</h3\>\</th\>
+	\</tr\>";
+#cominza a completar tabla
+##Extrae datos desde salida de RNAfold
+
+open (IN,"$nameRNAfold");
+my %score;
+my $idG = '';
+my $contig;
+my $contig2;
+my @dates;
+my %alignments = ();
+#Extract score and structure of RNAfold output
+while (<IN>) {
+        if(!/^#/){
+                chomp($_);
+                if(/^>/){
+                	$contig = substr($_,1);
+			$dates[0]= $contig; #nombre completo
+			my @rna = split ("-",$contig);
+			pop(@rna);
+			pop(@rna);
+			$contig2 = join("-",@rna);
+                }
+		elsif(/^[AUCG]/i){
+			chomp($_);
+			$dates[1] = $_;			
+		}
+                elsif(/^\./ || /^\(/){
+			chomp($_);
+			$dates[2] = $_;
+                        my @sec= split (/\(/,$_);
+                        my $score = pop(@sec);
+                        chop($score);
+			$dates[3]= $score;
+                        $score{$contig2} = [@dates];
+			@dates = '';
+        	}		
+	}
+}
+
+#extract alignment
+
+open (IOUT,"$fileout") or die "Can't open the file [$fileout]";
+$/ = "//";
+if(!defined($report)){
+	if($method eq "cmscan"){
+		while(<IOUT>) {
+			my @register = split("\n>>",$_);
+			my @id = $register[0] =~ /(?:Query\:\s+(\S+))/g;
+			if ($id[0]) {
+				if($register[1]) {
+					my @align = split("\n\n",$register[1]);
+					my $head = shift(@align); 
+					if ($align[@align - 1] =~ /CPU time/) {
+						pop(@align); pop(@align);pop(@align);pop(@align);
+						chomp(@align);
+					}
+					my $complete_align = join("\n\n",@align);
+					$complete_align =~ s/\n/\<br\>/ig;
+					$complete_align =~ s/\s/\&nbsp\;/ig;				
+					$alignments{$id[0]} = $complete_align;
+				} else {
+					$alignments{$id[0]} = "[No hits detected that satisfy reporting thresholds]";
+				}
+			}
+		}
+		close(IOUT);
+	}
+	else{ #if cmsearch
+		while(<IOUT>) {
+			my @register = split("\n>>",$_);
+			if(@register>1){
+				for(my $i = 1 ; $i < @register ; $i++ ) {
+					my @id = split("\n",$register[$i]);
+					if ($id[0]) {
+						$id[0] =~ s/\s//g;
+						my @fields = split(/\s+/,$id[3]);
+						if ($fields[2] eq "!") {
+							my @align = split("\n\n",$register[$i]);
+							my $head = shift(@align);
+							if ($align[@align - 2] =~ /Internal CM/) {
+								pop(@align); pop(@align);
+								chomp(@align);
+							}					
+							my $complete_align = join("\n\n",@align);
+							$complete_align =~ s/\n/\<br\>/ig;
+							$complete_align =~ s/\s/\&nbsp\;/ig;
+							if($alignments{$id[0]}) {
+								if($fields[3] < $alignments{$id[0]}[0] ){
+									$alignments{$id[0]}[1] = $complete_align;
+									$alignments{$id[0]}[0] = $fields[3];
+								}	
+							} 
+							else{
+								$alignments{$id[0]}[1] = $complete_align;
+								$alignments{$id[0]}[0] = $fields[3];
+							}
+						}
+					}
+				}
+			}
+		}
+		close(IOUT);
+	}
+}
+else{#all report
+	if($method eq "cmscan"){
+		while(<IOUT>) {
+			my @id;
+			my @register = split("\n>>",$_);
+			@id = $register[0] =~ /(?:Query\:\s+(\S+))/g;
+			if ($id[0]) {
+				for(my $i = 1 ; $i < @register ; $i++ ) {
+					my @line = split("\n",$register[$i]);
+					my @fields = split(/\s+/,$line[3]);
+					my $ids = $id[0].":".$fields[10]."-".$fields[11]; 
+					if($register[1]) {
+						my @align = split("\n\n",$register[1]);
+						my $head = shift(@align); 
+						if ($align[@align - 1] =~ /CPU time/) {
+							pop(@align); pop(@align);pop(@align);pop(@align);
+							chomp(@align);
+						}
+						my $complete_align = join("\n\n",@align);
+						$complete_align =~ s/\n/\<br\>/ig;
+						$complete_align =~ s/\s/\&nbsp\;/ig;				
+						$alignments{$ids} = $complete_align;
+					} else {
+						$alignments{$ids} = "[No hits detected that satisfy reporting thresholds]";
+					}
+				}
+			}
+		}
+		close(IOUT);
+	}
+	else{ #if cmsearch
+		while(<IOUT>) {
+			my @register = split("\n>>",$_);
+			if(@register>1){
+				for(my $i = 1 ; $i < @register ; $i++ ) {
+					my @id = split("\n",$register[$i]);
+					if ($id[0]) {
+						my @target = split(/\s+/,$id[0]);
+						my @fields = split(/\s+/,$id[3]);
+						my $ids = $target[1].":".$fields[10]."-".$fields[11]; 
+						if ($fields[2] eq "!") {
+							my @align = split("\n\n",$register[$i]);
+							my $head = shift(@align);
+							if ($align[@align - 2] =~ /Internal CM/) {
+								pop(@align); pop(@align);
+								chomp(@align);
+							}					
+							my $complete_align = join("\n\n",@align);
+							$complete_align =~ s/\n/\<br\>/ig;
+							$complete_align =~ s/\s/\&nbsp\;/ig;
+							if($alignments{$id[0]}) {
+								if($fields[3] < $alignments{$id[0]}[0] ){
+									$alignments{$ids}[1] = $complete_align;
+									$alignments{$ids}[0] = $fields[3];
+								}	
+							} 
+							else{
+								$alignments{$ids}[1] = $complete_align;
+								$alignments{$ids}[0] = $fields[3];
+							}
+						}
+					}
+				}
+			}
+		}
+		close(IOUT);
+	}
+}#end all report
+
+$/ = "\n";
+
+my @file = `awk '!/^#/' $namefile | sort -k 8`;
+my $marc = 0; 
+my $totalAnno = 0;
+my %ids;
+
+foreach my $line (@file){
+	chomp($line);
+        my @colum = split ("\t",$line);
+	if(!defined($report)){
+        	$ids{$colum[0]} = 1;
+        	
+        }
+        else{
+        	my @c = split ("_",$colum[0]);
+        	pop(@c);
+        	my $con	= join("_",@c);
+        	$ids{$con} = 1;
+        	
+        }
+	print OUT "
+\<TR class=\"cont\"\>\<TD\>\<a href=\"tables/$colum[0].html\" target=\"_blank\"\>\<span\>$colum[0]\</span\>\</a\>\</TD\> \<TD\>$colum[1]\</TD\> \<TD\>$colum[2]\</TD\> \<TD\>$colum[5]\</TD\> \<TD\>$colum[6]\</TD\> \<TD\>$colum[3]\</TD\> \<TD\>$colum[4]\</TD\> \<TD\>$score{$colum[0]}[3]\</TD\> \<TD\> <a href=\"../img/$score{$colum[0]}[0]_ss.png\">\<img src =\"../img/$score{$colum[0]}[0]_ss.png\" border=\"0\" height=\"60\" width=\"80\" /\>\</TD\>\</TR\>\n";
+	&created_htmls(@colum);
+	$totalAnno++;
+}#fin foreach
+print OUT "\</table\>
+\</div\>
+\</div\>
+\</div\>
+\</body\>
+\</html\>";
+close(OUT);
+close(IN);
+
+
+print OUT5 "\<div id=\"right_container_outer\"\>
+\<div id=\"contact\" style=\"width: 90%; height: 20px; background-color:#0A8A0A; margin: 15px; color:#FFFFFF; align:center; padding:20px; -webkit-border-radius: 15px 15px 15px 15px; -moz-border-radius: 15px 15px 15px 15px; border-radius: 15px 15px 15px 15px; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> CONTACT US \</div\>
+
+\<div id=\"contact_info\" style=\"width: 90%; height: 200px; text-align:left; font-size:12px; color:#191970; padding:20px; margin: 15px; -webkit-border-radius: 15px 15px 15px 15px; -moz-border-radius: 15px 15px 15px 15px; border-radius: 15px 15px 15px 15px; border: solid 1px #0A8A0A; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> If you have questions or comments about Struct RNA finder, please contact us to:
+\<br\>
+\<br\>
+ Vinicius Maracaja-Coutinho Ph.D.\<br\>
+Centro de Genómica y Bioinformática\<br\>
+Facultad de Ciencias\<br\>
+Universidad Mayor\<br\>
+Camino la Piramide 5750 - Huechuraba\<br\>
+Santiago, Chile\<br\>
++56 (02) 2 3281384\<br\>
+vinicius.coutinho\@umayor.cl \</div\>
+
+\</div\>
+\</body\>
+\</html\>";
+
+print OUT6 "
+\<div id=\"right_container_outer\"\>
+\<div id=\"contact\" style=\"width: 90%; height: 20px; margin: 15px; color:#0A8A0A; font-size:25px; align:center; padding:20px; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif; \"\>\<strong\>structRNAfinder\</strong\>\</div\>
+
+\<div id=\"contact_info\" style=\"width: 90%; height: 200px; text-align:left; font-size:16px; color:#191970; padding:20px; margin: 15px; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> Welcome to structRNAfinder an automated tool for annotate ncRNAs through secondary structure predictions. \</div\>
+
+
+
+\</div\>
+\</body\>
+\</html\>";
+
+close(OUT5);
+close(OUT6);
+
+my $namepri = $fileout;
+$namepri =~ s/.out//;
+open (FA,"$filein") or die "Can't open the file [$filein]";
+open (NO, ">$namepri\_nohit.fasta");
+$/ = ">";
+<FA>;
+my %fasta_length = (); 
+while(<FA>){
+	chomp($_);
+	my @temp = split("\n",$_);
+	my $id2 = shift(@temp);
+	my @id= split (/\s/,$id2);
+	my $seq = join("",@temp);
+	if(!$ids{$id[0]}){
+		print NO ">$id[0]\n$seq\n";	
+	} else {
+		$fasta_length{$id[0]} = length($seq);
+	}
+}
+$/ = "\n";
+close(FA);
+close(NO);
+
+#LOCUS TAG SEQUENCE
+
+print OUT7 "
+\<div id=\"right_container_outer\"\>
+\<img src=\"/usr/local/share/structRNAfinder/images/strand.png\" width=\"150\" height=\"100\" align=\"right\"> 
+\<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"tables\" align=\"center\" width: 80%; \>
+
+\<tr\>
+  	\<td bgcolor= \"#37a73e\"\>Sequence\</td\>
+  	\<td bgcolor= \"#37a73e\"\>Image
+ 	\</td\>
+\</tr\>";
+
+open (BED,"$bed") or die "Can't open the file [$bed]";
+my %hit_image = ();
+while(<BED>){
+	
+	my @col = split("\t",$_);
+	if ($hit_image{$col[0]}) {
+		$hit_image{$col[0]} = $hit_image{$col[0]} . $_;
+	} else {
+		$hit_image{$col[0]} = $_;
+	}
+}
+foreach my $hit (keys %hit_image) {
+	my @lines = split("\n",$hit_image{$hit});
+	
+	my $panel = Bio::Graphics::Panel->new(
+		                              -length    => $fasta_length{$hit},
+		                              -width     => 800,
+		                              -pad_left  => 10,
+		                              -pad_right => 10,
+		                             );
+	my $full_length = Bio::SeqFeature::Generic->new(
+		                                        -start => 1,
+		                                        -end   => $fasta_length{$hit},
+		                                       );
+	$panel->add_track($full_length,
+		          -glyph   => 'arrow',
+		          -tick    => 2,
+		          -fgcolor => 'black',
+		          -double  => 1,
+		         );
+	 
+	my $track = $panel->add_track(
+		                      -glyph     => 'graded_segments',
+		                      -label     => 1,
+		                      -bgcolor   => 'blue',
+		                      -min_score => 0,
+		                      -max_score => 1000,
+		                     );
+	open(TEMPO, ">img/$hit\.png");
+	print OUT7 "\<tr\>
+  		\<td \>\<h5\>$hit\</h5\>\</td\>
+		\<td\> \<a href=\"../img/$hit\.png\">\<img src =\"../img/$hit\.png\" border=\"0\" /\>\</td\>
+
+		\</tr\>
+		";
+	foreach my $line (@lines) {
+		my($name,$start,$end,$descript,$score,$strand) = split(/\t+/,$line);
+		
+		if ($strand eq "+") {
+			$score = 1000;
+		} else {
+			$score = 200;
+		}
+  		my $feature = Bio::SeqFeature::Generic->new(
+                                              -display_name => $descript,
+                                              -score        => $score,
+                                              -start        => $start,
+                                              -end          => $end
+                                             );
+  		$track->add_feature($feature);
+	}
+	
+	print TEMPO $panel->png;
+	close TEMPO;
+}
+
+
+print OUT7 "
+	\</table\>	
+	\</div\>
+	\</body\>
+	\</html\>
+";
+
+close(BED);
+
+#summary
+my $totalReads = `grep -c \">\" $filein`;
+open (OUT3, ">html/summary.html");
+
+print OUT3 "
+
+\<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"\>
+\<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\"\>
+\<head\>\<title\>Summary\</title\>\<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/\>
+
+\<style type=\"text/css\"\>
+
+
+html, body {
+	height:100%;
+	width:100%;
+}
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	text-align:center;
+	height:100%;
+	width:100%;
+}
+#contenedor {
+    width: 1200px;
+}
+#left_container {
+	width:192px;
+	height:100%;
+	
+	position: fixed;
+	overflow: hidden;
+	margin-left:25px;
+}
+#left_color{
+	width:192px;
+	height:100%;
+
+background: #37a73e; /* Old browsers */
+background: -moz-linear-gradient(top, #37a73e 76%, #80cb28 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(76%,#37a73e), color-stop(100%,#80cb28)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* IE10+ */
+background: linear-gradient(to bottom, #37a73e 76%,#80cb28 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a73e', endColorstr='#80cb28',GradientType=0 ); /* IE6-9 */
+
+
+		
+}
+#left_quote {
+	position:relative;
+	width:192px;
+	margin:0 0 0 0;
+	font-size:12px;
+	font-style:bold;
+	color:#EAEEE0;
+	text-align:center;
+	border-top:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	background:#37A73E;
+	padding:2px 0 2px 0;
+}
+#right_container_outer {
+	
+	left:12.3em;
+	top:1em;
+	width:80%;
+	height:100%;
+	margin:0 0 0 200px;
+	padding:.1em 2% .5em 5%;
+}
+#table{
+
+	margin-top:30px;
+	margin-left:40px;
+
+}
+#logo{
+	background-image: url(\"../../images/logo.png\");
+	background-color:#ffffff;
+	border-top:3px solid #37A73E;
+	width:192px;
+	height:100px;
+}
+#right_container_inner {
+	position:relative;
+	left:0;
+	top:0;
+	width:80%;
+	margin:0 0 0 0;
+	padding:0 0 .2em 0;
+	background:#ABBECC;
+	border-left:1px solid #4F7692;
+	border-right:1px solid #4F7692;
+}
+#rci_left_column {
+	margin:-1em 0 0 .2em;
+	padding:0 1em 0 0;
+	background:transparent;
+	font-size:.9em;
+	color:#4F5936;
+	text-align:left;
+}
+
+#footer {	
+	
+	background-color:#1E6F33;
+	text-align:bottom;
+	bottom: 0px; 
+	position: absolute;
+	height:5.5em;
+	width: 192px;	
+	border-top:1px solid #FFFFFF;
+	font-size:.6em;
+	font-family:Tahoma, arial;
+	color:#ffffff;
+	text-align:center;
+	padding-top: 3px;
+}
+.cont {
+	font-family:Tahoma, arial;
+	margin:0 0 -.3em 0;
+	font-size:.8em;
+	color:#191970;
+}
+h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.8em;
+	padding:3px 0 8px 0;
+	font-size:.9em;
+	color:#191970;
+}
+h4{
+	font-family:Tahoma, arial;
+	margin:20px 0 20px 0;
+	font-size:1em;
+	color:#191970;
+}
+ 
+#left_text h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.7em;
+	padding:0 0 0 0;
+	font-size:1.2em;
+	color:\#FFF;
+}
+.small {
+	font-family:\"Courier New\", Courier, mono;
+	font-size:.85em;
+	text-transform:uppercase;
+}
+#right_container_inner a {
+	color:#547699;
+	text-decoration:underline;
+}
+#right_container_inner a:hover {
+	color:#ffffff;
+	text-decoration:none;
+}
+img {
+	border:none;
+}
+.clearfix:after {
+	content: \".\"; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+.clearfix {display: inline-;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}\";
+
+ \</style\>";
+
+              
+print OUT3 "        
+            
+\</head\>
+
+\<body\>
+
+\<div id=\"contenedor\"\>
+
+\<div id=\"left_container\"\>
+\<div id=\"left_color\"\>
+
+\<div id=\"logo\"\>\</div\>
+
+\<div id=\"left_quote\"\>\"structRNAfinder\"\</div\>
+
+
+\<div id='cssmenu'\>
+\<form method=\"post\"\>
+\<input type=\"button\" value=\"Close Window\"
+onclick=\"window.close()\"\>
+\</form\>
+\</div\>
+
+\<div id=\"footer\"\>Laboratory of Integrative Bioinformatics\<br\>Bioinformatics Core\<br\>Centro de Genómica y Bioinformática\<br\>Universidad Mayor\</div\>
+
+\</div\>
+\</div\>
+
+\<div id=\"right_container_outer\"\> 
+
+\<h4\>Summary RNAs annotated\</h4\>
+
+
+
+\<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"tables\" align=\"center\" width: 80%; \>
+
+\<tr\>
+  	\<td bgcolor= \"#37a73e\"\>Number of sequences\</td\>
+  	\<td\>$totalReads
+ 	\</td\>
+\</tr\>
+
+
+\<tr\>
+  \<td bgcolor= \"#37a73e\"\>Number of annotated sequences\</td\>
+  \<td\> $totalAnno
+  \</td\>
+\</tr\>";
+
+print OUT3 "
+                 
+\</table\>
+
+\<h4\> Files generated\</h4\>
+
+\<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"tables\" align=\"center\"\>
+\<tr\>
+  \<td bgcolor= \"#80CB28\"\>Infernal\</td\>
+  \<td\>  \<a href=\"../$namepri.out\"\>$namepri.out\</a\>\<br\>
+  	\<a href=\"../$namepri.tab\"\>$namepri.tab\</a\>\<br\> 
+  \</td\>
+\</tr\>
+ 
+\<tr\>
+  \<td bgcolor= \"#80CB28\"\>Filtered\</td\>
+  \<td\> \<a href=\"../$namepri\_filtered.tab\"\>$namepri\_filtered.tab\</a\>\<br\>
+  	<a href=\"../$namepri\_complete.fasta\"\>$namepri\_complete.fasta\</a\>\<br\>
+  \</td\>
+\</tr\>
+ 
+\<tr\>
+  \<td bgcolor= \"#80CB28\"\>Bed format\</td\>
+  \<td\>\<a href=\"../$namepri\_filtered.bed\"\>$namepri\_filtered.bed\</a\>\<br\>
+  \</td\>
+\</tr\>
+ 
+\<tr\>
+  \<td bgcolor= \"#80CB28\"\>Extract mature\</td\>
+  \<td\>\<a href=\"../$namepri\_mature.fasta\"\>$namepri\_mature.fasta\</a\>\<br\>
+  \</td\>
+\</tr\>
+
+\<tr\>
+  \<td bgcolor= \"#80CB28\" \>RNAfold\</td\>
+  \<td\>\<a href=\"../$namepri\_RNAfold.dbn\"\>$namepri\_RNAfold.dbn\</a\>\<br\>
+  \</td\>
+\</tr\>
+
+\<tr\>
+  \<td bgcolor= \"#80CB28\"\>Not annotated\</td\>
+  \<td\>\<a href=\"../$namepri\_nohit.fasta\"\>$namepri\_nohit.fasta\</a\>\<br\>
+  \</td\>
+\</tr\>
+\</table\>
+	
+";
+print OUT3 "
+\</div\>
+\</div\>
+\</body\>
+\</html\>";
+
+close(OUT3);
+close(OUT7);
+
+#function
+sub created_htmls{
+	my @colum = @_;
+	my @coor = split("-",$score{$colum[0]}[0]);
+	my $match = $coor[2] - $coor[1];
+	my $leng = length($score{$colum[0]}[1]);
+open (OUT2, ">html/tables/$colum[0].html");	
+print OUT2 "
+\<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Strict//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd\"\>
+\<html xmlns=\"http://www.w3.org/1999/xhtml\" lang=\"en\" xml:lang=\"en\"\>
+\<head\>\<title\>$colum[0]\</title\>\<meta http-equiv=\"Content-Type\" content=\"text/html;charset=utf-8\"/\>
+\<style type=\"text/css\"\>
+html, body {
+	height:100%;
+	width:100%;
+}
+body {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	color:#000000;
+	margin:0 0 0 0;
+	padding:0 0 0 0;
+	text-align:center;
+	height:100%;
+	width:100%;
+}
+#contenedor {
+    width: 1200px;
+}
+#left_container {
+	width:192px;
+	height:100%;
+	
+	position: fixed;
+	overflow: hidden;
+	margin-left:25px;
+}
+#left_color{
+	width:192px;
+	height:100%;
+background: #37a73e; /* Old browsers */
+background: -moz-linear-gradient(top, #37a73e 76%, #80cb28 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(76%,#37a73e), color-stop(100%,#80cb28)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #37a73e 76%,#80cb28 100%); /* IE10+ */
+background: linear-gradient(to bottom, #37a73e 76%,#80cb28 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a73e', endColorstr='#80cb28',GradientType=0 ); /* IE6-9 */
+}
+#left_quote {
+	position:relative;
+	width:192px;
+	margin:0 0 0 0;
+	font-size:12px;
+	font-style:bold;
+	color:#EAEEE0;
+	text-align:center;
+	border-top:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	background:#37A73E;
+	padding:2px 0 2px 0;
+}
+#right_container_outer {
+	
+	left:12.3em;
+	top:1em;
+	width:80%;
+	height:100%;
+	margin:0 0 0 200px;
+	padding:.1em 2% .5em 5%;
+}
+#logo{
+	background-image: url(\"/home/nicole/yessy/tool/images/logo.png\");
+	background-color:#ffffff;
+	border-top:3px solid #37A73E;
+	width:192px;
+	height:100px;
+}
+#right_container_inner {
+	position:relative;
+	left:0;
+	top:0;
+	width:80%;
+	margin:0 0 0 0;
+	padding:0 0 .2em 0;
+	background:#ABBECC;
+	border-left:1px solid #4F7692;
+	border-right:1px solid #4F7692;
+}
+#rci_left_column {
+	margin:-1em 0 0 .2em;
+	padding:0 1em 0 0;
+	background:transparent;
+	font-size:.9em;
+	color:#4F5936;
+	text-align:left;
+}
+#footer {	
+	
+	background-color:#1E6E33;
+	text-align:bottom;
+	
+ 	bottom: 0px; 
+	
+	position: absolute;
+	height:5.5em;
+	width: 192px;	
+	
+	border-top:1px solid #FFFFFF;
+	font-size:.6em;
+	font-family:Tahoma, arial;
+	color:#ffffff;
+	text-align:center;
+	padding-top: 3px;
+}
+.cont {
+	font-family:Tahoma, arial;
+	margin:0 0 -.3em 0;
+	font-size:.8em;
+	color:#191970;
+	
+}
+h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.8em;
+	padding:3px 0 8px 0;
+	font-size:.9em;
+	color:#191970;
+}
+h4{
+	font-family:Tahoma, arial;
+	margin:0 0 -.3em 0;
+	font-size:1em;
+	color:#191970;
+	
+}
+h5{
+	margin:0 0 -.3em 0;
+	font-size:.8em;
+	color:#191970;
+	font-family: Courier, monospace;
+	text-align: left;
+	
+}
+.color_tab{
+	color:#FFFFFF;	
+	background-color:#1E6F33;
+	font-size:1em;
+	margin:0 0 -.3em 0;
+	font-family:Tahoma, arial;
+}
+ 
+#left_text h3 {
+	font-family:Tahoma, arial;
+	margin:0 0 -.7em;
+	padding:0 0 0 0;
+	font-size:1.2em;
+	color:\#FFF;
+}
+.small {
+	font-family:\"Courier New\", Courier, mono;
+	font-size:.85em;
+	text-transform:uppercase;
+}
+#right_container_inner a {
+	color:#547699;
+	text-decoration:underline;
+}
+#right_container_inner a:hover {
+	color:#ffffff;
+	text-decoration:none;
+}
+img {
+	border:none;
+}
+.clearfix:after {
+	content: \".\"; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility: hidden;
+}
+.clearfix {display: inline-;}
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}\";
+ \</style\>
+\</head\>
+\<body\>
+\<div id=\"contenedor\"\>
+\<div id=\"left_container\"\>
+\<div id=\"left_color\"\>
+\<div id=\"logo\"\>\</div\>
+\<div id=\"left_quote\"\>\"structRNAfinder\"\</div\>
+\<div id='cssmenu'\>
+\<form method=\"post\"\>
+\<input type=\"button\" value=\"Close Window\"
+onclick=\"window.close()\"\>
+\</form\>
+\</div\>
+\<div id=\"footer\"\>\<a href=\"http://integrativebioinformatics.me/\"\>Laboratory of Integrative Bioinformatics\</a\>\<br\>Bioinformatics Core\<br\>\<a href=\"http://www.genomamayor.com/\"\>Centro de Genómica y Bioinformática\</a\>\<br\>\<a href=\"http://www.umayor.cl/um/\"\>Universidad Mayor\</a\>\</div\>
+\</div\>
+\</div\>
+\<div id=\"right_container_outer\"\>";
+print OUT2 "\<div id=\"table\"\>
+\<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"cont\" text-align=\"left\"\>
+        \<tr background= \"\#0000FF\"\>
+                \<td class=\"color_tab\" COLSPAN = 2\>\<b\>$colum[0]\</b\>\</td\>
+        \</tr\>
+        \<tr\>
+                \<td COLSPAN = 2\> \<h3\>\<b\> $method-Rfam \</b\</h3\>\</td\>
+        \</tr\>
+        \<tr\>
+                \<td\>\<h3\>Family :</h3\> $colum[1] \</td\>
+                \<td\>   \<h3\>Id:\<a href=\"http://rfam.xfam.org/family/$colum[2]\"\>\</h3\> $colum[2]\</a\>\</td\>
+        \</tr\>
+        \<tr\>
+        	\<td\>\<h3\>Score:\</h3\> $colum[3]\</td\>
+                \<td\>\<h3\>E-value:\</h3\> $colum[4]\</td\>
+        \</tr\>
+        \<tr\>
+                \<td\>\<h3\>From sequence:\</h3\> $colum[5]\</td\>
+                \<td\>\<h3\>To sequence:\</h3\> $colum[6]\</td\>
+        \</tr\>
+	\<tr\>";
+	
+my $nid= '';
+if(defined($report)){	
+	my @id2 = split("_",$colum[0]);
+	pop(@id2);
+	my $nid2 = join("_",@id2);
+	$nid = $nid2.":".$colum[5]."-".$colum[6];
+}
+else{
+	$nid = $colum[0];
+}
+if($method eq "cmscan"){               
+	
+	print OUT2 "\<td COLSPAN = 3 \>\<h3\>Alignments:\</h3\>\<h5\>$alignments{$nid}\</h5\>\</td\>";
+}
+else{
+	print OUT2 "\<td COLSPAN = 3 \>\<h3\>Alignments:\</h3\>\<h5\>$alignments{$nid}[1]\</h5\>\</td\>";
+}	
+print OUT2 "       \</tr\>
+        \<tr\>
+                \<td COLSPAN = 2\>\<h3\>RNAfold\</h3\>\</td\>
+        \</tr\>
+        \<tr\>";
+#imprimir sequencia
+	my $count = int($leng / 50);
+	my $rest = $leng % 50;
+	my $seq = '';
+	my $stat = 0;
+	my $end = 50;
+	for(my $i=1; $i <= $count; $i++ ){
+		my $temp = substr($score{$colum[0]}[1],$stat,$end);
+		$temp = $temp . "\<br\>";
+		if ($i == 1){
+			$seq = $temp;
+		}
+		else{
+			$seq = $seq . $temp;
+		}
+		$stat = $stat + 50;
+	}
+	if($rest != 0){
+		my $stat2 = $count * 50;
+		my $temp = substr($score{$colum[0]}[1],$stat2);
+		$temp = $temp . "\<br\>";
+		$seq = $seq . $temp;
+	}
+	
+print OUT2 "
+                \<td\>\&\#62;$colum[0]\<br\>$seq$score{$colum[0]}[2]\</td\>
+                \<td ROWSPAN = 3\> \<a href=\"../../img/$score{$colum[0]}[0]_ss.png\"\>\<img src =\"../../img/$score{$colum[0]}[0]_ss.png\" border=\"0\" height=\"150\" width=\"170\" /\>\</td\>
+        \</tr\>
+        \<tr\>
+                \<td\>\<h3\>Length sequence\</h3\>: $leng\</td\>
+        \</tr\>
+        \<tr\>
+                \<td\>\<h3\>Length match:\</h3\> $match\</td\>
+        \</tr\>
+        
+         
+\</table\>
+\</div\>
+\</div\>
+\</body\>
+\</html\>
+";
+close (OUT2);
+	
+} 

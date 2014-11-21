@@ -1,0 +1,2973 @@
+#id	idGo	name	namespace	definition
+RF00016	0006396	RNA processing
+RF00016	0005730	nucleolus
+RF00049	0006396	RNA processing
+RF00049	0005730	nucleolus
+RF00113	0003729	mRNA binding
+RF00139	0006396	RNA processing
+RF00139	0005730	nucleolus
+RF00152	0006396	RNA processing
+RF00152	0005730	nucleolus
+RF00204	0006396	RNA processing
+RF00204	0005730	nucleolus
+RF00231	0006396	RNA processing
+RF00231	0015030	Cajal body
+RF00231	0005730	nucleolus
+RF00265	0006396	RNA processing
+RF00265	0005730	nucleolus
+RF00268	0006396	RNA processing
+RF00268	0005730	nucleolus
+RF00281	0006396	RNA processing
+RF00281	0005730	nucleolus
+RF00303	0006396	RNA processing
+RF00303	0005730	nucleolus
+RF00311	0006396	RNA processing
+RF00311	0005730	nucleolus
+RF00396	0006396	RNA processing
+RF00396	0005730	nucleolus
+RF00451	0035195	gene silencing by miRNA
+RF00451	0035068	micro-ribonucleoprotein complex
+RF00514	0000105	histidine biosynthetic process
+RF00591	0006396	RNA processing
+RF00591	0005730	nucleolus
+RF00592	0006396	RNA processing
+RF00592	0005730	nucleolus
+RF01159	0006396	RNA processing
+RF01159	0005730	nucleolus
+RF01165	0006396	RNA processing
+RF01165	0005730	nucleolus
+RF01179	0006396	RNA processing
+RF01179	0005730	nucleolus
+RF01215	0006396	RNA processing
+RF01215	0005730	nucleolus
+RF01226	0006396	RNA processing
+RF01226	0005730	nucleolus
+RF01436	0006396	RNA processing
+RF01436	0005730	nucleolus
+RF01543	0006396	RNA processing
+RF01543	0005730	nucleolus
+RF01588	0006396	RNA processing
+RF01588	0005730	nucleolus
+RF01597	0006396	RNA processing
+RF01597	0005730	nucleolus
+RF01648	0006396	RNA processing
+RF01648	0005730	nucleolus
+RF01947	0006342	chromatin silencing
+RF01947	0005730	nucleolus
+RF01954	0007275	multicellular organismal development
+RF01957	0042382	paraspeckles
+RF01957	0005515	protein binding
+RF02125	0010628	positive regulation of gene expression
+RF01997	0035068	micro-ribonucleoprotein complex
+RF01997	0035195	gene silencing by miRNA
+RF00608	0006396	RNA processing
+RF00608	0005730	nucleolus
+RF00614	0006396	RNA processing
+RF00614	0005730	nucleolus
+RF00644	0035068	micro-ribonucleoprotein complex
+RF00644	0035195	gene silencing by miRNA
+RF00665	0035068	micro-ribonucleoprotein complex
+RF00665	0035195	gene silencing by miRNA
+RF00710	0035068	micro-ribonucleoprotein complex
+RF00710	0035195	gene silencing by miRNA
+RF00714	0035068	micro-ribonucleoprotein complex
+RF00714	0035195	gene silencing by miRNA
+RF00791	0035068	micro-ribonucleoprotein complex
+RF00791	0035195	gene silencing by miRNA
+RF00819	0035068	micro-ribonucleoprotein complex
+RF00819	0035195	gene silencing by miRNA
+RF00827	0035068	micro-ribonucleoprotein complex
+RF00827	0035195	gene silencing by miRNA
+RF00843	0035068	micro-ribonucleoprotein complex
+RF00843	0035195	gene silencing by miRNA
+RF00855	0035068	micro-ribonucleoprotein complex
+RF00855	0035195	gene silencing by miRNA
+RF00888	0035068	micro-ribonucleoprotein complex
+RF00888	0035195	gene silencing by miRNA
+RF00891	0035068	micro-ribonucleoprotein complex
+RF00891	0035195	gene silencing by miRNA
+RF00934	0035068	micro-ribonucleoprotein complex
+RF00934	0035195	gene silencing by miRNA
+RF00969	0035068	micro-ribonucleoprotein complex
+RF00969	0035195	gene silencing by miRNA
+RF01020	0035068	micro-ribonucleoprotein complex
+RF01020	0035195	gene silencing by miRNA
+RF01218	0006396	RNA processing
+RF01218	0005730	nucleolus
+RF01239	0006396	RNA processing
+RF01239	0005730	nucleolus
+RF01903	0035068	micro-ribonucleoprotein complex
+RF01903	0035195	gene silencing by miRNA
+RF02023	0035068	micro-ribonucleoprotein complex
+RF02023	0035195	gene silencing by miRNA
+RF00001	0003735	structural constituent of ribosome
+RF00001	0005840	ribosome
+RF00002	0003735	structural constituent of ribosome
+RF00002	0005840	ribosome
+RF00003	0030627	pre-mRNA 5'-splice site binding
+RF00003	0005685	U1 snRNP
+RF00004	0045131	pre-mRNA branch point binding
+RF00004	0005686	U2 snRNP
+RF00005	0030533	triplet codon-amino acid adaptor activity
+RF00007	0045131	pre-mRNA branch point binding
+RF00007	0005693	U12 snRNP
+RF00009	0008033	tRNA processing
+RF00009	0004526	ribonuclease P activity
+RF00009	0030677	ribonuclease P complex
+RF00010	0008033	tRNA processing
+RF00010	0004526	ribonuclease P activity
+RF00010	0030680	dimeric ribonuclease P complex
+RF00011	0008033	tRNA processing
+RF00011	0004526	ribonuclease P activity
+RF00011	0030680	dimeric ribonuclease P complex
+RF00012	0006396	RNA processing
+RF00012	0005730	nucleolus
+RF00015	0000353	formation of quadruple SL/U4/U5/U6 snRNP
+RF00015	0017070	U6 snRNA binding
+RF00015	0005687	U4 snRNP
+RF00015	0046540	U4/U6 x U5 tri-snRNP complex
+RF00017	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF00017	0005786	signal recognition particle, endoplasmic reticulum targeting
+RF00017	0048501	signal recognition particle, plasma membrane targeting
+RF00018	0005515	protein binding
+RF00020	0000353	formation of quadruple SL/U4/U5/U6 snRNP
+RF00020	0005682	U5 snRNP
+RF00020	0046540	U4/U6 x U5 tri-snRNP complex
+RF00023	0006401	RNA catabolic process
+RF00024	0007004	telomere maintenance via telomerase
+RF00024	0003720	telomerase activity
+RF00024	0000333	telomerase catalytic core complex
+RF00025	0007004	telomere maintenance via telomerase
+RF00025	0003720	telomerase activity
+RF00025	0000333	telomerase catalytic core complex
+RF00026	0000353	formation of quadruple SL/U4/U5/U6 snRNP
+RF00026	0030621	U4 snRNA binding
+RF00026	0005688	U6 snRNP
+RF00026	0046540	U4/U6 x U5 tri-snRNP complex
+RF00027	0035195	gene silencing by miRNA 
+RF00027	0035068	micro-ribonucleoprotein complex
+RF00028	0000372	Group I intron splicing
+RF00029	0000373	Group II intron splicing
+RF00030	0006364	rRNA processing
+RF00030	0000171	ribonuclease MRP activity
+RF00030	0000172	ribonuclease MRP complex
+RF00031	0001514	selenocysteine incorporation
+RF00032	0006398	histone mRNA 3'-end processing
+RF00033	0006950	response to stress
+RF00033	0003729	mRNA binding
+RF00034	0003729	mRNA binding
+RF00037	0010039	response to iron ion
+RF00038	0040040	thermosensory behavior
+RF00039	0003729	mRNA binding
+RF00042	0003729	mRNA binding
+RF00043	0060908	plasmid copy number maintenance
+RF00045	0006396	RNA processing
+RF00045	0005730	nucleolus
+RF00046	0006396	RNA processing
+RF00046	0005730	nucleolus
+RF00047	0035195	gene silencing by miRNA 
+RF00047	0035068	micro-ribonucleoprotein complex
+RF00050	0010181	FMN binding
+RF00051	0035195	gene silencing by miRNA
+RF00051	0035068	micro-ribonucleoprotein complex
+RF00052	0035195	gene silencing by miRNA 
+RF00052	0035068	micro-ribonucleoprotein complex
+RF00053	0035195	gene silencing by miRNA
+RF00053	0035068	micro-ribonucleoprotein complex
+RF00054	0006396	RNA processing
+RF00054	0005730	nucleolus
+RF00055	0006396	RNA processing
+RF00055	0005730	nucleolus
+RF00056	0006396	RNA processing
+RF00056	0005730	nucleolus
+RF00059	0030976	thiamine pyrophosphate binding
+RF00061	0043022	ribosome binding
+RF00065	0006396	RNA processing
+RF00065	0005730	nucleolus
+RF00067	0006396	RNA processing
+RF00067	0005730	nucleolus
+RF00068	0006396	RNA processing
+RF00068	0005730	nucleolus
+RF00069	0006396	RNA processing
+RF00069	0005730	nucleolus
+RF00070	0006396	RNA processing
+RF00070	0005730	nucleolus
+RF00071	0006396	RNA processing
+RF00071	0005730	nucleolus
+RF00072	0006396	RNA processing
+RF00072	0005730	nucleolus
+RF00073	0035195	gene silencing by miRNA
+RF00073	0035068	micro-ribonucleoprotein complex
+RF00074	0035195	gene silencing by miRNA
+RF00074	0035068	micro-ribonucleoprotein complex
+RF00075	0035195	gene silencing by miRNA
+RF00075	0035068	micro-ribonucleoprotein complex
+RF00076	0035195	gene silencing by miRNA
+RF00076	0035068	micro-ribonucleoprotein complex
+RF00078	0003729	mRNA binding
+RF00078	0006950	response to stress
+RF00085	0006396	RNA processing
+RF00085	0005730	nucleolus
+RF00086	0006396	RNA processing
+RF00086	0005730	nucleolus
+RF00087	0006396	RNA processing
+RF00087	0005730	nucleolus
+RF00088	0006396	RNA processing
+RF00088	0005730	nucleolus
+RF00089	0006396	RNA processing
+RF00089	0005730	nucleolus
+RF00090	0006396	RNA processing
+RF00090	0005730	nucleolus
+RF00091	0006396	RNA processing
+RF00091	0005730	nucleolus
+RF00092	0006396	RNA processing
+RF00092	0005730	nucleolus
+RF00093	0006396	RNA processing
+RF00093	0005730	nucleolus
+RF00095	0006396	RNA processing
+RF00095	0005730	nucleolus
+RF00096	0006396	RNA processing
+RF00096	0005730	nucleolus
+RF00097	0006396	RNA processing
+RF00097	0005730	nucleolus
+RF00099	0006396	RNA processing
+RF00099	0005730	nucleolus
+RF00103	0035195	gene silencing by miRNA
+RF00103	0035068	micro-ribonucleoprotein complex
+RF00104	0035195	gene silencing by miRNA
+RF00104	0035068	micro-ribonucleoprotein complex
+RF00105	0006396	RNA processing
+RF00105	0005730	nucleolus
+RF00106	0060910	negative regulation of DNA replication initiation involved in plasmid copy number maintenance
+RF00108	0006396	RNA processing
+RF00108	0005730	nucleolus
+RF00109	0005515	protein binding
+RF00122	0003729	mRNA binding
+RF00129	0035195	gene silencing by miRNA
+RF00129	0035068	micro-ribonucleoprotein complex
+RF00130	0035195	gene silencing by miRNA
+RF00130	0035068	micro-ribonucleoprotein complex
+RF00131	0035195	gene silencing by miRNA
+RF00131	0035068	micro-ribonucleoprotein complex
+RF00132	0006396	RNA processing
+RF00132	0005730	nucleolus
+RF00133	0006396	RNA processing
+RF00133	0005730	nucleolus
+RF00134	0006396	RNA processing
+RF00134	0005730	nucleolus
+RF00135	0006396	RNA processing
+RF00135	0005730	nucleolus
+RF00136	0006396	RNA processing
+RF00136	0005730	nucleolus
+RF00137	0006396	RNA processing
+RF00137	0005730	nucleolus
+RF00138	0006396	RNA processing
+RF00138	0005730	nucleolus
+RF00142	0006396	RNA processing
+RF00142	0005730	nucleolus
+RF00143	0035195	gene silencing by miRNA
+RF00143	0035068	micro-ribonucleoprotein complex
+RF00144	0035195	gene silencing by miRNA
+RF00144	0035068	micro-ribonucleoprotein complex
+RF00145	0006396	RNA processing
+RF00145	0005730	nucleolus
+RF00147	0006396	RNA processing
+RF00147	0005730	nucleolus
+RF00149	0006396	RNA processing
+RF00149	0005730	nucleolus
+RF00150	0006396	RNA processing
+RF00150	0005730	nucleolus
+RF00151	0006396	RNA processing
+RF00151	0005730	nucleolus
+RF00153	0006396	RNA processing
+RF00153	0005730	nucleolus
+RF00154	0006396	RNA processing
+RF00154	0005730	nucleolus
+RF00155	0006396	RNA processing
+RF00155	0005730	nucleolus
+RF00156	0006396	RNA processing
+RF00156	0005730	nucleolus
+RF00157	0006396	RNA processing
+RF00157	0005730	nucleolus
+RF00158	0006396	RNA processing
+RF00158	0005730	nucleolus
+RF00159	0006396	RNA processing
+RF00159	0005730	nucleolus
+RF00160	0006396	RNA processing
+RF00160	0005730	nucleolus
+RF00161	0008595	anterior/posterior axis specification, embryo
+RF00161	0017148	negative regulation of translation
+RF00161	0005515	protein binding
+RF00166	0006401	RNA catabolic process
+RF00166	0006109	regulation of carbohydrate metabolic process
+RF00169	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF00169	0048501	signal recognition particle, plasma membrane targeting
+RF00174	0031419	cobalamin binding
+RF00177	0003735	structural constituent of ribosome
+RF00177	0005840	ribosome
+RF00178	0035195	gene silencing by miRNA
+RF00178	0035068	micro-ribonucleoprotein complex
+RF00181	0006396	RNA processing
+RF00181	0005730	nucleolus
+RF00186	0006396	RNA processing
+RF00186	0005730	nucleolus
+RF00187	0006396	RNA processing
+RF00187	0005730	nucleolus
+RF00188	0006396	RNA processing
+RF00188	0005730	nucleolus
+RF00189	0006396	RNA processing
+RF00189	0005730	nucleolus
+RF00190	0006396	RNA processing
+RF00190	0005730	nucleolus
+RF00191	0006396	RNA processing
+RF00191	0005730	nucleolus
+RF00200	0006396	RNA processing
+RF00200	0005730	nucleolus
+RF00201	0006396	RNA processing
+RF00201	0005730	nucleolus
+RF00202	0006396	RNA processing
+RF00202	0005730	nucleolus
+RF00203	0006396	RNA processing
+RF00203	0005730	nucleolus
+RF00205	0006396	RNA processing
+RF00205	0005730	nucleolus
+RF00206	0006396	RNA processing
+RF00206	0005730	nucleolus
+RF00208	0006396	RNA processing
+RF00208	0005730	nucleolus
+RF00209	0043022	ribosome binding
+RF00210	0043022	ribosome binding
+RF00211	0006396	RNA processing
+RF00211	0005730	nucleolus
+RF00212	0006396	RNA processing
+RF00212	0005730	nucleolus
+RF00213	0006396	RNA processing
+RF00213	0005730	nucleolus
+RF00216	0043022	ribosome binding
+RF00217	0006396	RNA processing
+RF00217	0005730	nucleolus
+RF00218	0006396	RNA processing
+RF00218	0005730	nucleolus
+RF00221	0006396	RNA processing
+RF00221	0005730	nucleolus
+RF00222	0043022	ribosome binding
+RF00223	0043022	ribosome binding
+RF00224	0043022	ribosome binding
+RF00225	0043022	ribosome binding
+RF00226	0043022	ribosome binding
+RF00228	0043022	ribosome binding
+RF00229	0043022	ribosome binding
+RF00230	0000049	tRNA binding
+RF00236	0003729	mRNA binding
+RF00237	0035195	gene silencing by miRNA
+RF00237	0035068	micro-ribonucleoprotein complex
+RF00238	0003729	mRNA binding
+RF00238	0060908	plasmid copy number maintenance
+RF00239	0035195	gene silencing by miRNA
+RF00239	0035068	micro-ribonucleoprotein complex
+RF00241	0035195	gene silencing by miRNA
+RF00241	0035068	micro-ribonucleoprotein complex
+RF00242	0060908	plasmid copy number maintenance
+RF00242	0003729	mRNA binding
+RF00244	0035195	gene silencing by miRNA
+RF00244	0035068	micro-ribonucleoprotein complex
+RF00245	0035195	gene silencing by miRNA
+RF00245	0035068	micro-ribonucleoprotein complex
+RF00246	0035195	gene silencing by miRNA
+RF00246	0035068	micro-ribonucleoprotein complex
+RF00247	0035195	gene silencing by miRNA
+RF00247	0035068	micro-ribonucleoprotein complex
+RF00248	0035195	gene silencing by miRNA
+RF00248	0035068	micro-ribonucleoprotein complex
+RF00249	0035195	gene silencing by miRNA
+RF00249	0035068	micro-ribonucleoprotein complex
+RF00250	0035068	micro-ribonucleoprotein complex
+RF00250	0035195	gene silencing by miRNA
+RF00251	0035195	gene silencing by miRNA
+RF00251	0035068	micro-ribonucleoprotein complex
+RF00253	0035195	gene silencing by miRNA
+RF00253	0035068	micro-ribonucleoprotein complex
+RF00254	0035195	gene silencing by miRNA
+RF00254	0035068	micro-ribonucleoprotein complex
+RF00255	0035195	gene silencing by miRNA
+RF00255	0035068	micro-ribonucleoprotein complex
+RF00256	0035195	gene silencing by miRNA
+RF00256	0035068	micro-ribonucleoprotein complex
+RF00257	0035195	gene silencing by miRNA
+RF00257	0035068	micro-ribonucleoprotein complex
+RF00258	0035195	gene silencing by miRNA
+RF00258	0035068	micro-ribonucleoprotein complex
+RF00261	0043022	ribosome binding
+RF00262	0003729	mRNA binding
+RF00263	0006396	RNA processing
+RF00263	0005730	nucleolus
+RF00264	0006396	RNA processing
+RF00264	0005730	nucleolus
+RF00266	0006396	RNA processing
+RF00266	0005730	nucleolus
+RF00267	0006396	RNA processing
+RF00267	0005730	nucleolus
+RF00270	0006396	RNA processing
+RF00270	0005730	nucleolus
+RF00271	0006396	RNA processing
+RF00271	0005730	nucleolus
+RF00272	0006396	RNA processing
+RF00272	0005730	nucleolus
+RF00273	0006396	RNA processing
+RF00273	0005730	nucleolus
+RF00274	0006396	RNA processing
+RF00274	0005730	nucleolus
+RF00275	0006396	RNA processing
+RF00275	0005730	nucleolus
+RF00276	0006396	RNA processing
+RF00276	0005730	nucleolus
+RF00277	0006396	RNA processing
+RF00277	0005730	nucleolus
+RF00278	0006396	RNA processing
+RF00278	0005730	nucleolus
+RF00279	0006396	RNA processing
+RF00279	0005730	nucleolus
+RF00280	0006396	RNA processing
+RF00280	0005730	nucleolus
+RF00282	0006396	RNA processing
+RF00282	0005730	nucleolus
+RF00283	0006396	RNA processing
+RF00283	0015030	Cajal body
+RF00283	0005730	nucleolus
+RF00284	0006396	RNA processing
+RF00284	0005730	nucleolus
+RF00285	0006396	RNA processing
+RF00285	0005730	nucleolus
+RF00286	0006396	RNA processing
+RF00286	0015030	Cajal body
+RF00286	0005730	nucleolus
+RF00287	0006396	RNA processing
+RF00287	0005730	nucleolus
+RF00288	0006396	RNA processing
+RF00288	0005730	nucleolus
+RF00289	0006396	RNA processing
+RF00289	0005730	nucleolus
+RF00291	0006396	RNA processing
+RF00291	0005730	nucleolus
+RF00292	0006396	RNA processing
+RF00292	0005730	nucleolus
+RF00293	0006396	RNA processing
+RF00293	0005730	nucleolus
+RF00294	0006396	RNA processing
+RF00294	0005730	nucleolus
+RF00295	0006396	RNA processing
+RF00295	0005730	nucleolus
+RF00296	0006396	RNA processing
+RF00296	0005730	nucleolus
+RF00300	0006396	RNA processing
+RF00300	0005730	nucleolus
+RF00301	0006396	RNA processing
+RF00301	0005730	nucleolus
+RF00302	0006396	RNA processing
+RF00302	0005730	nucleolus
+RF00304	0006396	RNA processing
+RF00304	0005730	nucleolus
+RF00305	0006396	RNA processing
+RF00305	0005730	nucleolus
+RF00306	0006396	RNA processing
+RF00306	0005730	nucleolus
+RF00307	0006396	RNA processing
+RF00307	0005730	nucleolus
+RF00309	0006396	RNA processing
+RF00309	0005730	nucleolus
+RF00310	0006396	RNA processing
+RF00310	0005730	nucleolus
+RF00312	0006396	RNA processing
+RF00312	0005730	nucleolus
+RF00313	0006396	RNA processing
+RF00313	0005730	nucleolus
+RF00314	0006396	RNA processing
+RF00314	0005730	nucleolus
+RF00315	0006396	RNA processing
+RF00315	0005730	nucleolus
+RF00316	0006396	RNA processing
+RF00316	0005730	nucleolus
+RF00317	0006396	RNA processing
+RF00317	0005730	nucleolus
+RF00318	0006396	RNA processing
+RF00318	0005730	nucleolus
+RF00319	0006396	RNA processing
+RF00319	0005730	nucleolus
+RF00320	0006396	RNA processing
+RF00320	0005730	nucleolus
+RF00321	0006396	RNA processing
+RF00321	0005730	nucleolus
+RF00322	0006396	RNA processing
+RF00322	0005730	nucleolus
+RF00323	0006396	RNA processing
+RF00323	0005730	nucleolus
+RF00324	0006396	RNA processing
+RF00324	0005730	nucleolus
+RF00325	0006396	RNA processing
+RF00325	0005730	nucleolus
+RF00326	0006396	RNA processing
+RF00326	0005730	nucleolus
+RF00327	0006396	RNA processing
+RF00327	0005730	nucleolus
+RF00328	0006396	RNA processing
+RF00328	0005730	nucleolus
+RF00329	0006396	RNA processing
+RF00329	0005730	nucleolus
+RF00330	0006396	RNA processing
+RF00330	0005730	nucleolus
+RF00331	0006396	RNA processing
+RF00331	0005730	nucleolus
+RF00332	0006396	RNA processing
+RF00332	0005730	nucleolus
+RF00333	0006396	RNA processing
+RF00333	0005730	nucleolus
+RF00334	0006396	RNA processing
+RF00334	0005730	nucleolus
+RF00335	0006396	RNA processing
+RF00335	0005730	nucleolus
+RF00336	0006396	RNA processing
+RF00336	0005730	nucleolus
+RF00337	0006396	RNA processing
+RF00337	0005730	nucleolus
+RF00338	0006396	RNA processing
+RF00338	0005730	nucleolus
+RF00339	0006396	RNA processing
+RF00339	0005730	nucleolus
+RF00340	0006396	RNA processing
+RF00340	0005730	nucleolus
+RF00341	0006396	RNA processing
+RF00341	0005730	nucleolus
+RF00342	0006396	RNA processing
+RF00342	0005730	nucleolus
+RF00343	0006396	RNA processing
+RF00343	0005730	nucleolus
+RF00344	0006396	RNA processing
+RF00344	0005730	nucleolus
+RF00345	0006396	RNA processing
+RF00345	0005730	nucleolus
+RF00348	0006396	RNA processing
+RF00348	0005730	nucleolus
+RF00349	0006396	RNA processing
+RF00349	0005730	nucleolus
+RF00350	0006396	RNA processing
+RF00350	0005730	nucleolus
+RF00351	0006396	RNA processing
+RF00351	0005730	nucleolus
+RF00352	0006396	RNA processing
+RF00352	0005730	nucleolus
+RF00353	0006396	RNA processing
+RF00353	0005730	nucleolus
+RF00355	0006396	RNA processing
+RF00355	0005730	nucleolus
+RF00356	0006396	RNA processing
+RF00356	0005730	nucleolus
+RF00357	0006396	RNA processing
+RF00357	0005730	nucleolus
+RF00358	0006396	RNA processing
+RF00358	0005730	nucleolus
+RF00359	0006396	RNA processing
+RF00359	0005730	nucleolus
+RF00360	0006396	RNA processing
+RF00360	0005730	nucleolus
+RF00361	0006396	RNA processing
+RF00361	0005730	nucleolus
+RF00363	0035195	gene silencing by miRNA
+RF00363	0035068	micro-ribonucleoprotein complex
+RF00364	0035195	gene silencing by miRNA
+RF00364	0035068	micro-ribonucleoprotein complex
+RF00365	0035195	gene silencing by miRNA
+RF00365	0035068	micro-ribonucleoprotein complex
+RF00366	0035195	gene silencing by miRNA
+RF00366	0035068	micro-ribonucleoprotein complex
+RF00367	0035195	gene silencing by miRNA
+RF00367	0035068	micro-ribonucleoprotein complex
+RF00373	0008033	tRNA processing
+RF00373	0004526	ribonuclease P activity
+RF00373	0030681	multimeric ribonuclease P complex
+RF00377	0006396	RNA processing
+RF00377	0005730	nucleolus
+RF00387	0043022	ribosome binding
+RF00392	0006396	RNA processing
+RF00392	0005730	nucleolus
+RF00393	0006396	RNA processing
+RF00393	0005730	nucleolus
+RF00394	0006396	RNA processing
+RF00394	0005730	nucleolus
+RF00397	0006396	RNA processing
+RF00397	0005730	nucleolus
+RF00398	0006396	RNA processing
+RF00398	0005730	nucleolus
+RF00399	0006396	RNA processing
+RF00399	0005730	nucleolus
+RF00400	0006396	RNA processing
+RF00400	0005730	nucleolus
+RF00401	0006396	RNA processing
+RF00401	0005730	nucleolus
+RF00402	0006396	RNA processing
+RF00402	0005730	nucleolus
+RF00403	0006396	RNA processing
+RF00403	0005730	nucleolus
+RF00404	0006396	RNA processing
+RF00404	0005730	nucleolus
+RF00405	0006396	RNA processing
+RF00405	0005730	nucleolus
+RF00406	0006396	RNA processing
+RF00406	0005730	nucleolus
+RF00407	0006396	RNA processing
+RF00407	0005730	nucleolus
+RF00408	0006396	RNA processing
+RF00408	0005730	nucleolus
+RF00409	0006396	RNA processing
+RF00409	0005730	nucleolus
+RF00410	0006396	RNA processing
+RF00410	0005730	nucleolus
+RF00411	0006396	RNA processing
+RF00411	0005730	nucleolus
+RF00412	0006396	RNA processing
+RF00412	0005730	nucleolus
+RF00413	0006396	RNA processing
+RF00413	0005730	nucleolus
+RF00414	0006396	RNA processing
+RF00414	0005730	nucleolus
+RF00415	0006396	RNA processing
+RF00415	0005730	nucleolus
+RF00416	0006396	RNA processing
+RF00416	0005730	nucleolus
+RF00417	0006396	RNA processing
+RF00417	0005730	nucleolus
+RF00418	0006396	RNA processing
+RF00418	0005730	nucleolus
+RF00419	0006396	RNA processing
+RF00419	0005730	nucleolus
+RF00420	0006396	RNA processing
+RF00420	0005730	nucleolus
+RF00421	0006396	RNA processing
+RF00421	0005730	nucleolus
+RF00422	0006396	RNA processing
+RF00422	0015030	Cajal body
+RF00422	0005730	nucleolus
+RF00423	0006396	RNA processing
+RF00423	0015030	Cajal body
+RF00423	0005730	nucleolus
+RF00424	0006396	RNA processing
+RF00424	0005730	nucleolus
+RF00425	0006396	RNA processing
+RF00425	0005730	nucleolus
+RF00426	0006396	RNA processing
+RF00426	0015030	Cajal body
+RF00426	0005730	nucleolus
+RF00427	0006396	RNA processing
+RF00427	0015030	Cajal body
+RF00427	0005730	nucleolus
+RF00428	0006396	RNA processing
+RF00428	0015030	Cajal body
+RF00428	0005730	nucleolus
+RF00429	0006396	RNA processing
+RF00429	0005730	nucleolus
+RF00430	0006396	RNA processing
+RF00430	0005730	nucleolus
+RF00431	0006396	RNA processing
+RF00431	0005730	nucleolus
+RF00432	0006396	RNA processing
+RF00432	0005730	nucleolus
+RF00433	0040040	thermosensory behavior
+RF00435	0040040	thermosensory behavior
+RF00438	0006396	RNA processing
+RF00438	0005730	nucleolus
+RF00439	0006396	RNA processing
+RF00439	0005730	nucleolus
+RF00440	0006396	RNA processing
+RF00440	0005730	nucleolus
+RF00441	0006396	RNA processing
+RF00441	0005730	nucleolus
+RF00443	0006396	RNA processing
+RF00443	0005730	nucleolus
+RF00445	0035195	gene silencing by miRNA
+RF00445	0035068	micro-ribonucleoprotein complex
+RF00446	0035195	gene silencing by miRNA
+RF00446	0035068	micro-ribonucleoprotein complex
+RF00447	0043022	ribosome binding
+RF00448	0043022	ribosome binding
+RF00449	0043022	ribosome binding
+RF00452	0035195	gene silencing by miRNA
+RF00452	0035068	micro-ribonucleoprotein complex
+RF00455	0035195	gene silencing by miRNA
+RF00455	0035068	micro-ribonucleoprotein complex
+RF00456	0035195	gene silencing by miRNA
+RF00456	0035068	micro-ribonucleoprotein complex
+RF00457	0043022	ribosome binding
+RF00458	0043022	ribosome binding
+RF00461	0043022	ribosome binding
+RF00462	0043022	ribosome binding
+RF00464	0035195	gene silencing by miRNA
+RF00464	0035068	micro-ribonucleoprotein complex
+RF00471	0006396	RNA processing
+RF00471	0005730	nucleolus
+RF00472	0006396	RNA processing
+RF00472	0005730	nucleolus
+RF00473	0006396	RNA processing
+RF00473	0005730	nucleolus
+RF00474	0006396	RNA processing
+RF00474	0005730	nucleolus
+RF00475	0006396	RNA processing
+RF00475	0005730	nucleolus
+RF00476	0006396	RNA processing
+RF00476	0005730	nucleolus
+RF00477	0006396	RNA processing
+RF00477	0005730	nucleolus
+RF00478	0006396	RNA processing
+RF00478	0005730	nucleolus
+RF00479	0006396	RNA processing
+RF00479	0005730	nucleolus
+RF00482	0006396	RNA processing
+RF00482	0005730	nucleolus
+RF00483	0043022	ribosome binding
+RF00484	0043022	ribosome binding
+RF00486	0035195	gene silencing by miRNA
+RF00486	0035068	micro-ribonucleoprotein complex
+RF00487	0043022	ribosome binding
+RF00488	0030627	pre-mRNA 5'-splice site binding
+RF00488	0005685	U1 snRNP
+RF00492	0006396	RNA processing
+RF00492	0015030	Cajal body
+RF00492	0005730	nucleolus
+RF00493	0006396	RNA processing
+RF00493	0005730	nucleolus
+RF00494	0006396	RNA processing
+RF00494	0005730	nucleolus
+RF00495	0043022	ribosome binding
+RF00504	0006545	glycine biosynthetic process
+RF00506	0009088	threonine biosynthetic process
+RF00509	0006396	RNA processing
+RF00509	0005730	nucleolus
+RF00511	0043022	ribosome binding
+RF00512	0009098	leucine biosynthetic process
+RF00521	0045814	negative regulation of gene expression, epigenetic
+RF00522	0008616	queuosine biosynthetic process
+RF00526	0006396	RNA processing
+RF00526	0005730	nucleolus
+RF00527	0006396	RNA processing
+RF00527	0005730	nucleolus
+RF00528	0006396	RNA processing
+RF00528	0005730	nucleolus
+RF00529	0006396	RNA processing
+RF00529	0005730	nucleolus
+RF00530	0006396	RNA processing
+RF00530	0005730	nucleolus
+RF00531	0006396	RNA processing
+RF00531	0005730	nucleolus
+RF00532	0006396	RNA processing
+RF00532	0005730	nucleolus
+RF00533	0006396	RNA processing
+RF00533	0005730	nucleolus
+RF00534	0032057	negative regulation of translational initiation in response to stress
+RF00534	0043488	regulation of mRNA stability
+RF00534	0030371	translation repressor activity
+RF00535	0006396	RNA processing
+RF00535	0005730	nucleolus
+RF00536	0006396	RNA processing
+RF00536	0005730	nucleolus
+RF00537	0006396	RNA processing
+RF00537	0005730	nucleolus
+RF00538	0006396	RNA processing
+RF00538	0005730	nucleolus
+RF00539	0006396	RNA processing
+RF00539	0005730	nucleolus
+RF00540	0006396	RNA processing
+RF00540	0005730	nucleolus
+RF00541	0006396	RNA processing
+RF00541	0005730	nucleolus
+RF00542	0006396	RNA processing
+RF00542	0005730	nucleolus
+RF00543	0006396	RNA processing
+RF00543	0005730	nucleolus
+RF00544	0006396	RNA processing
+RF00544	0005730	nucleolus
+RF00545	0006396	RNA processing
+RF00545	0005730	nucleolus
+RF00546	0006396	RNA processing
+RF00546	0005730	nucleolus
+RF00547	0043022	ribosome binding
+RF00548	0030627	pre-mRNA 5'-splice site binding
+RF00548	0005692	U11 snRNP
+RF00549	0043022	ribosome binding
+RF00551	0008359	regulation of bicoid mRNA localization
+RF00553	0006396	RNA processing
+RF00553	0015030	Cajal body
+RF00553	0005730	nucleolus
+RF00554	0006396	RNA processing
+RF00554	0005730	nucleolus
+RF00560	0006396	RNA processing
+RF00560	0005730	nucleolus
+RF00561	0006396	RNA processing
+RF00561	0005730	nucleolus
+RF00562	0006396	RNA processing
+RF00562	0005730	nucleolus
+RF00563	0006396	RNA processing
+RF00563	0005730	nucleolus
+RF00564	0006396	RNA processing
+RF00564	0015030	Cajal body
+RF00564	0005730	nucleolus
+RF00565	0006396	RNA processing
+RF00565	0015030	Cajal body
+RF00565	0005730	nucleolus
+RF00566	0006396	RNA processing
+RF00566	0005730	nucleolus
+RF00567	0006396	RNA processing
+RF00567	0005730	nucleolus
+RF00568	0006396	RNA processing
+RF00568	0005730	nucleolus
+RF00569	0006396	RNA processing
+RF00569	0005730	nucleolus
+RF00570	0006396	RNA processing
+RF00570	0005730	nucleolus
+RF00571	0006396	RNA processing
+RF00571	0005730	nucleolus
+RF00572	0006396	RNA processing
+RF00572	0005730	nucleolus
+RF00573	0006396	RNA processing
+RF00573	0005730	nucleolus
+RF00574	0006396	RNA processing
+RF00574	0005730	nucleolus
+RF00575	0006396	RNA processing
+RF00575	0005730	nucleolus
+RF00576	0006396	RNA processing
+RF00576	0005730	nucleolus
+RF00577	0006396	RNA processing
+RF00577	0005730	nucleolus
+RF00578	0006396	RNA processing
+RF00578	0005730	nucleolus
+RF00579	0006396	RNA processing
+RF00579	0005730	nucleolus
+RF00580	0006396	RNA processing
+RF00580	0005730	nucleolus
+RF00581	0006396	RNA processing
+RF00581	0005730	nucleolus
+RF00582	0006396	RNA processing
+RF00582	0015030	Cajal body
+RF00582	0005730	nucleolus
+RF00584	0006396	RNA processing
+RF00584	0005730	nucleolus
+RF00586	0006396	RNA processing
+RF00586	0005730	nucleolus
+RF00588	0006396	RNA processing
+RF00588	0005730	nucleolus
+RF00593	0006396	RNA processing
+RF00593	0005730	nucleolus
+RF00594	0006396	RNA processing
+RF00594	0005730	nucleolus
+RF00598	0006396	RNA processing
+RF00598	0005730	nucleolus
+RF00599	0006396	RNA processing
+RF00599	0005730	nucleolus
+RF00600	0006396	RNA processing
+RF00600	0005730	nucleolus
+RF00601	0006396	RNA processing
+RF00601	0015030	Cajal body
+RF00601	0005730	nucleolus
+RF00602	0006396	RNA processing
+RF00602	0015030	Cajal body
+RF00602	0005730	nucleolus
+RF00603	0006396	RNA processing
+RF00603	0005730	nucleolus
+RF00604	0006396	RNA processing
+RF00604	0005730	nucleolus
+RF00606	0006396	RNA processing
+RF00606	0005730	nucleolus
+RF00607	0006396	RNA processing
+RF00607	0005730	nucleolus
+RF00609	0006396	RNA processing
+RF00609	0005730	nucleolus
+RF00610	0006396	RNA processing
+RF00610	0005730	nucleolus
+RF00611	0006396	RNA processing
+RF00611	0005730	nucleolus
+RF00612	0006396	RNA processing
+RF00612	0005730	nucleolus
+RF00613	0006396	RNA processing
+RF00613	0005730	nucleolus
+RF00615	0003729	mRNA binding
+RF00618	0030624	U6atac snRNA binding
+RF00618	0030627	pre-mRNA 5'-splice site binding
+RF00618	0005690	U4atac snRNP
+RF00619	0030622	U4atac snRNA binding
+RF00619	0030627	pre-mRNA 5'-splice site binding
+RF00619	0005691	U6atac snRNP
+RF00626	0051028	mRNA transport
+RF00637	0035068	micro-ribonucleoprotein complex
+RF00637	0035195	gene silencing by miRNA
+RF00638	0035068	micro-ribonucleoprotein complex
+RF00638	0035195	gene silencing by miRNA
+RF00639	0035068	micro-ribonucleoprotein complex
+RF00639	0035195	gene silencing by miRNA
+RF00640	0035068	micro-ribonucleoprotein complex
+RF00640	0035195	gene silencing by miRNA
+RF00641	0035068	micro-ribonucleoprotein complex
+RF00641	0035195	gene silencing by miRNA
+RF00642	0035068	micro-ribonucleoprotein complex
+RF00642	0035195	gene silencing by miRNA
+RF00643	0035068	micro-ribonucleoprotein complex
+RF00643	0035195	gene silencing by miRNA
+RF00645	0035068	micro-ribonucleoprotein complex
+RF00645	0035195	gene silencing by miRNA
+RF00646	0035068	micro-ribonucleoprotein complex
+RF00646	0035195	gene silencing by miRNA
+RF00647	0035068	micro-ribonucleoprotein complex
+RF00647	0035195	gene silencing by miRNA
+RF00648	0035068	micro-ribonucleoprotein complex
+RF00648	0035195	gene silencing by miRNA
+RF00649	0035068	micro-ribonucleoprotein complex
+RF00649	0035195	gene silencing by miRNA
+RF00650	0035068	micro-ribonucleoprotein complex
+RF00650	0035195	gene silencing by miRNA
+RF00651	0035068	micro-ribonucleoprotein complex
+RF00651	0035195	gene silencing by miRNA
+RF00652	0035068	micro-ribonucleoprotein complex
+RF00652	0035195	gene silencing by miRNA
+RF00653	0035068	micro-ribonucleoprotein complex
+RF00653	0035195	gene silencing by miRNA
+RF00654	0035068	micro-ribonucleoprotein complex
+RF00654	0035195	gene silencing by miRNA
+RF00655	0035068	micro-ribonucleoprotein complex
+RF00655	0035195	gene silencing by miRNA
+RF00656	0035068	micro-ribonucleoprotein complex
+RF00656	0035195	gene silencing by miRNA
+RF00657	0035068	micro-ribonucleoprotein complex
+RF00657	0035195	gene silencing by miRNA
+RF00658	0035068	micro-ribonucleoprotein complex
+RF00658	0035195	gene silencing by miRNA
+RF00659	0035068	micro-ribonucleoprotein complex
+RF00659	0035195	gene silencing by miRNA
+RF00660	0035068	micro-ribonucleoprotein complex
+RF00660	0035195	gene silencing by miRNA
+RF00661	0035068	micro-ribonucleoprotein complex
+RF00661	0035195	gene silencing by miRNA
+RF00662	0035068	micro-ribonucleoprotein complex
+RF00662	0035195	gene silencing by miRNA
+RF00663	0035068	micro-ribonucleoprotein complex
+RF00663	0035195	gene silencing by miRNA
+RF00664	0035068	micro-ribonucleoprotein complex
+RF00664	0035195	gene silencing by miRNA
+RF00666	0035068	micro-ribonucleoprotein complex
+RF00666	0035195	gene silencing by miRNA
+RF00667	0035068	micro-ribonucleoprotein complex
+RF00667	0035195	gene silencing by miRNA
+RF00668	0035068	micro-ribonucleoprotein complex
+RF00668	0035195	gene silencing by miRNA
+RF00669	0035068	micro-ribonucleoprotein complex
+RF00669	0035195	gene silencing by miRNA
+RF00670	0035068	micro-ribonucleoprotein complex
+RF00670	0035195	gene silencing by miRNA
+RF00671	0035068	micro-ribonucleoprotein complex
+RF00671	0035195	gene silencing by miRNA
+RF00672	0035068	micro-ribonucleoprotein complex
+RF00672	0035195	gene silencing by miRNA
+RF00673	0035068	micro-ribonucleoprotein complex
+RF00673	0035195	gene silencing by miRNA
+RF00674	0035068	micro-ribonucleoprotein complex
+RF00674	0035195	gene silencing by miRNA
+RF00675	0035068	micro-ribonucleoprotein complex
+RF00675	0035195	gene silencing by miRNA
+RF00676	0035068	micro-ribonucleoprotein complex
+RF00676	0035195	gene silencing by miRNA
+RF00677	0035068	micro-ribonucleoprotein complex
+RF00677	0035195	gene silencing by miRNA
+RF00678	0035068	micro-ribonucleoprotein complex
+RF00678	0035195	gene silencing by miRNA
+RF00679	0035068	micro-ribonucleoprotein complex
+RF00679	0035195	gene silencing by miRNA
+RF00680	0035068	micro-ribonucleoprotein complex
+RF00680	0035195	gene silencing by miRNA
+RF00681	0035068	micro-ribonucleoprotein complex
+RF00681	0035195	gene silencing by miRNA
+RF00682	0035068	micro-ribonucleoprotein complex
+RF00682	0035195	gene silencing by miRNA
+RF00683	0035068	micro-ribonucleoprotein complex
+RF00683	0035195	gene silencing by miRNA
+RF00684	0035068	micro-ribonucleoprotein complex
+RF00684	0035195	gene silencing by miRNA
+RF00685	0035068	micro-ribonucleoprotein complex
+RF00685	0035195	gene silencing by miRNA
+RF00686	0035068	micro-ribonucleoprotein complex
+RF00686	0035195	gene silencing by miRNA
+RF00687	0035068	micro-ribonucleoprotein complex
+RF00687	0035195	gene silencing by miRNA
+RF00688	0035068	micro-ribonucleoprotein complex
+RF00688	0035195	gene silencing by miRNA
+RF00689	0035068	micro-ribonucleoprotein complex
+RF00689	0035195	gene silencing by miRNA
+RF00690	0035068	micro-ribonucleoprotein complex
+RF00690	0035195	gene silencing by miRNA
+RF00691	0035068	micro-ribonucleoprotein complex
+RF00691	0035195	gene silencing by miRNA
+RF00692	0035068	micro-ribonucleoprotein complex
+RF00692	0035195	gene silencing by miRNA
+RF00693	0035068	micro-ribonucleoprotein complex
+RF00693	0035195	gene silencing by miRNA
+RF00694	0035068	micro-ribonucleoprotein complex
+RF00694	0035195	gene silencing by miRNA
+RF00695	0035068	micro-ribonucleoprotein complex
+RF00695	0035195	gene silencing by miRNA
+RF00696	0035068	micro-ribonucleoprotein complex
+RF00696	0035195	gene silencing by miRNA
+RF00697	0035068	micro-ribonucleoprotein complex
+RF00697	0035195	gene silencing by miRNA
+RF00698	0035068	micro-ribonucleoprotein complex
+RF00698	0035195	gene silencing by miRNA
+RF00699	0035068	micro-ribonucleoprotein complex
+RF00699	0035195	gene silencing by miRNA
+RF00700	0035068	micro-ribonucleoprotein complex
+RF00700	0035195	gene silencing by miRNA
+RF00701	0035068	micro-ribonucleoprotein complex
+RF00701	0035195	gene silencing by miRNA
+RF00702	0035068	micro-ribonucleoprotein complex
+RF00702	0035195	gene silencing by miRNA
+RF00703	0035068	micro-ribonucleoprotein complex
+RF00703	0035195	gene silencing by miRNA
+RF00704	0035068	micro-ribonucleoprotein complex
+RF00704	0035195	gene silencing by miRNA
+RF00705	0035068	micro-ribonucleoprotein complex
+RF00705	0035195	gene silencing by miRNA
+RF00706	0035068	micro-ribonucleoprotein complex
+RF00706	0035195	gene silencing by miRNA
+RF00707	0035068	micro-ribonucleoprotein complex
+RF00707	0035195	gene silencing by miRNA
+RF00708	0035068	micro-ribonucleoprotein complex
+RF00708	0035195	gene silencing by miRNA
+RF00709	0035068	micro-ribonucleoprotein complex
+RF00709	0035195	gene silencing by miRNA
+RF00711	0035068	micro-ribonucleoprotein complex
+RF00711	0035195	gene silencing by miRNA
+RF00712	0035068	micro-ribonucleoprotein complex
+RF00712	0035195	gene silencing by miRNA
+RF00713	0035068	micro-ribonucleoprotein complex
+RF00713	0035195	gene silencing by miRNA
+RF00715	0035068	micro-ribonucleoprotein complex
+RF00715	0035195	gene silencing by miRNA
+RF00716	0035068	micro-ribonucleoprotein complex
+RF00716	0035195	gene silencing by miRNA
+RF00717	0035068	micro-ribonucleoprotein complex
+RF00717	0035195	gene silencing by miRNA
+RF00718	0035068	micro-ribonucleoprotein complex
+RF00718	0035195	gene silencing by miRNA
+RF00719	0035068	micro-ribonucleoprotein complex
+RF00719	0035195	gene silencing by miRNA
+RF00720	0035068	micro-ribonucleoprotein complex
+RF00720	0035195	gene silencing by miRNA
+RF00721	0035068	micro-ribonucleoprotein complex
+RF00721	0035195	gene silencing by miRNA
+RF00722	0035068	micro-ribonucleoprotein complex
+RF00722	0035195	gene silencing by miRNA
+RF00723	0035068	micro-ribonucleoprotein complex
+RF00723	0035195	gene silencing by miRNA
+RF00724	0035068	micro-ribonucleoprotein complex
+RF00724	0035195	gene silencing by miRNA
+RF00725	0035068	micro-ribonucleoprotein complex
+RF00725	0035195	gene silencing by miRNA
+RF00726	0035068	micro-ribonucleoprotein complex
+RF00726	0035195	gene silencing by miRNA
+RF00727	0035068	micro-ribonucleoprotein complex
+RF00727	0035195	gene silencing by miRNA
+RF00728	0035068	micro-ribonucleoprotein complex
+RF00728	0035195	gene silencing by miRNA
+RF00729	0035068	micro-ribonucleoprotein complex
+RF00729	0035195	gene silencing by miRNA
+RF00730	0035068	micro-ribonucleoprotein complex
+RF00730	0035195	gene silencing by miRNA
+RF00731	0035068	micro-ribonucleoprotein complex
+RF00731	0035195	gene silencing by miRNA
+RF00732	0035068	micro-ribonucleoprotein complex
+RF00732	0035195	gene silencing by miRNA
+RF00733	0035068	micro-ribonucleoprotein complex
+RF00733	0035195	gene silencing by miRNA
+RF00734	0035068	micro-ribonucleoprotein complex
+RF00734	0035195	gene silencing by miRNA
+RF00735	0035068	micro-ribonucleoprotein complex
+RF00735	0035195	gene silencing by miRNA
+RF00736	0035068	micro-ribonucleoprotein complex
+RF00736	0035195	gene silencing by miRNA
+RF00737	0035068	micro-ribonucleoprotein complex
+RF00737	0035195	gene silencing by miRNA
+RF00739	0035068	micro-ribonucleoprotein complex
+RF00739	0035195	gene silencing by miRNA
+RF00740	0035068	micro-ribonucleoprotein complex
+RF00740	0035195	gene silencing by miRNA
+RF00741	0035068	micro-ribonucleoprotein complex
+RF00741	0035195	gene silencing by miRNA
+RF00742	0035068	micro-ribonucleoprotein complex
+RF00742	0035195	gene silencing by miRNA
+RF00743	0035068	micro-ribonucleoprotein complex
+RF00743	0035195	gene silencing by miRNA
+RF00744	0035068	micro-ribonucleoprotein complex
+RF00744	0035195	gene silencing by miRNA
+RF00745	0035068	micro-ribonucleoprotein complex
+RF00745	0035195	gene silencing by miRNA
+RF00746	0035068	micro-ribonucleoprotein complex
+RF00746	0035195	gene silencing by miRNA
+RF00747	0035068	micro-ribonucleoprotein complex
+RF00747	0035195	gene silencing by miRNA
+RF00748	0035068	micro-ribonucleoprotein complex
+RF00748	0035195	gene silencing by miRNA
+RF00749	0035068	micro-ribonucleoprotein complex
+RF00749	0035195	gene silencing by miRNA
+RF00750	0035068	micro-ribonucleoprotein complex
+RF00750	0035195	gene silencing by miRNA
+RF00751	0035068	micro-ribonucleoprotein complex
+RF00751	0035195	gene silencing by miRNA
+RF00752	0035068	micro-ribonucleoprotein complex
+RF00752	0035195	gene silencing by miRNA
+RF00753	0035068	micro-ribonucleoprotein complex
+RF00753	0035195	gene silencing by miRNA
+RF00754	0035068	micro-ribonucleoprotein complex
+RF00754	0035195	gene silencing by miRNA
+RF00755	0035068	micro-ribonucleoprotein complex
+RF00755	0035195	gene silencing by miRNA
+RF00756	0035068	micro-ribonucleoprotein complex
+RF00756	0035195	gene silencing by miRNA
+RF00757	0035068	micro-ribonucleoprotein complex
+RF00757	0035195	gene silencing by miRNA
+RF00758	0035068	micro-ribonucleoprotein complex
+RF00758	0035195	gene silencing by miRNA
+RF00760	0035068	micro-ribonucleoprotein complex
+RF00760	0035195	gene silencing by miRNA
+RF00761	0035068	micro-ribonucleoprotein complex
+RF00761	0035195	gene silencing by miRNA
+RF00762	0035068	micro-ribonucleoprotein complex
+RF00762	0035195	gene silencing by miRNA
+RF00763	0035068	micro-ribonucleoprotein complex
+RF00763	0035195	gene silencing by miRNA
+RF00764	0035068	micro-ribonucleoprotein complex
+RF00764	0035195	gene silencing by miRNA
+RF00765	0035068	micro-ribonucleoprotein complex
+RF00765	0035195	gene silencing by miRNA
+RF00766	0035068	micro-ribonucleoprotein complex
+RF00766	0035195	gene silencing by miRNA
+RF00767	0035068	micro-ribonucleoprotein complex
+RF00767	0035195	gene silencing by miRNA
+RF00768	0035068	micro-ribonucleoprotein complex
+RF00768	0035195	gene silencing by miRNA
+RF00769	0035068	micro-ribonucleoprotein complex
+RF00769	0035195	gene silencing by miRNA
+RF00770	0035068	micro-ribonucleoprotein complex
+RF00770	0035195	gene silencing by miRNA
+RF00771	0035068	micro-ribonucleoprotein complex
+RF00771	0035195	gene silencing by miRNA
+RF00772	0035068	micro-ribonucleoprotein complex
+RF00772	0035195	gene silencing by miRNA
+RF00773	0035068	micro-ribonucleoprotein complex
+RF00773	0035195	gene silencing by miRNA
+RF00774	0035068	micro-ribonucleoprotein complex
+RF00774	0035195	gene silencing by miRNA
+RF00775	0035068	micro-ribonucleoprotein complex
+RF00775	0035195	gene silencing by miRNA
+RF00776	0035068	micro-ribonucleoprotein complex
+RF00776	0035195	gene silencing by miRNA
+RF00777	0035068	micro-ribonucleoprotein complex
+RF00777	0035195	gene silencing by miRNA
+RF00778	0035068	micro-ribonucleoprotein complex
+RF00778	0035195	gene silencing by miRNA
+RF00779	0035068	micro-ribonucleoprotein complex
+RF00779	0035195	gene silencing by miRNA
+RF00780	0035068	micro-ribonucleoprotein complex
+RF00780	0035195	gene silencing by miRNA
+RF00781	0035068	micro-ribonucleoprotein complex
+RF00781	0035195	gene silencing by miRNA
+RF00782	0035068	micro-ribonucleoprotein complex
+RF00782	0035195	gene silencing by miRNA
+RF00783	0035068	micro-ribonucleoprotein complex
+RF00783	0035195	gene silencing by miRNA
+RF00784	0035068	micro-ribonucleoprotein complex
+RF00784	0035195	gene silencing by miRNA
+RF00785	0035068	micro-ribonucleoprotein complex
+RF00785	0035195	gene silencing by miRNA
+RF00786	0035068	micro-ribonucleoprotein complex
+RF00786	0035195	gene silencing by miRNA
+RF00787	0035068	micro-ribonucleoprotein complex
+RF00787	0035195	gene silencing by miRNA
+RF00788	0035068	micro-ribonucleoprotein complex
+RF00788	0035195	gene silencing by miRNA
+RF00789	0035068	micro-ribonucleoprotein complex
+RF00789	0035195	gene silencing by miRNA
+RF00790	0035068	micro-ribonucleoprotein complex
+RF00790	0035195	gene silencing by miRNA
+RF00792	0035068	micro-ribonucleoprotein complex
+RF00792	0035195	gene silencing by miRNA
+RF00793	0035068	micro-ribonucleoprotein complex
+RF00793	0035195	gene silencing by miRNA
+RF00794	0035068	micro-ribonucleoprotein complex
+RF00794	0035195	gene silencing by miRNA
+RF00795	0035068	micro-ribonucleoprotein complex
+RF00795	0035195	gene silencing by miRNA
+RF00796	0035068	micro-ribonucleoprotein complex
+RF00796	0035195	gene silencing by miRNA
+RF00797	0035068	micro-ribonucleoprotein complex
+RF00797	0035195	gene silencing by miRNA
+RF00798	0035068	micro-ribonucleoprotein complex
+RF00798	0035195	gene silencing by miRNA
+RF00799	0035068	micro-ribonucleoprotein complex
+RF00799	0035195	gene silencing by miRNA
+RF00800	0035068	micro-ribonucleoprotein complex
+RF00800	0035195	gene silencing by miRNA
+RF00801	0035068	micro-ribonucleoprotein complex
+RF00801	0035195	gene silencing by miRNA
+RF00802	0035068	micro-ribonucleoprotein complex
+RF00802	0035195	gene silencing by miRNA
+RF00803	0035068	micro-ribonucleoprotein complex
+RF00803	0035195	gene silencing by miRNA
+RF00804	0035068	micro-ribonucleoprotein complex
+RF00804	0035195	gene silencing by miRNA
+RF00805	0035068	micro-ribonucleoprotein complex
+RF00805	0035195	gene silencing by miRNA
+RF00806	0035068	micro-ribonucleoprotein complex
+RF00806	0035195	gene silencing by miRNA
+RF00807	0035068	micro-ribonucleoprotein complex
+RF00807	0035195	gene silencing by miRNA
+RF00808	0035068	micro-ribonucleoprotein complex
+RF00808	0035195	gene silencing by miRNA
+RF00809	0035068	micro-ribonucleoprotein complex
+RF00809	0035195	gene silencing by miRNA
+RF00810	0035068	micro-ribonucleoprotein complex
+RF00810	0035195	gene silencing by miRNA
+RF00811	0035068	micro-ribonucleoprotein complex
+RF00811	0035195	gene silencing by miRNA
+RF00812	0035068	micro-ribonucleoprotein complex
+RF00812	0035195	gene silencing by miRNA
+RF00813	0035068	micro-ribonucleoprotein complex
+RF00813	0035195	gene silencing by miRNA
+RF00814	0035068	micro-ribonucleoprotein complex
+RF00814	0035195	gene silencing by miRNA
+RF00815	0035068	micro-ribonucleoprotein complex
+RF00815	0035195	gene silencing by miRNA
+RF00816	0035068	micro-ribonucleoprotein complex
+RF00816	0035195	gene silencing by miRNA
+RF00817	0035068	micro-ribonucleoprotein complex
+RF00817	0035195	gene silencing by miRNA
+RF00818	0035068	micro-ribonucleoprotein complex
+RF00818	0035195	gene silencing by miRNA
+RF00820	0035068	micro-ribonucleoprotein complex
+RF00820	0035195	gene silencing by miRNA
+RF00821	0035068	micro-ribonucleoprotein complex
+RF00821	0035195	gene silencing by miRNA
+RF00822	0035068	micro-ribonucleoprotein complex
+RF00822	0035195	gene silencing by miRNA
+RF00823	0035068	micro-ribonucleoprotein complex
+RF00823	0035195	gene silencing by miRNA
+RF00824	0035068	micro-ribonucleoprotein complex
+RF00824	0035195	gene silencing by miRNA
+RF00825	0035068	micro-ribonucleoprotein complex
+RF00825	0035195	gene silencing by miRNA
+RF00826	0035068	micro-ribonucleoprotein complex
+RF00826	0035195	gene silencing by miRNA
+RF00828	0035068	micro-ribonucleoprotein complex
+RF00828	0035195	gene silencing by miRNA
+RF00829	0035068	micro-ribonucleoprotein complex
+RF00829	0035195	gene silencing by miRNA
+RF00830	0035068	micro-ribonucleoprotein complex
+RF00830	0035195	gene silencing by miRNA
+RF00831	0035068	micro-ribonucleoprotein complex
+RF00831	0035195	gene silencing by miRNA
+RF00832	0035068	micro-ribonucleoprotein complex
+RF00832	0035195	gene silencing by miRNA
+RF00833	0035068	micro-ribonucleoprotein complex
+RF00833	0035195	gene silencing by miRNA
+RF00834	0035068	micro-ribonucleoprotein complex
+RF00834	0035195	gene silencing by miRNA
+RF00835	0035068	micro-ribonucleoprotein complex
+RF00835	0035195	gene silencing by miRNA
+RF00836	0035068	micro-ribonucleoprotein complex
+RF00836	0035195	gene silencing by miRNA
+RF00837	0035068	micro-ribonucleoprotein complex
+RF00837	0035195	gene silencing by miRNA
+RF00838	0035068	micro-ribonucleoprotein complex
+RF00838	0035195	gene silencing by miRNA
+RF00839	0035068	micro-ribonucleoprotein complex
+RF00839	0035195	gene silencing by miRNA
+RF00840	0035068	micro-ribonucleoprotein complex
+RF00840	0035195	gene silencing by miRNA
+RF00841	0035068	micro-ribonucleoprotein complex
+RF00841	0035195	gene silencing by miRNA
+RF00842	0035068	micro-ribonucleoprotein complex
+RF00842	0035195	gene silencing by miRNA
+RF00844	0035068	micro-ribonucleoprotein complex
+RF00844	0035195	gene silencing by miRNA
+RF00845	0035068	micro-ribonucleoprotein complex
+RF00845	0035195	gene silencing by miRNA
+RF00846	0035068	micro-ribonucleoprotein complex
+RF00846	0035195	gene silencing by miRNA
+RF00847	0035068	micro-ribonucleoprotein complex
+RF00847	0035195	gene silencing by miRNA
+RF00848	0035068	micro-ribonucleoprotein complex
+RF00848	0035195	gene silencing by miRNA
+RF00849	0035068	micro-ribonucleoprotein complex
+RF00849	0035195	gene silencing by miRNA
+RF00850	0035068	micro-ribonucleoprotein complex
+RF00850	0035195	gene silencing by miRNA
+RF00851	0035068	micro-ribonucleoprotein complex
+RF00851	0035195	gene silencing by miRNA
+RF00852	0035068	micro-ribonucleoprotein complex
+RF00852	0035195	gene silencing by miRNA
+RF00853	0035068	micro-ribonucleoprotein complex
+RF00853	0035195	gene silencing by miRNA
+RF00854	0035068	micro-ribonucleoprotein complex
+RF00854	0035195	gene silencing by miRNA
+RF00856	0035068	micro-ribonucleoprotein complex
+RF00856	0035195	gene silencing by miRNA
+RF00857	0035068	micro-ribonucleoprotein complex
+RF00857	0035195	gene silencing by miRNA
+RF00858	0035068	micro-ribonucleoprotein complex
+RF00858	0035195	gene silencing by miRNA
+RF00859	0035068	micro-ribonucleoprotein complex
+RF00859	0035195	gene silencing by miRNA
+RF00861	0035068	micro-ribonucleoprotein complex
+RF00861	0035195	gene silencing by miRNA
+RF00862	0035068	micro-ribonucleoprotein complex
+RF00862	0035195	gene silencing by miRNA
+RF00863	0035068	micro-ribonucleoprotein complex
+RF00863	0035195	gene silencing by miRNA
+RF00864	0035068	micro-ribonucleoprotein complex
+RF00864	0035195	gene silencing by miRNA
+RF00865	0035068	micro-ribonucleoprotein complex
+RF00865	0035195	gene silencing by miRNA
+RF00866	0035068	micro-ribonucleoprotein complex
+RF00866	0035195	gene silencing by miRNA
+RF00867	0035068	micro-ribonucleoprotein complex
+RF00867	0035195	gene silencing by miRNA
+RF00868	0035068	micro-ribonucleoprotein complex
+RF00868	0035195	gene silencing by miRNA
+RF00869	0035068	micro-ribonucleoprotein complex
+RF00869	0035195	gene silencing by miRNA
+RF00870	0035068	micro-ribonucleoprotein complex
+RF00870	0035195	gene silencing by miRNA
+RF00871	0035068	micro-ribonucleoprotein complex
+RF00871	0035195	gene silencing by miRNA
+RF00872	0035068	micro-ribonucleoprotein complex
+RF00872	0035195	gene silencing by miRNA
+RF00873	0035068	micro-ribonucleoprotein complex
+RF00873	0035195	gene silencing by miRNA
+RF00874	0035068	micro-ribonucleoprotein complex
+RF00874	0035195	gene silencing by miRNA
+RF00875	0035068	micro-ribonucleoprotein complex
+RF00875	0035195	gene silencing by miRNA
+RF00876	0035068	micro-ribonucleoprotein complex
+RF00876	0035195	gene silencing by miRNA
+RF00877	0035068	micro-ribonucleoprotein complex
+RF00877	0035195	gene silencing by miRNA
+RF00878	0035068	micro-ribonucleoprotein complex
+RF00878	0035195	gene silencing by miRNA
+RF00879	0035068	micro-ribonucleoprotein complex
+RF00879	0035195	gene silencing by miRNA
+RF00882	0035068	micro-ribonucleoprotein complex
+RF00882	0035195	gene silencing by miRNA
+RF00883	0035068	micro-ribonucleoprotein complex
+RF00883	0035195	gene silencing by miRNA
+RF00884	0035068	micro-ribonucleoprotein complex
+RF00884	0035195	gene silencing by miRNA
+RF00885	0035068	micro-ribonucleoprotein complex
+RF00885	0035195	gene silencing by miRNA
+RF00886	0035068	micro-ribonucleoprotein complex
+RF00886	0035195	gene silencing by miRNA
+RF00887	0035068	micro-ribonucleoprotein complex
+RF00887	0035195	gene silencing by miRNA
+RF00890	0035068	micro-ribonucleoprotein complex
+RF00890	0035195	gene silencing by miRNA
+RF00892	0035068	micro-ribonucleoprotein complex
+RF00892	0035195	gene silencing by miRNA
+RF00893	0035068	micro-ribonucleoprotein complex
+RF00893	0035195	gene silencing by miRNA
+RF00894	0035068	micro-ribonucleoprotein complex
+RF00894	0035195	gene silencing by miRNA
+RF00895	0035068	micro-ribonucleoprotein complex
+RF00895	0035195	gene silencing by miRNA
+RF00896	0035068	micro-ribonucleoprotein complex
+RF00896	0035195	gene silencing by miRNA
+RF00897	0035068	micro-ribonucleoprotein complex
+RF00897	0035195	gene silencing by miRNA
+RF00898	0035068	micro-ribonucleoprotein complex
+RF00898	0035195	gene silencing by miRNA
+RF00899	0035068	micro-ribonucleoprotein complex
+RF00899	0035195	gene silencing by miRNA
+RF00900	0035068	micro-ribonucleoprotein complex
+RF00900	0035195	gene silencing by miRNA
+RF00901	0035068	micro-ribonucleoprotein complex
+RF00901	0035195	gene silencing by miRNA
+RF00902	0035068	micro-ribonucleoprotein complex
+RF00902	0035195	gene silencing by miRNA
+RF00903	0035068	micro-ribonucleoprotein complex
+RF00903	0035195	gene silencing by miRNA
+RF00904	0035068	micro-ribonucleoprotein complex
+RF00904	0035195	gene silencing by miRNA
+RF00905	0035068	micro-ribonucleoprotein complex
+RF00905	0035195	gene silencing by miRNA
+RF00906	0035068	micro-ribonucleoprotein complex
+RF00906	0035195	gene silencing by miRNA
+RF00907	0035068	micro-ribonucleoprotein complex
+RF00907	0035195	gene silencing by miRNA
+RF00908	0035068	micro-ribonucleoprotein complex
+RF00908	0035195	gene silencing by miRNA
+RF00909	0035068	micro-ribonucleoprotein complex
+RF00909	0035195	gene silencing by miRNA
+RF00910	0035068	micro-ribonucleoprotein complex
+RF00910	0035195	gene silencing by miRNA
+RF00911	0035068	micro-ribonucleoprotein complex
+RF00911	0035195	gene silencing by miRNA
+RF00912	0035068	micro-ribonucleoprotein complex
+RF00912	0035195	gene silencing by miRNA
+RF00914	0035068	micro-ribonucleoprotein complex
+RF00914	0035195	gene silencing by miRNA
+RF00915	0035068	micro-ribonucleoprotein complex
+RF00915	0035195	gene silencing by miRNA
+RF00917	0035068	micro-ribonucleoprotein complex
+RF00917	0035195	gene silencing by miRNA
+RF00918	0035068	micro-ribonucleoprotein complex
+RF00918	0035195	gene silencing by miRNA
+RF00919	0035068	micro-ribonucleoprotein complex
+RF00919	0035195	gene silencing by miRNA
+RF00920	0035068	micro-ribonucleoprotein complex
+RF00920	0035195	gene silencing by miRNA
+RF00921	0035068	micro-ribonucleoprotein complex
+RF00921	0035195	gene silencing by miRNA
+RF00922	0035068	micro-ribonucleoprotein complex
+RF00922	0035195	gene silencing by miRNA
+RF00925	0035068	micro-ribonucleoprotein complex
+RF00925	0035195	gene silencing by miRNA
+RF00926	0035068	micro-ribonucleoprotein complex
+RF00926	0035195	gene silencing by miRNA
+RF00927	0035068	micro-ribonucleoprotein complex
+RF00927	0035195	gene silencing by miRNA
+RF00928	0035068	micro-ribonucleoprotein complex
+RF00928	0035195	gene silencing by miRNA
+RF00929	0035068	micro-ribonucleoprotein complex
+RF00929	0035195	gene silencing by miRNA
+RF00931	0035068	micro-ribonucleoprotein complex
+RF00931	0035195	gene silencing by miRNA
+RF00932	0035068	micro-ribonucleoprotein complex
+RF00932	0035195	gene silencing by miRNA
+RF00933	0035068	micro-ribonucleoprotein complex
+RF00933	0035195	gene silencing by miRNA
+RF00935	0035068	micro-ribonucleoprotein complex
+RF00935	0035195	gene silencing by miRNA
+RF00936	0035068	micro-ribonucleoprotein complex
+RF00936	0035195	gene silencing by miRNA
+RF00937	0035068	micro-ribonucleoprotein complex
+RF00937	0035195	gene silencing by miRNA
+RF00939	0035068	micro-ribonucleoprotein complex
+RF00939	0035195	gene silencing by miRNA
+RF00940	0035068	micro-ribonucleoprotein complex
+RF00940	0035195	gene silencing by miRNA
+RF00941	0035068	micro-ribonucleoprotein complex
+RF00941	0035195	gene silencing by miRNA
+RF00942	0035068	micro-ribonucleoprotein complex
+RF00942	0035195	gene silencing by miRNA
+RF00943	0035068	micro-ribonucleoprotein complex
+RF00943	0035195	gene silencing by miRNA
+RF00945	0035068	micro-ribonucleoprotein complex
+RF00945	0035195	gene silencing by miRNA
+RF00946	0035068	micro-ribonucleoprotein complex
+RF00946	0035195	gene silencing by miRNA
+RF00947	0035068	micro-ribonucleoprotein complex
+RF00947	0035195	gene silencing by miRNA
+RF00948	0035068	micro-ribonucleoprotein complex
+RF00948	0035195	gene silencing by miRNA
+RF00949	0035068	micro-ribonucleoprotein complex
+RF00949	0035195	gene silencing by miRNA
+RF00950	0035068	micro-ribonucleoprotein complex
+RF00950	0035195	gene silencing by miRNA
+RF00951	0035068	micro-ribonucleoprotein complex
+RF00951	0035195	gene silencing by miRNA
+RF00952	0035068	micro-ribonucleoprotein complex
+RF00952	0035195	gene silencing by miRNA
+RF00953	0035068	micro-ribonucleoprotein complex
+RF00953	0035195	gene silencing by miRNA
+RF00954	0035068	micro-ribonucleoprotein complex
+RF00954	0035195	gene silencing by miRNA
+RF00955	0035068	micro-ribonucleoprotein complex
+RF00955	0035195	gene silencing by miRNA
+RF00956	0035068	micro-ribonucleoprotein complex
+RF00956	0035195	gene silencing by miRNA
+RF00957	0035068	micro-ribonucleoprotein complex
+RF00957	0035195	gene silencing by miRNA
+RF00958	0035068	micro-ribonucleoprotein complex
+RF00958	0035195	gene silencing by miRNA
+RF00959	0035068	micro-ribonucleoprotein complex
+RF00959	0035195	gene silencing by miRNA
+RF00960	0035068	micro-ribonucleoprotein complex
+RF00960	0035195	gene silencing by miRNA
+RF00961	0035068	micro-ribonucleoprotein complex
+RF00961	0035195	gene silencing by miRNA
+RF00962	0035068	micro-ribonucleoprotein complex
+RF00962	0035195	gene silencing by miRNA
+RF00963	0035068	micro-ribonucleoprotein complex
+RF00963	0035195	gene silencing by miRNA
+RF00964	0035068	micro-ribonucleoprotein complex
+RF00964	0035195	gene silencing by miRNA
+RF00965	0035068	micro-ribonucleoprotein complex
+RF00965	0035195	gene silencing by miRNA
+RF00966	0035068	micro-ribonucleoprotein complex
+RF00966	0035195	gene silencing by miRNA
+RF00967	0035068	micro-ribonucleoprotein complex
+RF00967	0035195	gene silencing by miRNA
+RF00968	0035068	micro-ribonucleoprotein complex
+RF00968	0035195	gene silencing by miRNA
+RF00970	0035068	micro-ribonucleoprotein complex
+RF00970	0035195	gene silencing by miRNA
+RF00971	0035068	micro-ribonucleoprotein complex
+RF00971	0035195	gene silencing by miRNA
+RF00972	0035068	micro-ribonucleoprotein complex
+RF00972	0035195	gene silencing by miRNA
+RF00973	0035068	micro-ribonucleoprotein complex
+RF00973	0035195	gene silencing by miRNA
+RF00974	0035068	micro-ribonucleoprotein complex
+RF00974	0035195	gene silencing by miRNA
+RF00975	0035068	micro-ribonucleoprotein complex
+RF00975	0035195	gene silencing by miRNA
+RF00976	0035068	micro-ribonucleoprotein complex
+RF00976	0035195	gene silencing by miRNA
+RF00977	0035068	micro-ribonucleoprotein complex
+RF00977	0035195	gene silencing by miRNA
+RF00978	0035068	micro-ribonucleoprotein complex
+RF00978	0035195	gene silencing by miRNA
+RF00979	0035068	micro-ribonucleoprotein complex
+RF00979	0035195	gene silencing by miRNA
+RF00980	0035068	micro-ribonucleoprotein complex
+RF00980	0035195	gene silencing by miRNA
+RF00981	0035068	micro-ribonucleoprotein complex
+RF00981	0035195	gene silencing by miRNA
+RF00983	0035068	micro-ribonucleoprotein complex
+RF00983	0035195	gene silencing by miRNA
+RF00984	0035068	micro-ribonucleoprotein complex
+RF00984	0035195	gene silencing by miRNA
+RF00985	0035068	micro-ribonucleoprotein complex
+RF00985	0035195	gene silencing by miRNA
+RF00986	0035068	micro-ribonucleoprotein complex
+RF00986	0035195	gene silencing by miRNA
+RF00987	0035068	micro-ribonucleoprotein complex
+RF00987	0035195	gene silencing by miRNA
+RF00988	0035068	micro-ribonucleoprotein complex
+RF00988	0035195	gene silencing by miRNA
+RF00989	0035068	micro-ribonucleoprotein complex
+RF00989	0035195	gene silencing by miRNA
+RF00990	0035068	micro-ribonucleoprotein complex
+RF00990	0035195	gene silencing by miRNA
+RF00991	0035068	micro-ribonucleoprotein complex
+RF00991	0035195	gene silencing by miRNA
+RF00992	0035068	micro-ribonucleoprotein complex
+RF00992	0035195	gene silencing by miRNA
+RF00993	0035068	micro-ribonucleoprotein complex
+RF00993	0035195	gene silencing by miRNA
+RF00994	0035068	micro-ribonucleoprotein complex
+RF00994	0035195	gene silencing by miRNA
+RF00995	0035068	micro-ribonucleoprotein complex
+RF00995	0035195	gene silencing by miRNA
+RF00996	0035068	micro-ribonucleoprotein complex
+RF00996	0035195	gene silencing by miRNA
+RF00997	0035068	micro-ribonucleoprotein complex
+RF00997	0035195	gene silencing by miRNA
+RF00998	0035068	micro-ribonucleoprotein complex
+RF00998	0035195	gene silencing by miRNA
+RF00999	0035068	micro-ribonucleoprotein complex
+RF00999	0035195	gene silencing by miRNA
+RF01000	0035068	micro-ribonucleoprotein complex
+RF01000	0035195	gene silencing by miRNA
+RF01001	0035068	micro-ribonucleoprotein complex
+RF01001	0035195	gene silencing by miRNA
+RF01002	0035068	micro-ribonucleoprotein complex
+RF01002	0035195	gene silencing by miRNA
+RF01003	0035068	micro-ribonucleoprotein complex
+RF01003	0035195	gene silencing by miRNA
+RF01004	0035068	micro-ribonucleoprotein complex
+RF01004	0035195	gene silencing by miRNA
+RF01005	0035068	micro-ribonucleoprotein complex
+RF01005	0035195	gene silencing by miRNA
+RF01006	0035068	micro-ribonucleoprotein complex
+RF01006	0035195	gene silencing by miRNA
+RF01007	0035068	micro-ribonucleoprotein complex
+RF01007	0035195	gene silencing by miRNA
+RF01008	0035068	micro-ribonucleoprotein complex
+RF01008	0035195	gene silencing by miRNA
+RF01009	0035068	micro-ribonucleoprotein complex
+RF01009	0035195	gene silencing by miRNA
+RF01010	0035068	micro-ribonucleoprotein complex
+RF01010	0035195	gene silencing by miRNA
+RF01011	0035068	micro-ribonucleoprotein complex
+RF01011	0035195	gene silencing by miRNA
+RF01012	0035068	micro-ribonucleoprotein complex
+RF01012	0035195	gene silencing by miRNA
+RF01013	0035068	micro-ribonucleoprotein complex
+RF01013	0035195	gene silencing by miRNA
+RF01014	0035068	micro-ribonucleoprotein complex
+RF01014	0035195	gene silencing by miRNA
+RF01015	0035068	micro-ribonucleoprotein complex
+RF01015	0035195	gene silencing by miRNA
+RF01016	0035068	micro-ribonucleoprotein complex
+RF01016	0035195	gene silencing by miRNA
+RF01018	0035068	micro-ribonucleoprotein complex
+RF01018	0035195	gene silencing by miRNA
+RF01019	0035068	micro-ribonucleoprotein complex
+RF01019	0035195	gene silencing by miRNA
+RF01021	0035068	micro-ribonucleoprotein complex
+RF01021	0035195	gene silencing by miRNA
+RF01022	0035068	micro-ribonucleoprotein complex
+RF01022	0035195	gene silencing by miRNA
+RF01023	0035068	micro-ribonucleoprotein complex
+RF01023	0035195	gene silencing by miRNA
+RF01024	0035068	micro-ribonucleoprotein complex
+RF01024	0035195	gene silencing by miRNA
+RF01025	0035068	micro-ribonucleoprotein complex
+RF01025	0035195	gene silencing by miRNA
+RF01026	0035068	micro-ribonucleoprotein complex
+RF01026	0035195	gene silencing by miRNA
+RF01027	0035068	micro-ribonucleoprotein complex
+RF01027	0035195	gene silencing by miRNA
+RF01028	0035068	micro-ribonucleoprotein complex
+RF01028	0035195	gene silencing by miRNA
+RF01029	0035068	micro-ribonucleoprotein complex
+RF01029	0035195	gene silencing by miRNA
+RF01030	0035068	micro-ribonucleoprotein complex
+RF01030	0035195	gene silencing by miRNA
+RF01031	0035068	micro-ribonucleoprotein complex
+RF01031	0035195	gene silencing by miRNA
+RF01032	0035068	micro-ribonucleoprotein complex
+RF01032	0035195	gene silencing by miRNA
+RF01033	0035068	micro-ribonucleoprotein complex
+RF01033	0035195	gene silencing by miRNA
+RF01034	0035068	micro-ribonucleoprotein complex
+RF01034	0035195	gene silencing by miRNA
+RF01035	0035068	micro-ribonucleoprotein complex
+RF01035	0035195	gene silencing by miRNA
+RF01036	0035068	micro-ribonucleoprotein complex
+RF01036	0035195	gene silencing by miRNA
+RF01037	0035068	micro-ribonucleoprotein complex
+RF01037	0035195	gene silencing by miRNA
+RF01038	0035068	micro-ribonucleoprotein complex
+RF01038	0035195	gene silencing by miRNA
+RF01039	0035068	micro-ribonucleoprotein complex
+RF01039	0035195	gene silencing by miRNA
+RF01040	0035068	micro-ribonucleoprotein complex
+RF01040	0035195	gene silencing by miRNA
+RF01041	0035068	micro-ribonucleoprotein complex
+RF01041	0035195	gene silencing by miRNA
+RF01042	0035068	micro-ribonucleoprotein complex
+RF01042	0035195	gene silencing by miRNA
+RF01043	0035068	micro-ribonucleoprotein complex
+RF01043	0035195	gene silencing by miRNA
+RF01044	0035068	micro-ribonucleoprotein complex
+RF01044	0035195	gene silencing by miRNA
+RF01045	0035068	micro-ribonucleoprotein complex
+RF01045	0035195	gene silencing by miRNA
+RF01047	0019079	viral genome replication
+RF01054	0008616	queuosine biosynthetic process
+RF01055	0048037	cofactor binding
+RF01059	0035068	micro-ribonucleoprotein complex
+RF01059	0035195	gene silencing by miRNA
+RF01061	0035068	micro-ribonucleoprotein complex
+RF01061	0035195	gene silencing by miRNA
+RF01064	0035068	micro-ribonucleoprotein complex
+RF01064	0035195	gene silencing by miRNA
+RF01117	0035068	micro-ribonucleoprotein complex
+RF01117	0035195	gene silencing by miRNA
+RF01119	0006396	RNA processing
+RF01119	0005730	nucleolus
+RF01120	0006396	RNA processing
+RF01120	0005730	nucleolus
+RF01121	0006396	RNA processing
+RF01121	0005730	nucleolus
+RF01122	0006396	RNA processing
+RF01122	0005730	nucleolus
+RF01123	0006396	RNA processing
+RF01123	0005730	nucleolus
+RF01124	0006396	RNA processing
+RF01124	0005730	nucleolus
+RF01125	0006396	RNA processing
+RF01125	0005730	nucleolus
+RF01126	0006396	RNA processing
+RF01126	0005730	nucleolus
+RF01127	0006396	RNA processing
+RF01127	0005730	nucleolus
+RF01128	0006396	RNA processing
+RF01128	0005730	nucleolus
+RF01129	0006396	RNA processing
+RF01129	0005730	nucleolus
+RF01130	0006396	RNA processing
+RF01130	0005730	nucleolus
+RF01131	0006396	RNA processing
+RF01131	0005730	nucleolus
+RF01132	0006396	RNA processing
+RF01132	0005730	nucleolus
+RF01133	0006396	RNA processing
+RF01133	0005730	nucleolus
+RF01134	0006396	RNA processing
+RF01134	0005730	nucleolus
+RF01135	0006396	RNA processing
+RF01135	0005730	nucleolus
+RF01136	0006396	RNA processing
+RF01136	0005730	nucleolus
+RF01137	0006396	RNA processing
+RF01137	0005730	nucleolus
+RF01138	0006396	RNA processing
+RF01138	0005730	nucleolus
+RF01139	0006396	RNA processing
+RF01139	0005730	nucleolus
+RF01140	0006396	RNA processing
+RF01140	0005730	nucleolus
+RF01141	0006396	RNA processing
+RF01141	0005730	nucleolus
+RF01142	0006396	RNA processing
+RF01142	0005730	nucleolus
+RF01143	0006396	RNA processing
+RF01143	0005730	nucleolus
+RF01144	0006396	RNA processing
+RF01144	0005730	nucleolus
+RF01145	0006396	RNA processing
+RF01145	0005730	nucleolus
+RF01146	0006396	RNA processing
+RF01146	0005730	nucleolus
+RF01147	0006396	RNA processing
+RF01147	0005730	nucleolus
+RF01149	0006396	RNA processing
+RF01149	0005730	nucleolus
+RF01150	0006396	RNA processing
+RF01150	0005730	nucleolus
+RF01151	0006396	RNA processing
+RF01151	0005730	nucleolus
+RF01152	0006396	RNA processing
+RF01152	0005730	nucleolus
+RF01153	0006396	RNA processing
+RF01153	0005730	nucleolus
+RF01155	0006396	RNA processing
+RF01155	0005730	nucleolus
+RF01156	0006396	RNA processing
+RF01156	0005730	nucleolus
+RF01157	0006396	RNA processing
+RF01157	0005730	nucleolus
+RF01158	0006396	RNA processing
+RF01158	0005730	nucleolus
+RF01160	0006396	RNA processing
+RF01160	0005730	nucleolus
+RF01161	0006396	RNA processing
+RF01161	0005730	nucleolus
+RF01162	0006396	RNA processing
+RF01162	0005730	nucleolus
+RF01163	0006396	RNA processing
+RF01163	0005730	nucleolus
+RF01164	0006396	RNA processing
+RF01164	0005730	nucleolus
+RF01166	0006396	RNA processing
+RF01166	0005730	nucleolus
+RF01167	0006396	RNA processing
+RF01167	0005730	nucleolus
+RF01168	0006396	RNA processing
+RF01168	0005730	nucleolus
+RF01169	0006396	RNA processing
+RF01169	0005730	nucleolus
+RF01170	0006396	RNA processing
+RF01170	0005730	nucleolus
+RF01171	0006396	RNA processing
+RF01171	0005730	nucleolus
+RF01172	0006396	RNA processing
+RF01172	0005730	nucleolus
+RF01173	0006396	RNA processing
+RF01173	0005730	nucleolus
+RF01174	0006396	RNA processing
+RF01174	0005730	nucleolus
+RF01175	0006396	RNA processing
+RF01175	0005730	nucleolus
+RF01176	0006396	RNA processing
+RF01176	0005730	nucleolus
+RF01177	0006396	RNA processing
+RF01177	0005730	nucleolus
+RF01178	0006396	RNA processing
+RF01178	0005730	nucleolus
+RF01180	0006396	RNA processing
+RF01180	0005730	nucleolus
+RF01181	0006396	RNA processing
+RF01181	0005730	nucleolus
+RF01182	0006396	RNA processing
+RF01182	0005730	nucleolus
+RF01183	0006396	RNA processing
+RF01183	0005730	nucleolus
+RF01184	0006396	RNA processing
+RF01184	0005730	nucleolus
+RF01185	0006396	RNA processing
+RF01185	0005730	nucleolus
+RF01186	0006396	RNA processing
+RF01186	0005730	nucleolus
+RF01188	0006396	RNA processing
+RF01188	0005730	nucleolus
+RF01189	0006396	RNA processing
+RF01189	0005730	nucleolus
+RF01190	0006396	RNA processing
+RF01190	0005730	nucleolus
+RF01191	0006396	RNA processing
+RF01191	0005730	nucleolus
+RF01192	0006396	RNA processing
+RF01192	0005730	nucleolus
+RF01193	0006396	RNA processing
+RF01193	0005730	nucleolus
+RF01194	0006396	RNA processing
+RF01194	0005730	nucleolus
+RF01195	0006396	RNA processing
+RF01195	0005730	nucleolus
+RF01196	0006396	RNA processing
+RF01196	0005730	nucleolus
+RF01197	0006396	RNA processing
+RF01197	0005730	nucleolus
+RF01198	0006396	RNA processing
+RF01198	0005730	nucleolus
+RF01199	0006396	RNA processing
+RF01199	0005730	nucleolus
+RF01200	0006396	RNA processing
+RF01200	0005730	nucleolus
+RF01201	0006396	RNA processing
+RF01201	0005730	nucleolus
+RF01202	0006396	RNA processing
+RF01202	0005730	nucleolus
+RF01203	0006396	RNA processing
+RF01203	0005730	nucleolus
+RF01204	0006396	RNA processing
+RF01204	0005730	nucleolus
+RF01205	0006396	RNA processing
+RF01205	0005730	nucleolus
+RF01206	0006396	RNA processing
+RF01206	0005730	nucleolus
+RF01207	0006396	RNA processing
+RF01207	0005730	nucleolus
+RF01208	0006396	RNA processing
+RF01208	0005730	nucleolus
+RF01209	0006396	RNA processing
+RF01209	0005730	nucleolus
+RF01210	0006396	RNA processing
+RF01210	0005730	nucleolus
+RF01211	0006396	RNA processing
+RF01211	0005730	nucleolus
+RF01212	0006396	RNA processing
+RF01212	0005730	nucleolus
+RF01213	0006396	RNA processing
+RF01213	0005730	nucleolus
+RF01214	0006396	RNA processing
+RF01214	0005730	nucleolus
+RF01216	0006396	RNA processing
+RF01216	0005730	nucleolus
+RF01219	0006396	RNA processing
+RF01219	0005730	nucleolus
+RF01220	0006396	RNA processing
+RF01220	0005730	nucleolus
+RF01221	0006396	RNA processing
+RF01221	0005730	nucleolus
+RF01222	0006396	RNA processing
+RF01222	0005730	nucleolus
+RF01223	0006396	RNA processing
+RF01223	0005730	nucleolus
+RF01224	0006396	RNA processing
+RF01224	0005730	nucleolus
+RF01225	0006396	RNA processing
+RF01225	0005730	nucleolus
+RF01227	0006396	RNA processing
+RF01227	0005730	nucleolus
+RF01228	0006396	RNA processing
+RF01228	0005730	nucleolus
+RF01229	0006396	RNA processing
+RF01229	0005730	nucleolus
+RF01230	0006396	RNA processing
+RF01230	0005730	nucleolus
+RF01231	0006396	RNA processing
+RF01231	0005730	nucleolus
+RF01232	0006396	RNA processing
+RF01232	0005730	nucleolus
+RF01233	0006396	RNA processing
+RF01233	0005730	nucleolus
+RF01234	0006396	RNA processing
+RF01234	0005730	nucleolus
+RF01235	0006396	RNA processing
+RF01235	0005730	nucleolus
+RF01236	0006396	RNA processing
+RF01236	0005730	nucleolus
+RF01237	0006396	RNA processing
+RF01237	0005730	nucleolus
+RF01238	0006396	RNA processing
+RF01238	0005730	nucleolus
+RF01240	0006396	RNA processing
+RF01240	0005730	nucleolus
+RF01241	0006396	RNA processing
+RF01241	0005730	nucleolus
+RF01242	0006396	RNA processing
+RF01242	0005730	nucleolus
+RF01243	0006396	RNA processing
+RF01243	0005730	nucleolus
+RF01244	0006396	RNA processing
+RF01244	0005730	nucleolus
+RF01245	0006396	RNA processing
+RF01245	0005730	nucleolus
+RF01246	0006396	RNA processing
+RF01246	0005730	nucleolus
+RF01247	0006396	RNA processing
+RF01247	0005730	nucleolus
+RF01248	0006396	RNA processing
+RF01248	0005730	nucleolus
+RF01249	0006396	RNA processing
+RF01249	0005730	nucleolus
+RF01250	0006396	RNA processing
+RF01250	0005730	nucleolus
+RF01251	0006396	RNA processing
+RF01251	0005730	nucleolus
+RF01252	0006396	RNA processing
+RF01252	0005730	nucleolus
+RF01253	0006396	RNA processing
+RF01253	0005730	nucleolus
+RF01254	0006396	RNA processing
+RF01254	0005730	nucleolus
+RF01255	0006396	RNA processing
+RF01255	0005730	nucleolus
+RF01256	0006396	RNA processing
+RF01256	0005730	nucleolus
+RF01257	0006396	RNA processing
+RF01257	0005730	nucleolus
+RF01258	0006396	RNA processing
+RF01258	0005730	nucleolus
+RF01259	0006396	RNA processing
+RF01259	0005730	nucleolus
+RF01260	0006396	RNA processing
+RF01260	0005730	nucleolus
+RF01261	0006396	RNA processing
+RF01261	0005730	nucleolus
+RF01262	0006396	RNA processing
+RF01262	0005730	nucleolus
+RF01263	0006396	RNA processing
+RF01263	0005730	nucleolus
+RF01264	0006396	RNA processing
+RF01264	0005730	nucleolus
+RF01265	0006396	RNA processing
+RF01265	0005730	nucleolus
+RF01266	0006396	RNA processing
+RF01266	0005730	nucleolus
+RF01267	0006396	RNA processing
+RF01267	0005730	nucleolus
+RF01268	0006396	RNA processing
+RF01268	0005730	nucleolus
+RF01269	0006396	RNA processing
+RF01269	0005730	nucleolus
+RF01270	0006396	RNA processing
+RF01270	0005730	nucleolus
+RF01271	0006396	RNA processing
+RF01271	0005730	nucleolus
+RF01272	0006396	RNA processing
+RF01272	0005730	nucleolus
+RF01273	0006396	RNA processing
+RF01273	0005730	nucleolus
+RF01274	0006396	RNA processing
+RF01274	0005730	nucleolus
+RF01275	0006396	RNA processing
+RF01275	0005730	nucleolus
+RF01276	0006396	RNA processing
+RF01276	0005730	nucleolus
+RF01277	0006396	RNA processing
+RF01277	0005730	nucleolus
+RF01278	0006396	RNA processing
+RF01278	0005730	nucleolus
+RF01279	0006396	RNA processing
+RF01279	0005730	nucleolus
+RF01280	0006396	RNA processing
+RF01280	0005730	nucleolus
+RF01281	0006396	RNA processing
+RF01281	0005730	nucleolus
+RF01283	0006396	RNA processing
+RF01283	0005730	nucleolus
+RF01284	0006396	RNA processing
+RF01284	0005730	nucleolus
+RF01285	0006396	RNA processing
+RF01285	0005730	nucleolus
+RF01286	0006396	RNA processing
+RF01286	0005730	nucleolus
+RF01287	0006396	RNA processing
+RF01287	0005730	nucleolus
+RF01288	0006396	RNA processing
+RF01288	0005730	nucleolus
+RF01289	0006396	RNA processing
+RF01289	0005730	nucleolus
+RF01290	0006396	RNA processing
+RF01290	0005730	nucleolus
+RF01291	0006396	RNA processing
+RF01291	0005730	nucleolus
+RF01292	0006396	RNA processing
+RF01292	0005730	nucleolus
+RF01293	0006396	RNA processing
+RF01293	0005730	nucleolus
+RF01294	0006396	RNA processing
+RF01294	0005730	nucleolus
+RF01295	0006396	RNA processing
+RF01295	0005730	nucleolus
+RF01296	0006396	RNA processing
+RF01296	0005730	nucleolus
+RF01297	0006396	RNA processing
+RF01297	0005730	nucleolus
+RF01298	0006396	RNA processing
+RF01298	0005730	nucleolus
+RF01299	0006396	RNA processing
+RF01299	0005730	nucleolus
+RF01300	0006396	RNA processing
+RF01300	0005730	nucleolus
+RF01301	0006396	RNA processing
+RF01301	0005730	nucleolus
+RF01302	0006396	RNA processing
+RF01302	0005730	nucleolus
+RF01303	0006396	RNA processing
+RF01303	0005730	nucleolus
+RF01304	0006396	RNA processing
+RF01304	0005730	nucleolus
+RF01305	0006396	RNA processing
+RF01305	0005730	nucleolus
+RF01306	0006396	RNA processing
+RF01306	0005730	nucleolus
+RF01307	0006396	RNA processing
+RF01307	0005730	nucleolus
+RF01308	0006396	RNA processing
+RF01308	0005730	nucleolus
+RF01309	0006396	RNA processing
+RF01309	0005730	nucleolus
+RF01310	0006396	RNA processing
+RF01310	0005730	nucleolus
+RF01312	0006396	RNA processing
+RF01312	0005730	nucleolus
+RF01313	0019079	viral genome replication
+RF01314	0035068	micro-ribonucleoprotein complex
+RF01314	0035195	gene silencing by miRNA
+RF01413	0035068	micro-ribonucleoprotein complex
+RF01413	0035195	gene silencing by miRNA
+RF01420	0006396	RNA processing
+RF01420	0005730	nucleolus
+RF01421	0006396	RNA processing
+RF01421	0005730	nucleolus
+RF01422	0006396	RNA processing
+RF01422	0005730	nucleolus
+RF01423	0006396	RNA processing
+RF01423	0005730	nucleolus
+RF01424	0006396	RNA processing
+RF01424	0005730	nucleolus
+RF01425	0006396	RNA processing
+RF01425	0005730	nucleolus
+RF01426	0006396	RNA processing
+RF01426	0005730	nucleolus
+RF01427	0006396	RNA processing
+RF01427	0005730	nucleolus
+RF01428	0006396	RNA processing
+RF01428	0005730	nucleolus
+RF01429	0006396	RNA processing
+RF01429	0005730	nucleolus
+RF01430	0006396	RNA processing
+RF01430	0005730	nucleolus
+RF01431	0006396	RNA processing
+RF01431	0005730	nucleolus
+RF01432	0006396	RNA processing
+RF01432	0005730	nucleolus
+RF01433	0006396	RNA processing
+RF01433	0005730	nucleolus
+RF01434	0006396	RNA processing
+RF01434	0005730	nucleolus
+RF01435	0006396	RNA processing
+RF01435	0005730	nucleolus
+RF01437	0006396	RNA processing
+RF01437	0005730	nucleolus
+RF01438	0006396	RNA processing
+RF01438	0005730	nucleolus
+RF01439	0006396	RNA processing
+RF01439	0005730	nucleolus
+RF01440	0006396	RNA processing
+RF01440	0005730	nucleolus
+RF01441	0006396	RNA processing
+RF01441	0005730	nucleolus
+RF01442	0006396	RNA processing
+RF01442	0005730	nucleolus
+RF01443	0006396	RNA processing
+RF01443	0005730	nucleolus
+RF01444	0006396	RNA processing
+RF01444	0005730	nucleolus
+RF01445	0006396	RNA processing
+RF01445	0005730	nucleolus
+RF01446	0006396	RNA processing
+RF01446	0005730	nucleolus
+RF01447	0006396	RNA processing
+RF01447	0005730	nucleolus
+RF01448	0006396	RNA processing
+RF01448	0005730	nucleolus
+RF01449	0006396	RNA processing
+RF01449	0005730	nucleolus
+RF01450	0006396	RNA processing
+RF01450	0005730	nucleolus
+RF01451	0006396	RNA processing
+RF01451	0005730	nucleolus
+RF01452	0006396	RNA processing
+RF01452	0005730	nucleolus
+RF01482	0045893	positive regulation of transcription, DNA-templated
+RF01482	0046336	ethanolamine catabolic process
+RF01495	0006446	regulation of translational initiation
+RF01498	0006396	RNA processing
+RF01498	0005730	nucleolus
+RF01499	0006396	RNA processing
+RF01499	0005730	nucleolus
+RF01500	0006396	RNA processing
+RF01500	0005730	nucleolus
+RF01501	0006396	RNA processing
+RF01501	0005730	nucleolus
+RF01502	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF01502	0005786	signal recognition particle, endoplasmic reticulum targeting
+RF01502	0048501	signal recognition particle, plasma membrane targeting
+RF01505	0006396	RNA processing
+RF01505	0005730	nucleolus
+RF01506	0006396	RNA processing
+RF01506	0005730	nucleolus
+RF01507	0006396	RNA processing
+RF01507	0005730	nucleolus
+RF01509	0006396	RNA processing
+RF01509	0005730	nucleolus
+RF01510	0032546	deoxyribonucleoside binding
+RF01511	0006396	RNA processing
+RF01511	0005730	nucleolus
+RF01513	0006396	RNA processing
+RF01513	0005730	nucleolus
+RF01514	0006396	RNA processing
+RF01514	0005730	nucleolus
+RF01515	0006396	RNA processing
+RF01515	0005730	nucleolus
+RF01516	0006396	RNA processing
+RF01516	0005730	nucleolus
+RF01517	0075139	response to host iron concentration
+RF01518	0006338	chromatin remodeling
+RF01522	0006396	RNA processing
+RF01522	0005730	nucleolus
+RF01523	0006396	RNA processing
+RF01523	0005730	nucleolus
+RF01524	0006396	RNA processing
+RF01524	0005730	nucleolus
+RF01525	0006396	RNA processing
+RF01525	0005730	nucleolus
+RF01526	0006396	RNA processing
+RF01526	0005730	nucleolus
+RF01531	0006396	RNA processing
+RF01531	0005730	nucleolus
+RF01532	0006396	RNA processing
+RF01532	0005730	nucleolus
+RF01533	0006396	RNA processing
+RF01533	0005730	nucleolus
+RF01534	0006396	RNA processing
+RF01534	0005730	nucleolus
+RF01535	0006396	RNA processing
+RF01535	0005730	nucleolus
+RF01536	0006396	RNA processing
+RF01536	0005730	nucleolus
+RF01537	0006396	RNA processing
+RF01537	0005730	nucleolus
+RF01538	0006396	RNA processing
+RF01538	0005730	nucleolus
+RF01539	0006396	RNA processing
+RF01539	0005730	nucleolus
+RF01540	0006396	RNA processing
+RF01540	0005730	nucleolus
+RF01541	0006396	RNA processing
+RF01541	0005730	nucleolus
+RF01542	0006396	RNA processing
+RF01542	0005730	nucleolus
+RF01544	0006396	RNA processing
+RF01544	0005730	nucleolus
+RF01545	0006396	RNA processing
+RF01545	0005730	nucleolus
+RF01546	0006396	RNA processing
+RF01546	0005730	nucleolus
+RF01547	0006396	RNA processing
+RF01547	0005730	nucleolus
+RF01548	0006396	RNA processing
+RF01548	0005730	nucleolus
+RF01549	0006396	RNA processing
+RF01549	0005730	nucleolus
+RF01550	0006396	RNA processing
+RF01550	0005730	nucleolus
+RF01551	0006396	RNA processing
+RF01551	0005730	nucleolus
+RF01552	0006396	RNA processing
+RF01552	0005730	nucleolus
+RF01553	0006396	RNA processing
+RF01553	0005730	nucleolus
+RF01554	0006396	RNA processing
+RF01554	0005730	nucleolus
+RF01555	0006396	RNA processing
+RF01555	0005730	nucleolus
+RF01556	0006396	RNA processing
+RF01556	0005730	nucleolus
+RF01557	0006396	RNA processing
+RF01557	0005730	nucleolus
+RF01558	0006396	RNA processing
+RF01558	0005730	nucleolus
+RF01559	0006396	RNA processing
+RF01559	0005730	nucleolus
+RF01560	0006396	RNA processing
+RF01560	0005730	nucleolus
+RF01561	0006396	RNA processing
+RF01561	0005730	nucleolus
+RF01562	0006396	RNA processing
+RF01562	0005730	nucleolus
+RF01563	0006396	RNA processing
+RF01563	0005730	nucleolus
+RF01564	0006396	RNA processing
+RF01564	0005730	nucleolus
+RF01565	0006396	RNA processing
+RF01565	0005730	nucleolus
+RF01566	0006396	RNA processing
+RF01566	0005730	nucleolus
+RF01567	0006396	RNA processing
+RF01567	0005730	nucleolus
+RF01568	0006396	RNA processing
+RF01568	0005730	nucleolus
+RF01569	0006396	RNA processing
+RF01569	0005730	nucleolus
+RF01572	0006396	RNA processing
+RF01572	0005730	nucleolus
+RF01573	0006396	RNA processing
+RF01573	0005730	nucleolus
+RF01574	0006396	RNA processing
+RF01574	0005730	nucleolus
+RF01575	0006396	RNA processing
+RF01575	0005730	nucleolus
+RF01576	0006396	RNA processing
+RF01576	0005730	nucleolus
+RF01583	0006396	RNA processing
+RF01583	0005730	nucleolus
+RF01584	0006396	RNA processing
+RF01584	0005730	nucleolus
+RF01585	0006396	RNA processing
+RF01585	0005730	nucleolus
+RF01586	0006396	RNA processing
+RF01586	0005730	nucleolus
+RF01587	0006396	RNA processing
+RF01587	0005730	nucleolus
+RF01589	0006396	RNA processing
+RF01589	0005730	nucleolus
+RF01590	0006396	RNA processing
+RF01590	0005730	nucleolus
+RF01591	0006396	RNA processing
+RF01591	0005730	nucleolus
+RF01592	0006396	RNA processing
+RF01592	0005730	nucleolus
+RF01593	0006396	RNA processing
+RF01593	0005730	nucleolus
+RF01594	0006396	RNA processing
+RF01594	0005730	nucleolus
+RF01595	0006396	RNA processing
+RF01595	0005730	nucleolus
+RF01596	0006396	RNA processing
+RF01596	0005730	nucleolus
+RF01598	0006396	RNA processing
+RF01598	0005730	nucleolus
+RF01599	0006396	RNA processing
+RF01599	0005730	nucleolus
+RF01600	0006396	RNA processing
+RF01600	0005730	nucleolus
+RF01601	0006396	RNA processing
+RF01601	0005730	nucleolus
+RF01602	0006396	RNA processing
+RF01602	0005730	nucleolus
+RF01603	0006396	RNA processing
+RF01603	0005730	nucleolus
+RF01604	0006396	RNA processing
+RF01604	0005730	nucleolus
+RF01605	0006396	RNA processing
+RF01605	0005730	nucleolus
+RF01606	0006396	RNA processing
+RF01606	0005730	nucleolus
+RF01607	0006396	RNA processing
+RF01607	0005730	nucleolus
+RF01608	0006396	RNA processing
+RF01608	0005730	nucleolus
+RF01609	0006396	RNA processing
+RF01609	0005730	nucleolus
+RF01610	0006396	RNA processing
+RF01610	0005730	nucleolus
+RF01611	0006396	RNA processing
+RF01611	0005730	nucleolus
+RF01612	0006396	RNA processing
+RF01612	0005730	nucleolus
+RF01613	0006396	RNA processing
+RF01613	0005730	nucleolus
+RF01614	0006396	RNA processing
+RF01614	0005730	nucleolus
+RF01615	0006396	RNA processing
+RF01615	0005730	nucleolus
+RF01617	0006396	RNA processing
+RF01617	0005730	nucleolus
+RF01618	0006396	RNA processing
+RF01618	0005730	nucleolus
+RF01620	0006396	RNA processing
+RF01620	0005730	nucleolus
+RF01621	0006396	RNA processing
+RF01621	0005730	nucleolus
+RF01622	0006396	RNA processing
+RF01622	0005730	nucleolus
+RF01624	0006396	RNA processing
+RF01624	0005730	nucleolus
+RF01625	0006396	RNA processing
+RF01625	0005730	nucleolus
+RF01626	0006396	RNA processing
+RF01626	0005730	nucleolus
+RF01627	0006396	RNA processing
+RF01627	0005730	nucleolus
+RF01628	0006396	RNA processing
+RF01628	0005730	nucleolus
+RF01629	0006396	RNA processing
+RF01629	0005730	nucleolus
+RF01630	0006396	RNA processing
+RF01630	0005730	nucleolus
+RF01631	0006396	RNA processing
+RF01631	0005730	nucleolus
+RF01632	0006396	RNA processing
+RF01632	0005730	nucleolus
+RF01633	0006396	RNA processing
+RF01633	0005730	nucleolus
+RF01634	0006396	RNA processing
+RF01634	0005730	nucleolus
+RF01635	0006396	RNA processing
+RF01635	0005730	nucleolus
+RF01636	0006396	RNA processing
+RF01636	0005730	nucleolus
+RF01637	0006396	RNA processing
+RF01637	0005730	nucleolus
+RF01638	0006396	RNA processing
+RF01638	0005730	nucleolus
+RF01639	0006396	RNA processing
+RF01639	0005730	nucleolus
+RF01640	0006396	RNA processing
+RF01640	0005730	nucleolus
+RF01641	0006396	RNA processing
+RF01641	0005730	nucleolus
+RF01642	0006396	RNA processing
+RF01642	0005730	nucleolus
+RF01644	0006396	RNA processing
+RF01644	0005730	nucleolus
+RF01645	0006396	RNA processing
+RF01645	0005730	nucleolus
+RF01646	0006396	RNA processing
+RF01646	0005730	nucleolus
+RF01647	0006396	RNA processing
+RF01647	0005730	nucleolus
+RF01649	0006396	RNA processing
+RF01649	0005730	nucleolus
+RF01650	0006396	RNA processing
+RF01650	0005730	nucleolus
+RF01651	0006396	RNA processing
+RF01651	0005730	nucleolus
+RF01652	0006396	RNA processing
+RF01652	0005730	nucleolus
+RF01653	0006396	RNA processing
+RF01653	0005730	nucleolus
+RF01654	0006396	RNA processing
+RF01654	0005730	nucleolus
+RF01655	0006396	RNA processing
+RF01655	0005730	nucleolus
+RF01658	0006396	RNA processing
+RF01658	0005730	nucleolus
+RF01659	0006396	RNA processing
+RF01659	0005730	nucleolus
+RF01660	0006396	RNA processing
+RF01660	0005730	nucleolus
+RF01661	0006396	RNA processing
+RF01661	0005730	nucleolus
+RF01662	0006396	RNA processing
+RF01662	0005730	nucleolus
+RF01664	0006396	RNA processing
+RF01664	0005730	nucleolus
+RF01673	0009372	quorum sensing
+RF01675	0045013	carbon catabolite repression of transcription
+RF01766	0040040	thermosensory behavior
+RF01767	0006446	regulation of translational initiation
+RF01767	0004478	methionine adenosyltransferase activity
+RF01794	0003729	mRNA binding
+RF01795	0040040	thermosensory behavior
+RF01797	0003729	mRNA binding
+RF01807	0008380	RNA splicing
+RF01809	0003729	mRNA binding
+RF01831	0046653	tetrahydrofolate metabolic process
+RF01832	0040040	thermosensory behavior
+RF01845	0009877	nodulation
+RF01846	0006396	RNA processing
+RF01846	0005730	nucleolus
+RF01847	0006396	RNA processing
+RF01847	0005730	nucleolus
+RF01848	0006396	RNA processing
+RF01848	0005730	nucleolus
+RF01849	0006401	RNA catabolic process
+RF01850	0006401	RNA catabolic process
+RF01851	0006401	RNA catabolic process
+RF01852	0030533	triplet codon-amino acid adaptor activity
+RF01854	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF01854	0048501	signal recognition particle, plasma membrane targeting
+RF01855	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF01855	0005786	signal recognition particle, endoplasmic reticulum targeting
+RF01855	0048501	signal recognition particle, plasma membrane targeting
+RF01856	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF01856	0005786	signal recognition particle, endoplasmic reticulum targeting
+RF01856	0048501	signal recognition particle, plasma membrane targeting
+RF01857	0006617	SRP-dependent cotranslational protein targeting to membrane, signal sequence recognition
+RF01857	0005786	signal recognition particle, endoplasmic reticulum targeting
+RF01857	0048501	signal recognition particle, plasma membrane targeting
+RF01859	0006520	cellular amino acid metabolic process
+RF01860	0006396	RNA processing
+RF01860	0005730	nucleolus
+RF01861	0006396	RNA processing
+RF01861	0005730	nucleolus
+RF01862	0006396	RNA processing
+RF01862	0005730	nucleolus
+RF01863	0006396	RNA processing
+RF01863	0005730	nucleolus
+RF01864	0006396	RNA processing
+RF01864	0005730	nucleolus
+RF01865	0010042	response to manganese ion
+RF01866	0006396	RNA processing
+RF01866	0005730	nucleolus
+RF01871	2000147	positive regulation of cell motility
+RF01872	0030308	negative regulation of cell growth
+RF01874	0005634	nucleus
+RF01874	0001708	cell fate specification
+RF01875	0005634	nucleus
+RF01875	0001708	cell fate specification
+RF01876	0005634	nucleus
+RF01876	0001708	cell fate specification
+RF01877	0005634	nucleus
+RF01877	0001708	cell fate specification
+RF01880	0009048	dosage compensation by inactivation of X chromosome
+RF01881	0009048	dosage compensation by inactivation of X chromosome
+RF01882	0042478	regulation of eye photoreceptor cell development
+RF01883	0042478	regulation of eye photoreceptor cell development
+RF01885	0016607	nuclear speck
+RF01885	0042981	regulation of apoptotic process
+RF01886	0016607	nuclear speck
+RF01886	0042981	regulation of apoptotic process
+RF01887	0045893	positive regulation of transcription, DNA-templated
+RF01887	0030900	forebrain development
+RF01888	0045893	positive regulation of transcription, DNA-templated
+RF01888	0030900	forebrain development
+RF01889	0042981	regulation of apoptotic process
+RF01890	0042981	regulation of apoptotic process
+RF01891	0042478	regulation of eye photoreceptor cell development
+RF01892	0042478	regulation of eye photoreceptor cell development
+RF01895	0035068	micro-ribonucleoprotein complex
+RF01895	0035195	gene silencing by miRNA
+RF01896	0035068	micro-ribonucleoprotein complex
+RF01896	0035195	gene silencing by miRNA
+RF01897	0035068	micro-ribonucleoprotein complex
+RF01897	0035195	gene silencing by miRNA
+RF01898	0035068	micro-ribonucleoprotein complex
+RF01898	0035195	gene silencing by miRNA
+RF01899	0035068	micro-ribonucleoprotein complex
+RF01899	0035195	gene silencing by miRNA
+RF01900	0035068	micro-ribonucleoprotein complex
+RF01900	0035195	gene silencing by miRNA
+RF01901	0035068	micro-ribonucleoprotein complex
+RF01901	0035195	gene silencing by miRNA
+RF01902	0035068	micro-ribonucleoprotein complex
+RF01902	0035195	gene silencing by miRNA
+RF01904	0006342	chromatin silencing
+RF01904	0005515	protein binding
+RF01905	0006342	chromatin silencing
+RF01905	0005515	protein binding
+RF01906	0006342	chromatin silencing
+RF01906	0005515	protein binding
+RF01909	0006342	chromatin silencing
+RF01909	0005515	protein binding
+RF01910	0035068	micro-ribonucleoprotein complex
+RF01910	0035195	gene silencing by miRNA
+RF01911	0035068	micro-ribonucleoprotein complex
+RF01911	0035195	gene silencing by miRNA
+RF01912	0035068	micro-ribonucleoprotein complex
+RF01912	0035195	gene silencing by miRNA
+RF01913	0035068	micro-ribonucleoprotein complex
+RF01913	0035195	gene silencing by miRNA
+RF01914	0035068	micro-ribonucleoprotein complex
+RF01914	0035195	gene silencing by miRNA
+RF01915	0035068	micro-ribonucleoprotein complex
+RF01915	0035195	gene silencing by miRNA
+RF01916	0035068	micro-ribonucleoprotein complex
+RF01916	0035195	gene silencing by miRNA
+RF01917	0035068	micro-ribonucleoprotein complex
+RF01917	0035195	gene silencing by miRNA
+RF01918	0035068	micro-ribonucleoprotein complex
+RF01918	0035195	gene silencing by miRNA
+RF01919	0035068	micro-ribonucleoprotein complex
+RF01919	0035195	gene silencing by miRNA
+RF01920	0035068	micro-ribonucleoprotein complex
+RF01920	0035195	gene silencing by miRNA
+RF01921	0035068	micro-ribonucleoprotein complex
+RF01921	0035195	gene silencing by miRNA
+RF01922	0035068	micro-ribonucleoprotein complex
+RF01922	0035195	gene silencing by miRNA
+RF01923	0035068	micro-ribonucleoprotein complex
+RF01923	0035195	gene silencing by miRNA
+RF01924	0035068	micro-ribonucleoprotein complex
+RF01924	0035195	gene silencing by miRNA
+RF01925	0035068	micro-ribonucleoprotein complex
+RF01925	0035195	gene silencing by miRNA
+RF01926	0035068	micro-ribonucleoprotein complex
+RF01926	0035195	gene silencing by miRNA
+RF01927	0035068	micro-ribonucleoprotein complex
+RF01927	0035195	gene silencing by miRNA
+RF01929	0006342	chromatin silencing
+RF01930	0006342	chromatin silencing
+RF01931	0006342	chromatin silencing
+RF01932	0006342	chromatin silencing
+RF01933	0006342	chromatin silencing
+RF01934	0006342	chromatin silencing
+RF01935	0006342	chromatin silencing
+RF01936	0035068	micro-ribonucleoprotein complex
+RF01936	0035195	gene silencing by miRNA
+RF01937	0035068	micro-ribonucleoprotein complex
+RF01937	0035195	gene silencing by miRNA
+RF01938	0035068	micro-ribonucleoprotein complex
+RF01938	0035195	gene silencing by miRNA
+RF01939	0035068	micro-ribonucleoprotein complex
+RF01939	0035195	gene silencing by miRNA
+RF01940	0035068	micro-ribonucleoprotein complex
+RF01940	0035195	gene silencing by miRNA
+RF01941	0035068	micro-ribonucleoprotein complex
+RF01941	0035195	gene silencing by miRNA
+RF01942	0035068	micro-ribonucleoprotein complex
+RF01942	0035195	gene silencing by miRNA
+RF01943	0035068	micro-ribonucleoprotein complex
+RF01943	0035195	gene silencing by miRNA
+RF01944	0035068	micro-ribonucleoprotein complex
+RF01944	0035195	gene silencing by miRNA
+RF01945	0035068	micro-ribonucleoprotein complex
+RF01945	0035195	gene silencing by miRNA
+RF01946	0006342	chromatin silencing
+RF01946	0005730	nucleolus
+RF01948	0006342	chromatin silencing
+RF01948	0005730	nucleolus
+RF01950	0006342	chromatin silencing
+RF01950	0005730	nucleolus
+RF01951	0007275	multicellular organismal development
+RF01952	0007275	multicellular organismal development
+RF01953	0007275	multicellular organismal development
+RF01955	0042382	paraspeckles
+RF01955	0005515	protein binding
+RF01956	0042382	paraspeckles
+RF01956	0005515	protein binding
+RF01959	0003735	structural constituent of ribosome
+RF01959	0005840	ribosome
+RF01960	0003735	structural constituent of ribosome
+RF01960	0005840	ribosome
+RF01981	0042981	regulation of apoptotic process
+RF01982	0030631	pyrrolysine incorporation
+RF01984	0010628	positive regulation of gene expression
+RF01985	0010628	positive regulation of gene expression
+RF01986	0010628	positive regulation of gene expression
+RF01987	0010628	positive regulation of gene expression
+RF01988	0001514	selenocysteine incorporation
+RF01989	0001514	selenocysteine incorporation
+RF01990	0001514	selenocysteine incorporation
+RF01991	0001514	selenocysteine incorporation
+RF01996	0035068	micro-ribonucleoprotein complex
+RF01996	0035195	gene silencing by miRNA
+RF01998	0000373	Group II intron splicing
+RF01999	0000373	Group II intron splicing
+RF02000	0035068	micro-ribonucleoprotein complex
+RF02000	0035195	gene silencing by miRNA
+RF02001	0000373	Group II intron splicing
+RF02002	0035068	micro-ribonucleoprotein complex
+RF02002	0035195	gene silencing by miRNA
+RF02003	0000373	Group II intron splicing
+RF02004	0000373	Group II intron splicing
+RF02005	0000373	Group II intron splicing
+RF02006	0035068	micro-ribonucleoprotein complex
+RF02006	0035195	gene silencing by miRNA
+RF02007	0035068	micro-ribonucleoprotein complex
+RF02007	0035195	gene silencing by miRNA
+RF02008	0035068	micro-ribonucleoprotein complex
+RF02008	0035195	gene silencing by miRNA
+RF02009	0035068	micro-ribonucleoprotein complex
+RF02009	0035195	gene silencing by miRNA
+RF02010	0035068	micro-ribonucleoprotein complex
+RF02010	0035195	gene silencing by miRNA
+RF02011	0035068	micro-ribonucleoprotein complex
+RF02011	0035195	gene silencing by miRNA
+RF02012	0000373	Group II intron splicing
+RF02013	0035068	micro-ribonucleoprotein complex
+RF02013	0035195	gene silencing by miRNA
+RF02014	0035068	micro-ribonucleoprotein complex
+RF02014	0035195	gene silencing by miRNA
+RF02015	0035068	micro-ribonucleoprotein complex
+RF02015	0035195	gene silencing by miRNA
+RF02016	0035068	micro-ribonucleoprotein complex
+RF02016	0035195	gene silencing by miRNA
+RF02017	0035068	micro-ribonucleoprotein complex
+RF02017	0035195	gene silencing by miRNA
+RF02018	0035068	micro-ribonucleoprotein complex
+RF02018	0035195	gene silencing by miRNA
+RF02019	0035068	micro-ribonucleoprotein complex
+RF02019	0035195	gene silencing by miRNA
+RF02020	0035068	micro-ribonucleoprotein complex
+RF02020	0035195	gene silencing by miRNA
+RF02021	0035068	micro-ribonucleoprotein complex
+RF02021	0035195	gene silencing by miRNA
+RF02022	0035068	micro-ribonucleoprotein complex
+RF02022	0035195	gene silencing by miRNA
+RF02024	0035068	micro-ribonucleoprotein complex
+RF02024	0035195	gene silencing by miRNA
+RF02025	0035068	micro-ribonucleoprotein complex
+RF02025	0035195	gene silencing by miRNA
+RF02026	0035068	micro-ribonucleoprotein complex
+RF02026	0035195	gene silencing by miRNA
+RF02027	0035068	micro-ribonucleoprotein complex
+RF02027	0035195	gene silencing by miRNA
+RF02028	0035068	micro-ribonucleoprotein complex
+RF02028	0035195	gene silencing by miRNA
+RF02038	0005737	cytoplasm
+RF02039	0005737	cytoplasm
+RF02044	0006342	chromatin silencing
+RF02044	0005515	protein binding
+RF02045	0006342	chromatin silencing
+RF02045	0005515	protein binding
+RF02046	0008049	male courtship behavior
+RF02046	0010629	negative regulation of gene expression
+RF02047	0008049	male courtship behavior
+RF02047	0010629	negative regulation of gene expression
+RF02085	0005737	cytoplasm
+RF02085	0042749	regulation of circadian sleep/wake cycle
+RF02086	0005737	cytoplasm
+RF02086	0042749	regulation of circadian sleep/wake cycle
+RF02087	0005737	cytoplasm
+RF02087	0042749	regulation of circadian sleep/wake cycle
+RF02092	0035195	gene silencing by miRNA
+RF02093	0035195	gene silencing by miRNA
+RF02094	0035195	gene silencing by miRNA
+RF02095	0035195	gene silencing by miRNA
+RF02096	0035195	gene silencing by miRNA
+RF02097	0035195	gene silencing by miRNA
+RF02101	0005840	ribosome
+RF02101	0010468	regulation of gene expression
+RF02102	0010468	regulation of gene expression
+RF02112	0010468	regulation of gene expression
+RF02113	0010468	regulation of gene expression
+RF02116	0010468	regulation of gene expression
+RF02117	0043066	negative regulation of apoptotic process
+RF02118	0043066	negative regulation of apoptotic process
+RF02119	0010628	positive regulation of gene expression
+RF02120	0010628	positive regulation of gene expression
+RF02121	0010628	positive regulation of gene expression
+RF02122	0010628	positive regulation of gene expression
+RF02123	0010628	positive regulation of gene expression
+RF02124	0010628	positive regulation of gene expression
+RF02134	0010468	regulation of gene expression
+RF02135	0010468	regulation of gene expression
+RF02136	0010468	regulation of gene expression
+RF02137	0010629	negative regulation of gene expression
+RF02138	0010629	negative regulation of gene expression
+RF02139	0010629	negative regulation of gene expression
+RF02140	0010629	negative regulation of gene expression
+RF02141	0010629	negative regulation of gene expression
+RF02142	0010629	negative regulation of gene expression
+RF02145	0005634	nucleus
+RF02146	0005634	nucleus
+RF02147	0005634	nucleus
+RF02154	0010628	positive regulation of gene expression
+RF02155	0010628	positive regulation of gene expression
+RF02156	0010468	regulation of gene expression
+RF02156	0003729	mRNA binding
+RF02157	0010468	regulation of gene expression
+RF02157	0003729	mRNA binding
+RF02158	0010468	regulation of gene expression
+RF02158	0003729	mRNA binding
+RF02162	0016458	gene silencing
+RF02163	0030488	tRNA methylation
+RF02202	0010468	regulation of gene expression
+RF02211	0010629	negative regulation of gene expression
+RF02212	0010629	negative regulation of gene expression
+RF02213	0010629	negative regulation of gene expression
+RF02214	0035068	micro-ribonucleoprotein complex
+RF02214	0035195	gene silencing by miRNA
+RF02214	0050779	RNA destabilization
+RF02215	0005634	nucleus
+RF02215	0005737	cytoplasm
+RF02216	0005634	nucleus
+RF02216	0005737	cytoplasm
+RF02217	0005634	nucleus
+RF02217	0005737	cytoplasm
+RF02231	0009405	pathogenesis
+RF02244	0035068	micro-ribonucleoprotein complex
+RF02244	0035195	gene silencing by miRNA
+RF02245	0035068	micro-ribonucleoprotein complex
+RF02245	0035195	gene silencing by miRNA
+RF02246	0010468	regulation of gene expression
+RF02247	0010468	regulation of gene expression
+RF02248	0010468	regulation of gene expression
+RF02249	0010468	regulation of gene expression
+RF02250	0010468	regulation of gene expression
+RF02251	0010468	regulation of gene expression
+RF02252	0010468	regulation of gene expression
+RF02253	0010039	response to iron ion
+RF02254	0035068	micro-ribonucleoprotein complex
+RF02254	0035195	gene silencing by miRNA
+RF02259	0051726	regulation of cell cycle
+RF02267	0051726	regulation of cell cycle
+RF02268	0015797	mannitol transport
+RF02272	0051726	regulation of cell cycle
+RF02273	0006417	regulation of translation
+RF02275	0003824	catalytic activity
+RF02276	0003824	catalytic activity
+RF02277	0003824	catalytic activity
+RF02279	0006396	RNA processing
+RF02279	0005730	nucleolus
+RF02280	0006396	RNA processing
+RF02280	0005730	nucleolus
+RF02281	0006396	RNA processing
+RF02281	0005730	nucleolus
+RF02282	0006396	RNA processing
+RF02282	0005730	nucleolus
+RF02283	0006396	RNA processing
+RF02283	0005730	nucleolus
+RF02284	0006396	RNA processing
+RF02284	0005730	nucleolus
+RF02285	0006396	RNA processing
+RF02285	0005730	nucleolus
+RF02286	0006396	RNA processing
+RF02286	0005730	nucleolus
+RF02287	0006396	RNA processing
+RF02287	0005730	nucleolus
+RF02288	0006396	RNA processing
+RF02288	0005730	nucleolus
+RF02289	0006396	RNA processing
+RF02289	0005730	nucleolus
+RF02290	0006396	RNA processing
+RF02290	0005730	nucleolus
+RF02291	0006396	RNA processing
+RF02291	0005730	nucleolus
+RF02292	0006396	RNA processing
+RF02292	0005730	nucleolus
+RF02293	0006396	RNA processing
+RF02293	0005730	nucleolus
+RF02294	0006396	RNA processing
+RF02294	0005730	nucleolus
+RF02295	0006396	RNA processing
+RF02295	0005730	nucleolus
+RF02296	0006396	RNA processing
+RF02296	0005730	nucleolus
+RF02297	0006396	RNA processing
+RF02297	0005730	nucleolus
+RF02298	0006396	RNA processing
+RF02298	0005730	nucleolus
+RF02299	0006396	RNA processing
+RF02299	0005730	nucleolus
+RF02300	0006396	RNA processing
+RF02300	0005730	nucleolus
+RF02301	0006396	RNA processing
+RF02301	0005730	nucleolus
+RF02302	0006396	RNA processing
+RF02302	0005730	nucleolus
+RF02303	0006396	RNA processing
+RF02303	0005730	nucleolus
+RF02304	0006396	RNA processing
+RF02304	0005730	nucleolus
+RF02305	0006396	RNA processing
+RF02305	0005730	nucleolus
+RF02306	0006396	RNA processing
+RF02306	0005730	nucleolus
+RF02307	0006396	RNA processing
+RF02307	0005730	nucleolus
+RF02308	0006396	RNA processing
+RF02308	0005730	nucleolus
+RF02309	0006396	RNA processing
+RF02309	0005730	nucleolus
+RF02310	0006396	RNA processing
+RF02310	0005730	nucleolus
+RF02311	0006396	RNA processing
+RF02311	0005730	nucleolus
+RF02312	0006396	RNA processing
+RF02312	0005730	nucleolus
+RF02313	0006396	RNA processing
+RF02313	0005730	nucleolus
+RF02314	0006396	RNA processing
+RF02314	0005730	nucleolus
+RF02315	0006396	RNA processing
+RF02315	0005730	nucleolus
+RF02316	0006396	RNA processing
+RF02316	0005730	nucleolus
+RF02317	0006396	RNA processing
+RF02317	0005730	nucleolus
+RF02318	0006396	RNA processing
+RF02318	0005730	nucleolus
+RF02319	0006396	RNA processing
+RF02319	0005730	nucleolus
+RF02320	0006396	RNA processing
+RF02320	0005730	nucleolus
+RF02321	0006396	RNA processing
+RF02321	0005730	nucleolus
+RF02322	0006396	RNA processing
+RF02322	0005730	nucleolus
+RF02323	0006396	RNA processing
+RF02323	0005730	nucleolus
+RF02324	0006396	RNA processing
+RF02324	0005730	nucleolus
+RF02325	0006396	RNA processing
+RF02325	0005730	nucleolus
+RF02326	0006396	RNA processing
+RF02326	0005730	nucleolus
+RF02327	0006396	RNA processing
+RF02327	0005730	nucleolus
+RF02328	0006396	RNA processing
+RF02328	0005730	nucleolus
+RF02329	0006396	RNA processing
+RF02329	0005730	nucleolus
+RF02330	0006396	RNA processing
+RF02330	0005730	nucleolus
+RF02331	0006396	RNA processing
+RF02331	0005730	nucleolus
+RF02332	0006396	RNA processing
+RF02332	0005730	nucleolus
+RF02333	0006396	RNA processing
+RF02333	0005730	nucleolus
+RF02334	0006396	RNA processing
+RF02334	0005730	nucleolus
+RF02335	0006396	RNA processing
+RF02335	0005730	nucleolus
+RF02335	0035068	micro-ribonucleoprotein complex
+RF02335	0035195	miRNA-mediated gene silencing
+RF02336	0006396	RNA processing
+RF02336	0005730	nucleolus
+RF02336	0035068	micro-ribonucleoprotein complex
+RF02336	0035195	miRNA-mediated gene silencing
+RF02338	0006396	RNA processing
+RF02338	0005730	nucleolus
+RF02338	0035068	micro-ribonucleoprotein complex
+RF02338	0035195	miRNA-mediated gene silencing
+RF02339	0006396	RNA processing
+RF02339	0005730	nucleolus
+RF02339	0035068	micro-ribonucleoprotein complex
+RF02339	0035195	miRNA-mediated gene silencing
+RF02370	0010468	regulation of gene expression
+RF02371	0010468	regulation of gene expression
+RF02372	0010468	regulation of gene expression
+RF02373	0010468	regulation of gene expression
+RF02374	0009372	quorum sensing
+RF02375	0006521	regulation of cellular amino acid metabolic process
+RF02376	0045947	negative regulation of translational initiation
+RF02376	0000900	translation repressor activity, nucleic acid binding
+RF02400	0006417	regulation of translation
+RF02401	0048255	mRNA stabilization
+RF02406	0006396	RNA processing
+RF02406	0005730	nucleolus
+RF02407	0006396	RNA processing
+RF02407	0005730	nucleolus
+RF02408	0006396	RNA processing
+RF02408	0005730	nucleolus
+RF02409	0006396	RNA processing
+RF02409	0005730	nucleolus
+RF02410	0006396	RNA processing
+RF02410	0005730	nucleolus
+RF02411	0006396	RNA processing
+RF02411	0005730	nucleolus
+RF02412	0006396	RNA processing
+RF02412	0005730	nucleolus
+RF02413	0006396	RNA processing
+RF02413	0005730	nucleolus
+RF02462	0007004	telomere maintenance via telomerase
+RF02462	0003720	telomerase activity
+RF02462	0000333	telomerase catalytic core complex
+RF02472	0006364	rRNA processing
+RF02472	0000171	ribonuclease MRP activity
+RF02472	0000172	ribonuclease MRP complex
+RF02473	0006396	RNA processing
+RF02473	0005730	nucleolus
+RF02474	0006396	RNA processing
+RF02474	0005730	nucleolus
+RF02475	0006396	RNA processing
+RF02475	0005730	nucleolus
+RF02476	0006396	RNA processing
+RF02476	0005730	nucleolus
+RF02477	0006396	RNA processing
+RF02477	0005730	nucleolus
+RF02478	0006396	RNA processing
+RF02478	0005730	nucleolus
+RF02479	0006396	RNA processing
+RF02479	0005730	nucleolus
+RF02480	0006396	RNA processing
+RF02480	0005730	nucleolus
+RF02481	0006396	RNA processing
+RF02481	0005730	nucleolus
+RF02482	0006396	RNA processing
+RF02482	0005730	nucleolus
+RF02483	0006396	RNA processing
+RF02483	0005730	nucleolus
+RF02484	0006396	RNA processing
+RF02484	0005730	nucleolus
+RF02485	0006396	RNA processing
+RF02485	0005730	nucleolus
+RF02486	0006396	RNA processing
+RF02486	0005730	nucleolus
+RF02487	0006396	RNA processing
+RF02487	0005730	nucleolus
+RF02488	0006396	RNA processing
+RF02488	0005730	nucleolus
+RF02489	0006396	RNA processing
+RF02489	0005730	nucleolus
+RF02490	0006396	RNA processing
+RF02490	0005730	nucleolus
+RF02491	0030627	pre-mRNA 5'-splice site binding
+RF02491	0005685	U1 snRNP
+RF02492	0030627	pre-mRNA 5'-splice site binding
+RF02492	0005685	U1 snRNP
+RF02493	0030627	pre-mRNA 5'-splice site binding
+RF02493	0005685	U1 snRNP
+RF02494	0030627	pre-mRNA 5'-splice site binding
+RF02494	0005685	U1 snRNP
+RF02495	0003729	mRNA binding
+RF02509	0030631	pyrrolysine incorporation
+RF02510	0030631	pyrrolysine incorporation
+RF02511	0030631	pyrrolysine incorporation
+RF02512	0030631	pyrrolysine incorporation
+RF02513	0030631	pyrrolysine incorporation
+RF02514	0010629	negative regulation of gene expression
+RF02515	0010629	negative regulation of gene expression
+RF02516	0035068	micro-ribonucleoprotein complex
+RF02516	0035195	miRNA-mediated gene silencing
+RF02517	0035068	micro-ribonucleoprotein complex
+RF02517	0035195	miRNA-mediated gene silencing
+RF02518	0035068	micro-ribonucleoprotein complex
+RF02518	0035195	miRNA-mediated gene silencing
+RF02520	0035068	micro-ribonucleoprotein complex
+RF02520	0035195	miRNA-mediated gene silencing
+RF02523	0040040	thermosensory behavior
+RF02530	0043022	ribosome binding
+RF02531	0043022	ribosome binding
+RF02535	0043022	ribosome binding
+RF02537	0010468	regulation of gene expression
+RF02538	0010468	regulation of gene expression
+RF02337	0006396	RNA processing
+RF02337	0005730	nucleolus
+RF02337	0035068	micro-ribonucleoprotein complex
+RF02337	0035195	miRNA-mediated gene silencing
+RF02402	0006396	RNA processing
+RF02402	0005730	nucleolus
+RF02403	0006396	RNA processing
+RF02403	0005730	nucleolus
+RF02539	0006396	RNA processing
+RF02539	0005730	nucleolus
+RF02540	0003735	structural constituent of ribosome
+RF02540	0005840	ribosome
+RF02541	0003735	structural constituent of ribosome
+RF02541	0005840	ribosome
+RF00003	0000395	mRNA 5'-splice site recognition
+RF00004	0000348	mRNA branch site recognition
+RF00007	0000348	mRNA branch site recognition
+RF00015	0000244	spliceosomal tri-snRNP complex assembly
+RF00020	0000244	spliceosomal tri-snRNP complex assembly
+RF00026	0000244	spliceosomal tri-snRNP complex assembly
+RF00167	0009113	purine nucleobase biosynthetic process
+RF00198	0000365	mRNA trans splicing, via spliceosome
+RF00199	0000365	mRNA trans splicing, via spliceosome
+RF00488	0000395	mRNA 5'-splice site recognition
+RF00548	0000395	mRNA 5'-splice site recognition
+RF00519	0006353	DNA-templated transcription, termination
+RF00618	0000244	spliceosomal tri-snRNP complex assembly
+RF00618	0000395	mRNA 5'-splice site recognition
+RF00619	0000244	spliceosomal tri-snRNP complex assembly
+RF00619	0000395	mRNA 5'-splice site recognition
+RF01510	0031554	regulation of DNA-templated transcription, termination
+RF01765	0045892	negative regulation of transcription, DNA-templated
+RF02542	0003735	structural constituent of ribosome
+RF02542	0005840	ribosome
+RF02543	0003735	structural constituent of ribosome
+RF02543	0005840	ribosome
+RF02544	0006401	RNA catabolic process
