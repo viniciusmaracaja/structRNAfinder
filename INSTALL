@@ -1,0 +1,12 @@
+**Installation**
+
+The installation procedure into structRNAfinder is done by 
+a shell script that have all the instruction to install the
+required softwares and download the Rfam databases if the 
+user wants.
+
+To install type in terminal:
+
+	*sudo sh install.sh*
+	
+and follow the instruction.
