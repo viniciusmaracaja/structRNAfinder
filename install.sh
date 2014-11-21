@@ -10,7 +10,7 @@ die() {
     exit 1
 }
 
-echo "$RED""Make sure internet connection works for your shell prompt under current user's privilege ...""$NORMAL";
+echo "$RED""Make sure your internet connection works for your shell prompt under current user's privilege ...""$NORMAL";
 echo "$BLUE""Starting structRNAfinder installation ...""$NORMAL";
 
 #check for make
