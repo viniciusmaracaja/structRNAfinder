@@ -1,6 +1,6 @@
 structRNAfinder
 ===============
-StructRNAfinder is designed to analyse data originated from transcriptome or genome projects. As input it is required the sequences in Fasta format, as well a covariance model (CM format) related to the secondary structures used for comparison.
+StructRNAfinder is designed to analyze data originated from transcriptome or genome projects. As input it is required the sequences in Fasta format, as well a covariance model (CM format) related to the secondary structures used for comparison.
 
 StructRNAfinder integrates two third-part softwares and in-house scripts that allows to perform noncoding RNA annotation based on secondary structure inference. This tool generates a friendly output of the obtained results for every analysis developed on each step of its workflow.
 
