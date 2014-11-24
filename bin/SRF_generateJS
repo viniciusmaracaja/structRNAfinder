@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #######################################################################################################
-## Script which filter the best hit from output tab of cmscan 
+## Script to filter the best hit from the tab delimited output of cmscan 
 ## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
 ## Contact: vinicius.coutinho@umayor.cl
 ## Date: 12th May, 2014
