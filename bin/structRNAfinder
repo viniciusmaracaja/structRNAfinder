@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 #######################################################################################################
 ##structRNAfinder is an automated tool for de novo identification, functional annotation and taxonomic
-#assignation of structured RNA domains and families in large and small nucleotide sequences. This script 
-#is main program which call all other programs. 
+#assignation of structured RNA families in large and small nucleotide sequences. This script is the 
+#main program which calls all other dependencies. 
 ## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
 ## Contact: vinicius.coutinho@umayor.cl
 ## Date: 12th oct, 2014
