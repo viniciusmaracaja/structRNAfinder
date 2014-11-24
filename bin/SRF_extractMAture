@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 #######################################################################################################
-## Script which extract the sequence of mature RNAs through alignment of structures done previously 
-## with infernal, considering the length of reference sequences into a covariance model file (.cm)
+## Script to extract the mature sequence of RNAs through alignment of structures done previously 
+## using infernal. It considers the length of reference sequences on the covariance model file (.cm)
 ## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
 ## Contact: vinicius.coutinho@umayor.cl
 ## Date: 12th May, 2014
