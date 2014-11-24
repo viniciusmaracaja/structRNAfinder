@@ -1112,12 +1112,16 @@ print OUT6 "
 \<div id=\"right_container_outer\"\>
 \<div id=\"contact\" style=\"width: 90%; height: 20px; margin: 15px; color:#0A8A0A; font-size:25px; align:center; padding:20px; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif; \"\>\<strong\>structRNAfinder\</strong\>\</div\>
 
-\<div id=\"contact_info\" style=\"width: 90%; height: 200px; text-align:left; font-size:16px; color:#191970; padding:20px; margin: 15px; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> Welcome to structRNAfinder an automated tool for annotate ncRNAs through secondary structure predictions. \</div\>
+\<div id=\"contact_info\" style=\"width: 90%; height: 200px; text-align:left; font-size:13px; color:#191970; padding:20px; margin: 15px; -webkit-border-radius: 15px 15px 15px 15px; -moz-border-radius: 15px 15px 15px 15px; border-radius: 15px 15px 15px 15px; border: solid 1px #0A8A0A; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> Welcome to structRNAfinder an automated tool for de novo identification, functional annotation and taxonomic assignation of RNA families through secondary structure inference. It integrates third-part softwares to compare nucleotide sequences with covariance models, generate secondary structures and functional annotations in a stand-alone toolkit with friendly reports and outputs useful for downstream analysis and data exploration.. \<br\>\<br\> 
 
 
+If you want know more about structRNAfinder, please visit \<a href=\"http://integrativebioinformatics.me/structrnafinder/\"\>our main page\</a\> or \<a href=\"https://github.com/viniciusmaracaja/structRNAfinder\"\>our GitHub account\</a\>, here available all information including documentation and tutorial of tool.\<br\>\<br\>\<center\> 
+\<a href=\"http://integrativebioinformatics.me/structrnafinder/\"\> \<img src =\"/usr/local/share/structRNAfinder/images/lib.png\" width='160' height='60'\>\</a\>
+\<a href=\"https://github.com/viniciusmaracaja/structRNAfinder\"\> \<img src =\"/usr/local/share/structRNAfinder/images/github.png\"width='160' height='60'\>\</a\>
+ \</center\> 
 
 
-
+ \</div\>
 
 
 \</div\>
