@@ -47,7 +47,7 @@ If you only press enter without put a letter the answer yes
 (y) is taken by default.
 
 Here, the Rfam database is downloaded from 
-ftp://selab.janelia.org/pub/rfam/rfam-11.0/Rfam.cm.gz. 
+ftp://ftp.ebi.ac.uk/pub/databases/Rfam/12.0/Rfam.cm.gz. 
 Then, the necessary files to run cmscan using the cmpress program 
 (Infernal recomendation) are generated. By default, the path to extract 
 the database is the home folder of the current user. It can be changed by 
