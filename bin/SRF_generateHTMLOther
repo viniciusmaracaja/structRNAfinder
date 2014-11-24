@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 #######################################################################################################
-## This script generate the html output in the case that you didn't use Rfam covariance model  
+## This script generate the html output when you are not using Rfam covariance models  
 ## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
 ## Contact: vinicius.coutinho@umayor.cl
 ## Date: 12th oct, 2014
