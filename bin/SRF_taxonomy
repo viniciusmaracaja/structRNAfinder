@@ -1,5 +1,10 @@
 #! /usr/bin/perl
-
+#######################################################################################################
+##This script performs the taxonomic assignation of annotated RNAs based on Rfam annotations 
+## Authors: Yessenia Vazquez-Moran, Raul Arias-Carrasco and Vinicius Maracaja-Coutinho
+## Contact: vinicius.coutinho@umayor.cl
+## Date: 12th oct, 2014
+#######################################################################################################
 use strict;
 use Getopt::Long;
 use File::Basename;
