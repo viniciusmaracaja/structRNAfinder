@@ -162,7 +162,7 @@ else{
 #run RNAfold
 
 system("mkdir img");
-system("RNAfold --circ < $name4\_mature.fasta > $name4\_RNAfold.dbn");
+system("RNAfold < $name4\_mature.fasta > $name4\_RNAfold.dbn");
 
 my $function = "/segmark { % f i j lw r g b segmark
   % mark segment [i,j] with outline width lw and color rgb
@@ -208,7 +208,7 @@ my @ps = grep(!/^\./,readdir(DIR));
 closedir(DIR);
 
 foreach my $name_ps (@ps) {
-	if($name_ps =~ /.ps/){
+	if($name_ps =~ /\.ps/){
 		my $name_png = $name_ps;
 		$name_png  =~ s/ps/png/;
 		open(PS,$name_ps);

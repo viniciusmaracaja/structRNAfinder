@@ -57,7 +57,7 @@ open (OUT, ">html/index.html");
 open (OUT6, ">html/home.html");
 open (OUT5, ">html/contact.html");
 open (OUT7, ">html/locus.html");
-
+system("cp -r /usr/local/share/structRNAfinder/images img/");
 
 for my $fh (\*OUT, \*OUT5, \*OUT6, \*OUT7) { 
 print $fh "
@@ -126,7 +126,7 @@ body {
 	padding:.1em 2% .5em 5%;
 }
 #logo{
-	background-image: url(\"/usr/local/share/structRNAfinder/images/logo.png\");
+	background-image: url(\"../img/images/logo.png\");
 	background-color:#ffffff;
 	border-top:3px solid #37A73E;
 	width:192px;
@@ -307,18 +307,18 @@ img {
 		var a = qmad.qm0 = new Object();
 		// Item Bullets Add On
 		a.ibullets_apply_to = \"parent\";
-		a.ibullets_main_image = \"/usr/local/share/structRNAfinder/images/tree_main_plus.gif\";
-		a.ibullets_main_image_hover = \"/usr/local/share/structRNAfinder/images/tree_main_plus.gif\";
-		a.ibullets_main_image_active = \"/usr/local/share/structRNAfinder/images/tree_main_plus_active.gif\";
+		a.ibullets_main_image = \"../img/images/tree_main_plus.gif\";
+		a.ibullets_main_image_hover = \"../img/images/tree_main_plus.gif\";
+		a.ibullets_main_image_active = \"../img/images/tree_main_plus_active.gif\";
 		a.ibullets_main_image_width = 13;
 		a.ibullets_main_image_height = 13;
 		a.ibullets_main_position_x = -20;
 		a.ibullets_main_position_y = -6;
 		a.ibullets_main_align_x = \"left\";
 		a.ibullets_main_align_y = \"middle\";
-		a.ibullets_sub_image = \"/usr/local/share/structRNAfinder/images/tree_sub_plus.gif\";
-		a.ibullets_sub_image_hover = \"/usr/local/share/structRNAfinder/images/tree_sub_plus.gif\";
-		a.ibullets_sub_image_active = \"/usr/local/share/structRNAfinder/images/tree_sub_plus_active.gif\";
+		a.ibullets_sub_image = \"../img/images/tree_sub_plus.gif\";
+		a.ibullets_sub_image_hover = \"../img/images/tree_sub_plus.gif\";
+		a.ibullets_sub_image_active = \"../img/images/tree_sub_plus_active.gif\";
 		a.ibullets_sub_image_width = 5;
 		a.ibullets_sub_image_height = 5;
 		a.ibullets_sub_position_x = -10;
@@ -1115,8 +1115,8 @@ print OUT6 "
 \<div id=\"contact_info\" style=\"width: 90%; height: 200px; text-align:left; font-size:13px; color:#191970; padding:20px; margin: 15px; -webkit-border-radius: 15px 15px 15px 15px; -moz-border-radius: 15px 15px 15px 15px; border-radius: 15px 15px 15px 15px; border: solid 1px #0A8A0A; font-family:\"Lucida Sans Unicode\", \"Lucida Grande\", sans-serif;\"\> Welcome to structRNAfinder, an automated tool for de novo identification, functional annotation and taxonomic assignation of RNA families through secondary structure inference. It integrates third-part softwares to compare nucleotide sequences with covariance models, generate secondary structures and functional annotations in a stand-alone toolkit with friendly reports and outputs useful for downstream analysis and data exploration.\<br\>\<br\>
 
 If you want know more about structRNAfinder, please visit \<a href=\"http://integrativebioinformatics.me/structrnafinder/\"\>our main page\</a\> or \<a href=\"https://github.com/viniciusmaracaja/structRNAfinder\"\>our GitHub account\</a\>. There, you can have access to a complete documentation and tutorial of the tool.\<br\>\<br\>\<center\> 
-\<a href=\"http://integrativebioinformatics.me/structrnafinder/\"\> \<img src =\"/usr/local/share/structRNAfinder/images/lib.png\" width='160' height='60'\>\</a\>
-\<a href=\"https://github.com/viniciusmaracaja/structRNAfinder\"\> \<img src =\"/usr/local/share/structRNAfinder/images/github.png\"width='160' height='60'\>\</a\>
+\<a href=\"http://integrativebioinformatics.me/structrnafinder/\"\> \<img src =\"../img/images/lib.png\" width='160' height='60'\>\</a\>
+\<a href=\"https://github.com/viniciusmaracaja/structRNAfinder\"\> \<img src =\"../img/images/github.png\"width='160' height='60'\>\</a\>
  \</center\> 
 
 
@@ -1134,7 +1134,7 @@ close(OUT6);
 my $namepri = $fileout;
 $namepri =~ s/.out//;
 open (FA,"$filein") or die "Can't open the file [$filein]";
-open (NO, ">$namepri\_nohit.fasta");
+#open (NO, ">$namepri\_nohit.fasta");
 $/ = ">";
 <FA>;
 my %fasta_length = (); 
@@ -1145,14 +1145,14 @@ while(<FA>){
 	my @id= split (/\s/,$id2);
 	my $seq = join("",@temp);
 	if(!$ids{$id[0]}){
-		print NO ">$id[0]\n$seq\n";	
+		#print NO ">$id[0]\n$seq\n";	
 	} else {
 		$fasta_length{$id[0]} = length($seq);
 	}
 }
 $/ = "\n";
 close(FA);
-close(NO);
+#close(NO);
 
 
 
@@ -1160,7 +1160,7 @@ close(NO);
 
 print OUT7 "
 \<div id=\"right_container_outer\"\>
-\<img src=\"/usr/local/share/structRNAfinder/images/strand.png\" width=\"150\" height=\"100\" align=\"right\"> 
+\<img src=\"../img/images/strand.png\" width=\"150\" height=\"100\" align=\"right\"> 
 \<table border=\"1\" bordercolor=\"#ABBECC\" cellspacing=\"3\" cellpadding=\"3\" class=\"tables\" align=\"center\" width: 80%; \>
 
 \<tr\>
@@ -1185,7 +1185,7 @@ foreach my $hit (keys %hit_image) {
 		                              -length    => $fasta_length{$hit},
 		                              -width     => 800,
 		                              -pad_left  => 10,
-		                              -pad_right => 10,
+		                              -pad_right => 100,
 		                             );
 	my $full_length = Bio::SeqFeature::Generic->new(
 		                                        -start => 1,
@@ -1325,7 +1325,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a73e', end
 
 }
 #logo{
-	background-image: url(\"/usr/local/share/structRNAfinder/images/logo.png\");
+	background-image: url(\"../img/images/logo.png\");
 	background-color:#ffffff;
 	border-top:3px solid #37A73E;
 	width:192px;
@@ -1839,14 +1839,19 @@ print OUT3 "
   \</td\>
 \</tr\>
 
+
+\</table\>
+\<h3\>
+";
+
+=pos
 \<tr\>
   \<td bgcolor= \"#80CB28\"\>Not annotated\</td\>
   \<td\>\<a href=\"../$namepri\_nohit.fasta\"\>$namepri\_nohit.fasta\</a\>\<br\>
   \</td\>
 \</tr\>
-\</table\>
-\<h3\>
-";
+=cut
+
 print OUT3 "
 \</div\>
 \</div\>
@@ -1927,7 +1932,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a73e', end
 	padding:.1em 2% .5em 5%;
 }
 #logo{
-	background-image: url(\"/usr/local/share/structRNAfinder/images/logo.png\");
+	background-image: url(\"../../img/images/logo.png\");
 	background-color:#ffffff;
 	border-top:3px solid #37A73E;
 	width:192px;
@@ -2072,7 +2077,7 @@ print OUT2 "\<div id=\"table\"\>
                 \<td\>\<h3\>Type:\</h3\> $colum[7]\</td\>
         \</tr\>
         \<tr\>
-                \<td\>\<h3\>Dominio:\</h3\> $colum[8]\</td\>";
+                \<td\>\<h3\>Taxonomy:\</h3\> $colum[8]\</td\>";
 #imprimir ontology GO:
 	if($go{$colum[2]}){
 		my @gos = split(/\]/,$go{$colum[2]});
