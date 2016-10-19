@@ -134,9 +134,9 @@ fi
 echo -n "Would you like to install/re-install Infernal? (y/n) [n] : "
 read ans
 if [ XX${ans} = XXy ]; then
-	$get infernal-1.1.tar.gz http://selab.janelia.org/software/infernal/infernal-1.1-linux-intel-gcc.tar.gz
+	$get infernal-1.1.tar.gz http://eddylab.org/infernal/infernal-1.1.2-linux-intel-gcc.tar.gz
 	tar xvzf infernal-1.1.tar.gz
-	cp infernal-1.1-linux-intel-gcc/binaries/* $PREFIX_BIN
+	cp infernal-1.1.2-linux-intel-gcc/binaries/* $PREFIX_BIN
 	wasInstalled=0;
 fi
 
